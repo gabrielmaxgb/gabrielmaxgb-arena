@@ -1,20 +1,17 @@
-import { Button } from "@mui/material";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import ProjectCard from "../../components/common/project-card/ProjectCard";
+import { ProjectsContainer } from "./ProjectsStyled";
 
 const Projects = () => {
   return (
-    <div>
-      <Link to={`/projects/${1}`}>
-        <Button>Go to project 1</Button>
-      </Link>
-      <Link to={`/projects/${2}`}>
-        <Button>Go to project 2</Button>
-      </Link>
-      <Link to={`/projects/${3}`}>
-        <Button>Go to project 3</Button>
-      </Link>
+    <ProjectsContainer>
+      <div id="projects-list">
+        <ProjectCard name="winesounds" />
+        <ProjectCard name="ourofino" />
+        <ProjectCard name="appen" />
+      </div>
       <Outlet />
-    </div>
+    </ProjectsContainer>
   );
 };
 

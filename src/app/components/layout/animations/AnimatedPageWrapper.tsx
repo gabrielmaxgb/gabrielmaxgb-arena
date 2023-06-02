@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
-import { IChildren } from '../../../../types/common/types';
+import { motion } from "framer-motion";
+import { IChildren } from "../../../../types/common/types";
 
 const animations = {
-  initial: { opacity: 0, x: 100 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -100 }
+  initial: { opacity: 0, y: 100 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -100 },
 };
 
 const AnimatedPageWrapper = ({ children }: IChildren) => {
@@ -14,7 +14,7 @@ const AnimatedPageWrapper = ({ children }: IChildren) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ duration: 1.4 }}
+      transition={{ duration: 0.4 }}
     >
       {children}
     </motion.div>

@@ -9,6 +9,7 @@ declare module '@mui/material/styles' {
     extraColors: {
       white: string;
       black: string;
+      yellow?: strinh;
     };
     palette: {
       background: {
@@ -35,6 +36,7 @@ declare module '@mui/material/styles' {
     extraColors?: {
       white?: string;
       black?: string;
+      yellow?: strinh;
     };
     // palette?: {
     //   background?: {
@@ -62,6 +64,7 @@ const themeCreator = createTheme({
   extraColors: {
     white: '#ffffff',
     black: '#000000',
+    yellow: '#cbac64',
   },
   palette: {
     background: {
