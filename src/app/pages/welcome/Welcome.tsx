@@ -6,7 +6,7 @@ import { WelcomeContainer } from "./WelcomeStyled";
 const Welcome = () => {
   const theme = useTheme();
 
-  console.log(theme);
+  console.log("theme", theme);
 
   return (
     <WelcomeContainer
@@ -19,13 +19,27 @@ const Welcome = () => {
       alignItems={"center"}
     >
       <AnimatedPageWrapper>
-        <Typography variant="h5">
-          Hello! I'm Gabriel, a fullstack software developer focused on frontend
+        {/* <Typography variant="h4" sx={{ display: "flex", alignItems: "end" }}>
+          Hello! I'm
+          <Typography variant="h3" fontFamily={"monofett"}>
+            &nbsp;Gabriel&nbsp;
+          </Typography>
+          , a fullstack software developer focused on frontend
         </Typography>
         <Typography variant="h1" fontFamily={"Monoton"}>
           Welcome
         </Typography>
-        <Typography variant="h5" mb={"1rem"}>
+        <Typography variant="h4" mb={"1rem"}>
+          to my portifolio
+        </Typography> */}
+        <Typography variant="h4">
+          Hello! I'm Gabriel , a fullstack software developer focused on
+          frontend
+        </Typography>
+        <Typography variant="h1" fontFamily={"Monoton"}>
+          Welcome
+        </Typography>
+        <Typography variant="h4" mb={"1rem"}>
           to my portifolio
         </Typography>
         <Link to={"/home"}>
