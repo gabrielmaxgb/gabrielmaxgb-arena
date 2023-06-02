@@ -19,22 +19,9 @@ const Welcome = () => {
       alignItems={"center"}
     >
       <AnimatedPageWrapper>
-        {/* <Typography variant="h4" sx={{ display: "flex", alignItems: "end" }}>
-          Hello! I'm
-          <Typography variant="h3" fontFamily={"monofett"}>
-            &nbsp;Gabriel&nbsp;
-          </Typography>
-          , a fullstack software developer focused on frontend
-        </Typography>
-        <Typography variant="h1" fontFamily={"Monoton"}>
-          Welcome
-        </Typography>
-        <Typography variant="h4" mb={"1rem"}>
-          to my portifolio
-        </Typography> */}
         <Typography variant="h4">
-          Hello! I'm Gabriel , a fullstack software developer focused on
-          frontend
+          Hello! I'm Gabriel , a <s>wizard</s> fullstack software developer
+          focused on frontend
         </Typography>
         <Typography variant="h1" fontFamily={"Monoton"}>
           Welcome
