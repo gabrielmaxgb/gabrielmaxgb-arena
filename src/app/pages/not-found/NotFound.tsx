@@ -1,5 +1,12 @@
-const NotFound = () => {
-  return <div>NotFound</div>;
-};
+import { Typography } from '@mui/material'
+import AnimatedPageWrapper from '../../components/layout/animations/AnimatedPageWrapper'
 
-export default NotFound;
+const NotFound = () => {
+  return (
+    <AnimatedPageWrapper>
+      <Typography>NotFound</Typography>
+    </AnimatedPageWrapper>
+  )
+}
+
+export default NotFound

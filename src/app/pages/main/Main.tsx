@@ -1,5 +1,12 @@
-const Main = () => {
-  return <div>Main</div>;
-};
+import { Typography } from '@mui/material'
+import AnimatedPageWrapper from '../../components/layout/animations/AnimatedPageWrapper'
 
-export default Main;
+const Main = () => {
+  return (
+    <AnimatedPageWrapper>
+      <Typography>Main</Typography>
+    </AnimatedPageWrapper>
+  )
+}
+
+export default Main
