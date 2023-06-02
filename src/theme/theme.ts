@@ -1,4 +1,8 @@
-import { createTheme } from '@mui/material';
+// @ts-nocheck
+import '@fontsource/chakra-petch';
+import '@fontsource/monofett';
+import '@fontsource/monoton';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   export interface Theme {
@@ -6,6 +10,22 @@ declare module '@mui/material/styles' {
       white: string;
       black: string;
     };
+    palette: {
+      background: {
+        default: string,
+      };
+      primary: {
+        main: string,
+      };
+      secondary: {
+        main: string,
+      };
+    };
+    // typography?: {
+    //   monofett?: {
+    //     fontFamily?: string;
+    //   }
+    // };
     status: {
       danger: string;
     };
@@ -16,27 +36,50 @@ declare module '@mui/material/styles' {
       white?: string;
       black?: string;
     };
+    // palette?: {
+    //   background?: {
+    //     default?: string;
+    //   };
+    //   primary?: {
+    //     main?: string;
+    //   };
+    //   secondary: {
+    //     main?: string;
+    //   };
+    // };
+    // typography?: {
+    //   monofett?: {
+    //     fontFamily?: string;
+    //   }
+    // };
     status?: {
       danger?: string;
     };
   }
 }
 
-export const theme = createTheme({
+const themeCreator = createTheme({
   extraColors: {
     white: '#ffffff',
     black: '#000000',
   },
   palette: {
+    background: {
+      default: "#E8D6A1",
+    },
     primary: {
-      main: '#ff7300',
+      main: '#000000',
     },
     secondary: {
       main: '#000000',
     },
   },
   typography: {
+    // monofett: {
+    //   fontFamily: "Monofett",
+    // },
     fontFamily: [
+      '"Chakra Petch"',
       '-apple-system',
       'BlinkMacSystemFont',
       '"Segoe UI"',
@@ -50,3 +93,5 @@ export const theme = createTheme({
     ].join(','),
   },
 });
+
+export const theme = responsiveFontSizes(themeCreator);
