@@ -1,4 +1,5 @@
-import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import AnimatedPageWrapper from "../../components/layout/animations/AnimatedPageWrapper";
 import { HomeContainer } from "./HomeStyled";
 
@@ -14,7 +15,9 @@ const Home = () => {
       alignItems={"center"}
     >
       <AnimatedPageWrapper>
-        <Typography>Home</Typography>
+        <Link to={"/projects"}>
+          <Button variant="contained">Peojects</Button>
+        </Link>
       </AnimatedPageWrapper>
     </HomeContainer>
   );
