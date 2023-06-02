@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .eslintrc
+.eslintrc.json
 .eslintrc.cjs
 .prettierrc
 
