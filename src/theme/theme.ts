@@ -11,6 +11,11 @@ declare module "@mui/material/styles" {
       black: string;
       yellow?: strinh;
     };
+    typography?: {
+      monofett?: {
+        fontFamily?: string;
+      };
+    };
     palette: {
       background: {
         default: string;
@@ -32,6 +37,11 @@ declare module "@mui/material/styles" {
       white?: string;
       black?: string;
       yellow?: strinh;
+    };
+    typography?: {
+      monofett?: {
+        fontFamily?: string;
+      };
     };
     status?: {
       danger?: string;
@@ -57,9 +67,9 @@ const themeCreator = createTheme({
     },
   },
   typography: {
-    // monofett: {
-    //   fontFamily: "Monofett",
-    // },
+    monofett: {
+      fontFamily: "Monofett",
+    },
     fontFamily: [
       '"Chakra Petch"',
       "-apple-system",

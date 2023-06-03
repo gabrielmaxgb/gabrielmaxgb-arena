@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { Button, Grid } from "@mui/material";
-import { ICustomizableComponent } from "../../../types/common/types";
+import { Grid } from "@mui/material";
 import { IMoonContainer, IWelcomeContainerStyled } from "./types";
 
 export const WelcomeContainer = styled(Grid)<IWelcomeContainerStyled>`
@@ -91,22 +90,5 @@ export const MoonContainer = styled.div<IMoonContainer>`
   #villager {
     background-color: transparent;
     cursor: pointer;
-  }
-`;
-
-export const CustomButton = styled(Button)<ICustomizableComponent>`
-  background-image: ${(props) => `url(${props.bgImage})`};
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 100%;
-  transition: 0.5s;
-
-  &:hover {
-    border-radius: 100%;
-    transition: 0.5s;
-    background-image: ${(props) => `url(${props.bgImageOnHover})`};
   }
 `;
