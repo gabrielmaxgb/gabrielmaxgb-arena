@@ -6,3 +6,9 @@ export interface IChildren {
 export interface ITheme extends ThemeOptions {
   theme?: ThemeOptions;
 }
+
+export interface ICustomizableComponent extends ThemeOptions {
+  theme?: ThemeOptions;
+  bgImage?: string;
+  bgImageOnHover?: string;
+}

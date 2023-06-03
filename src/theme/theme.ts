@@ -1,10 +1,10 @@
 // @ts-nocheck
-import '@fontsource/chakra-petch';
-import '@fontsource/monofett';
-import '@fontsource/monoton';
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import "@fontsource/chakra-petch";
+import "@fontsource/monofett";
+import "@fontsource/monoton";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   export interface Theme {
     extraColors: {
       white: string;
@@ -13,20 +13,15 @@ declare module '@mui/material/styles' {
     };
     palette: {
       background: {
-        default: string,
+        default: string;
       };
       primary: {
-        main: string,
+        main: string;
       };
       secondary: {
-        main: string,
+        main: string;
       };
     };
-    // typography?: {
-    //   monofett?: {
-    //     fontFamily?: string;
-    //   }
-    // };
     status: {
       danger: string;
     };
@@ -38,22 +33,6 @@ declare module '@mui/material/styles' {
       black?: string;
       yellow?: strinh;
     };
-    // palette?: {
-    //   background?: {
-    //     default?: string;
-    //   };
-    //   primary?: {
-    //     main?: string;
-    //   };
-    //   secondary: {
-    //     main?: string;
-    //   };
-    // };
-    // typography?: {
-    //   monofett?: {
-    //     fontFamily?: string;
-    //   }
-    // };
     status?: {
       danger?: string;
     };
@@ -62,19 +41,19 @@ declare module '@mui/material/styles' {
 
 const themeCreator = createTheme({
   extraColors: {
-    white: '#ffffff',
-    black: '#000000',
-    yellow: '#cbac64',
+    white: "#ffffff",
+    black: "#000000",
+    yellow: "#cbac64",
   },
   palette: {
     background: {
       default: "#E8D6A1",
     },
     primary: {
-      main: '#000000',
+      main: "#000000",
     },
     secondary: {
-      main: '#000000',
+      main: "#E8D6A1",
     },
   },
   typography: {
@@ -83,17 +62,17 @@ const themeCreator = createTheme({
     // },
     fontFamily: [
       '"Chakra Petch"',
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(','),
+    ].join(","),
   },
 });
 

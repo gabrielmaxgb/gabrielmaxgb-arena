@@ -20,7 +20,9 @@ const Header = () => {
         </div>
         <div id={"nav"}>
           <Link to={"projects"}>
-            <Button variant="contained">Peojects</Button>
+            <Button variant="contained" color="secondary">
+              Projects
+            </Button>
           </Link>
         </div>
       </Grid>
