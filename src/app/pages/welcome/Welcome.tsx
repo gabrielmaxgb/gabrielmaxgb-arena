@@ -1,8 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { FULL_MOON_PNG, VILLAGER_PNG, WEREWOLF_PNG } from "../../../assets";
 import AnimatedPageWrapper from "../../components/layout/animations/AnimatedPageWrapper";
-import { CustomButton, MoonContainer, WelcomeContainer } from "./WelcomeStyled";
+import { WelcomeContainer } from "./WelcomeStyled";
 
 const Welcome = () => {
   return (
@@ -21,7 +20,7 @@ const Welcome = () => {
             Hello! I'm Gabriel , a fullstack <s>wizard</s> software developer
             focused on frontend
           </Typography>
-          <MoonContainer bgImage={FULL_MOON_PNG}>
+          {/* <MoonContainer bgImage={FULL_MOON_PNG}>
             <Link to={"/home"} id={"staff-link"}>
               <CustomButton
                 id={"villager"}
@@ -29,7 +28,7 @@ const Welcome = () => {
                 bgImageOnHover={WEREWOLF_PNG}
               />
             </Link>
-          </MoonContainer>
+          </MoonContainer> */}
           <Typography variant="h1" fontFamily={"Monoton"}>
             Welcome
           </Typography>
