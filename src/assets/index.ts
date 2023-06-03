@@ -1,5 +1,5 @@
 import fire from "./imgs/fire.png";
-import fullMoon from "./imgs/full-moon.png";
+import fullMoon from "./imgs/full-moon.webp";
 import villager from "./imgs/villager.png";
 import werewolf from "./imgs/werewolf.png";
 
