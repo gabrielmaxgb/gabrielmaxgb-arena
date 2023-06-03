@@ -27,7 +27,7 @@ const Welcome = () => {
           Welcome
         </Typography>
         <Typography variant="h4" mb={"1rem"}>
-          to my portifolio
+          to my portfolio
         </Typography>
         <Link to={"/home"}>
           <Button variant="outlined">See more</Button>
