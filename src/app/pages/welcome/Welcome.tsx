@@ -20,15 +20,6 @@ const Welcome = () => {
             Hello! I'm Gabriel , a fullstack <s>wizard</s> software developer
             focused on frontend
           </Typography>
-          {/* <MoonContainer bgImage={FULL_MOON_PNG}>
-            <Link to={"/home"} id={"staff-link"}>
-              <CustomButton
-                id={"villager"}
-                bgImage={VILLAGER_PNG}
-                bgImageOnHover={WEREWOLF_PNG}
-              />
-            </Link>
-          </MoonContainer> */}
           <Typography variant="h1" fontFamily={"Monoton"}>
             Welcome
           </Typography>

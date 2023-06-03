@@ -14,7 +14,7 @@ const AnimatedPageWrapper = ({ children }: IChildren) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.8 }}
     >
       {children}
     </motion.div>
