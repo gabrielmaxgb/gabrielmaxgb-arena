@@ -32,7 +32,6 @@ const Home = () => {
   const theme = useTheme();
   const sectionTwo = useRef<null | HTMLDivElement>(null);
   const scrollPosition = useScrollPosition();
-  console.log(scrollPosition);
   const [isSkillsModalOpen, setSkillsModalOpen] = useState(false);
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
 

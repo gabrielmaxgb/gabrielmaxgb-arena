@@ -10,7 +10,6 @@ export const HomeContainer = styled(Grid)<ICustomizableComponent>`
   #presentation {
     /* height: 100vh; */
     height: ${(props) => {
-      console.log("props", props);
       return props.height ? props.height : "auto";
     }};
 
