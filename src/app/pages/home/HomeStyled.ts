@@ -61,3 +61,13 @@ export const ModalContent = styled.div`
     }
   }
 `;
+
+export const BackgroundContainer = styled.div<ICustomizableComponent>`
+  background-image: ${(props) => `url(${props.bgImage})`};
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+
+  width: 100%;
+  height: 500px;
+`;

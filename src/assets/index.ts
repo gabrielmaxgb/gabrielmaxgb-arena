@@ -2,6 +2,7 @@ import fire from "./imgs/fire.png";
 import fullMoon from "./imgs/full-moon.webp";
 import villager_png from "./imgs/villager.png";
 import werewolf from "./imgs/werewolf.png";
+import winesounds from "./imgs/winesounds.jpg";
 
 import adventure_map_svg from "./icons/adventure-map.svg";
 import api_svg from "./icons/api.svg";
@@ -20,6 +21,7 @@ export const FIRE_PNG = fire;
 export const FULL_MOON_PNG = fullMoon;
 export const VILLAGER_PNG = villager_png;
 export const WEREWOLF_PNG = werewolf;
+export const WINESOUNDS_JPG = winesounds;
 
 export const VILLAGER_SVG = villager_svg;
 export const WEREWOLF_SVG = werewolf_svg;
