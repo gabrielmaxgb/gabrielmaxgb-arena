@@ -9,6 +9,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ADVENTURE_MAP_SVG,
   API_SVG,
@@ -118,11 +119,21 @@ const Home = () => {
             backgroundColor={theme.extraColors.yellow}
             p={xs ? "0 0 1rem 0" : "1rem 0"}
           >
-            <img src={ADVENTURE_MAP_SVG} width={"60rem"} />
-            <Typography m={"0 1rem"} variant="h2">
-              Projects
-            </Typography>
-            <img src={SPELL_SCROLL_SVG} width={"60rem"} />
+            <Link to="/projects">
+              <Button variant="text">
+                <img src={ADVENTURE_MAP_SVG} width={"60rem"} />
+                <Typography m={"0 1rem"} variant="h2">
+                  Projects
+                </Typography>
+                <img src={SPELL_SCROLL_SVG} width={"60rem"} />
+              </Button>
+            </Link>
+            <Grid item container xs={12}>
+              {/* <Grid item container xs={6}></Grid>
+              <Grid item container xs={6}>
+                <BackgroundContainer bgImage={WINESOUNDS_JPG} />
+              </Grid> */}
+            </Grid>
           </HomeSection>
         </HomeContainer>
       </AnimatedPageWrapper>

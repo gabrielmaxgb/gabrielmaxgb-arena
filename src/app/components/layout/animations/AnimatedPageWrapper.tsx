@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { IChildren } from "../../../../types/common/types";
 
 const animations = {
-  initial: { opacity: 0, y: 100 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -100 },
+  initial: { opacity: 0, x: 500 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -500 },
 };
 
 const AnimatedPageWrapper = ({ children }: IChildren) => {
@@ -14,7 +14,7 @@ const AnimatedPageWrapper = ({ children }: IChildren) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
     >
       {children}
     </motion.div>
