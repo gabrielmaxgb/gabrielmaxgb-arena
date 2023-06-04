@@ -11,16 +11,16 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ADVENTURE_MAP_SVG,
-  API_SVG,
+  ARMOR_SVG,
   DESTRUCTIVE_MAGIC_SVG,
-  FRONT_END_SVG,
   KNIGHT_SVG,
   MY_CV,
   SPELL_SCROLL_SVG,
+  SWORD_SVG,
   VILLAGER_SVG,
 } from "../../../assets";
 import BasicModal from "../../components/common/basic-modal/BasicModal";
+import Footer from "../../components/common/footer/Footer";
 import { CustomButton } from "../../components/common/styled-components/StyledComponents";
 import AnimatedPageWrapper from "../../components/layout/animations/AnimatedPageWrapper";
 import { HomeContainer, HomeSection, ModalContent } from "./HomeStyled";
@@ -121,7 +121,7 @@ const Home = () => {
           >
             <Link to="/projects">
               <Button variant="text">
-                <img src={ADVENTURE_MAP_SVG} width={"60rem"} />
+                {/* <img src={ADVENTURE_MAP_SVG} width={"60rem"} /> */}
                 <Typography m={"0 1rem"} variant="h2">
                   Projects
                 </Typography>
@@ -134,6 +134,18 @@ const Home = () => {
                 <BackgroundContainer bgImage={WINESOUNDS_JPG} />
               </Grid> */}
             </Grid>
+          </HomeSection>
+          <HomeSection
+            id="footer"
+            item
+            container
+            xs={12}
+            // md={12}
+            justifyContent={"center"}
+            p={xs ? "0 0 1rem 0" : "1rem 0"}
+            bgcolor={"black"}
+          >
+            <Footer />
           </HomeSection>
         </HomeContainer>
       </AnimatedPageWrapper>
@@ -153,25 +165,29 @@ const Home = () => {
               alt="destructive-magic"
             />
             <section className="specialization-area">
-              <img
-                id="front-end"
-                className="specialization-image"
-                src={FRONT_END_SVG}
-                alt="front-end"
-                width={"80px"}
-              />
+              <Button>
+                <img
+                  id="front-end"
+                  className="specialization-image"
+                  src={SWORD_SVG}
+                  alt="front-end"
+                  width={"80px"}
+                />
+              </Button>
               <Typography mt={"1rem"} variant="h5">
                 Front end
               </Typography>
             </section>
             <section className="specialization-area">
-              <img
-                id="back-end"
-                className="specialization-image"
-                src={API_SVG}
-                alt="back-end"
-                width={"80px"}
-              />
+              <Button>
+                <img
+                  id="back-end"
+                  className="specialization-image"
+                  src={ARMOR_SVG}
+                  alt="back-end"
+                  width={"80px"}
+                />
+              </Button>
               <Typography mt={"1rem"} variant="h5">
                 Back end
               </Typography>

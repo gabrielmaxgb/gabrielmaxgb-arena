@@ -1,3 +1,4 @@
+// @ts-nocheck
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 import { ICustomizableComponent, ITheme } from "../../../types/common/types";
@@ -28,6 +29,11 @@ export const HomeContainer = styled(Grid)<ITheme>`
       }
     }
   }
+
+  #footer {
+    // TODO: move this style to <Footer /> component
+    color: white;
+  }
 `;
 
 export const HomeSection = styled(Grid)<ICustomizableComponent>`
@@ -37,7 +43,7 @@ export const HomeSection = styled(Grid)<ICustomizableComponent>`
   background-color: ${(props) => props.backgroundColor || undefined};
 `;
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.div<ITheme>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,9 +61,15 @@ export const ModalContent = styled.div`
     align-items: center;
     justify-content: center;
     margin: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
 
     img {
       cursor: pointer;
+    }
+
+    &:hover {
+      color: ${(props) => props.theme.extraColors?.emphasis};
     }
   }
 `;
