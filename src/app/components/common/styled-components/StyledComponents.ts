@@ -9,6 +9,7 @@ export const CustomButton = styled(Button)<ICustomizableComponent>`
   background-size: contain;
   background-color: transparent;
   width: ${(props) => props.width || "5rem"};
+  max-width: ${(props) => props.maxWidth || undefined};
   height: ${(props) => props.height || "5rem"};
   border-radius: 100%;
   transition: 0.5s;
