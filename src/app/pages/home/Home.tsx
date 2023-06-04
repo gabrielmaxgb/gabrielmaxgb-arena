@@ -1,4 +1,13 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import DescriptionIcon from "@mui/icons-material/Description";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import {
   ADVENTURE_MAP_SVG,
@@ -6,6 +15,7 @@ import {
   DESTRUCTIVE_MAGIC_SVG,
   FRONT_END_SVG,
   KNIGHT_SVG,
+  MY_CV,
   SPELL_SCROLL_SVG,
   VILLAGER_SVG,
 } from "../../../assets";
@@ -34,6 +44,7 @@ const Home = () => {
             item
             container
             xs={12}
+            md={10}
             justifyContent={"center"}
             p={xs ? "0 0 1rem 0" : "1rem 0"}
           >
@@ -55,14 +66,35 @@ const Home = () => {
                 onClick={() => setSkillsModalOpen(true)}
               />
               {/* <img id="me-img" src={VILLAGER_SVG} alt="me" width={"200px"} /> */}
+              <div id="icons">
+                <Button>
+                  <a href="https://github.com/gabrielmaxgb" target="_blank">
+                    <GitHubIcon />
+                  </a>
+                </Button>
+                <Button>
+                  <a
+                    href="https://www.linkedin.com/in/gabriel-max-dev/"
+                    target="_blank"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                </Button>
+                <Button>
+                  <a href={MY_CV} target="_blank">
+                    <DescriptionIcon />
+                  </a>
+                </Button>
+              </div>
             </Grid>
             <Grid
               item
               container
               xs={11}
               md={6}
-              justifyContent={xs ? "center" : "start"}
-              alignItems={"center"}
+              flexDirection={"column"}
+              justifyContent={"center"}
+              alignItems={xs ? "center" : "start"}
             >
               <Typography variant="h5" textAlign={"center"} maxWidth={"70%"}>
                 I am passionate about technology and I seek to improve my

@@ -14,6 +14,8 @@ import spell_scroll_svg from "./icons/spell-scroll.svg";
 import villager_svg from "./icons/villager.svg";
 import werewolf_svg from "./icons/werewolf.svg";
 
+import my_cv_pdf from "./pdf/GabrielMaxGB.pdf";
+
 export const FIRE_PNG = fire;
 export const FULL_MOON_PNG = fullMoon;
 export const VILLAGER_PNG = villager_png;
@@ -29,3 +31,5 @@ export const BOOTSTRAP_SVG = bootstrap_svg;
 export const API_SVG = api_svg;
 export const SPELL_SCROLL_SVG = spell_scroll_svg;
 export const ADVENTURE_MAP_SVG = adventure_map_svg;
+
+export const MY_CV = my_cv_pdf;

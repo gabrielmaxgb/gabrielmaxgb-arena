@@ -5,6 +5,29 @@ import { ICustomizableComponent, ITheme } from "../../../types/common/types";
 export const HomeContainer = styled(Grid)<ITheme>`
   background-color: ${(props) => props.theme.palette?.background?.default};
   box-sizing: border-box;
+
+  #presentation {
+    #icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      width: 100%;
+
+      button {
+        margin: 1rem;
+        box-shadow: 0 0 0 0;
+        border: 0 none;
+        outline: 0;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
 `;
 
 export const HomeSection = styled(Grid)<ICustomizableComponent>`
@@ -12,9 +35,6 @@ export const HomeSection = styled(Grid)<ICustomizableComponent>`
   width: 100vw;
   box-sizing: border-box;
   background-color: ${(props) => props.backgroundColor || undefined};
-
-  #presentation {
-  }
 `;
 
 export const ModalContent = styled.div`

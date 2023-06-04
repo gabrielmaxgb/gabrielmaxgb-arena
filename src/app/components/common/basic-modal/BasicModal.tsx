@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import { IBasicModalProps } from "./types";
 

@@ -17,6 +17,7 @@
     "@fontsource/chakra-petch": "^5.0.2",
     "@fontsource/monofett": "^5.0.2",
     "@fontsource/monoton": "^5.0.2",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.3",
     "framer-motion": "^10.12.16",
     "localforage": "^1.10.0",
