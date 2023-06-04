@@ -86,11 +86,11 @@ const Home = () => {
             backgroundColor={theme.extraColors.yellow}
             p={xs ? "0 0 1rem 0" : "1rem 0"}
           >
-            <img src={ADVENTURE_MAP_SVG} width={"100px"} />
+            <img src={ADVENTURE_MAP_SVG} width={"60rem"} />
             <Typography m={"0 1rem"} variant="h2">
               Projects
             </Typography>
-            <img src={SPELL_SCROLL_SVG} width={"100px"} />
+            <img src={SPELL_SCROLL_SVG} width={"60rem"} />
           </HomeSection>
         </HomeContainer>
       </AnimatedPageWrapper>
