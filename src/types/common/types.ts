@@ -15,4 +15,5 @@ export interface ICustomizableComponent extends ThemeOptions {
   maxWidth?: string;
   height?: string;
   backgroundColor?: string;
+  bg?: string;
 }

@@ -3,11 +3,17 @@ import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 import { ICustomizableComponent, ITheme } from "../../../types/common/types";
 
-export const HomeContainer = styled(Grid)<ITheme>`
+export const HomeContainer = styled(Grid)<ICustomizableComponent>`
   background-color: ${(props) => props.theme.palette?.background?.default};
   box-sizing: border-box;
 
   #presentation {
+    /* height: 100vh; */
+    height: ${(props) => {
+      console.log("props", props);
+      return props.height ? props.height : "auto";
+    }};
+
     #icons {
       display: flex;
       align-items: center;
@@ -30,9 +36,11 @@ export const HomeContainer = styled(Grid)<ITheme>`
     }
   }
 
+  #projects {
+    padding: 1rem 0;
+  }
+
   #footer {
-    // TODO: move this style to <Footer /> component
-    color: white;
   }
 `;
 
@@ -41,6 +49,7 @@ export const HomeSection = styled(Grid)<ICustomizableComponent>`
   width: 100vw;
   box-sizing: border-box;
   background-color: ${(props) => props.backgroundColor || undefined};
+  background: ${(props) => props.bg || undefined};
 `;
 
 export const ModalContent = styled.div<ITheme>`
