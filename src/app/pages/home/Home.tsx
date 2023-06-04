@@ -1,10 +1,12 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import {
+  ADVENTURE_MAP_SVG,
   API_SVG,
   DESTRUCTIVE_MAGIC_SVG,
   FRONT_END_SVG,
   KNIGHT_SVG,
+  SPELL_SCROLL_SVG,
   VILLAGER_SVG,
 } from "../../../assets";
 import BasicModal from "../../components/common/basic-modal/BasicModal";
@@ -80,10 +82,15 @@ const Home = () => {
             container
             xs={12}
             justifyContent={"center"}
+            alignItems={"center"}
             backgroundColor={theme.extraColors.yellow}
             p={xs ? "0 0 1rem 0" : "1rem 0"}
           >
-            <Typography variant="h2">Projects</Typography>
+            <img src={ADVENTURE_MAP_SVG} width={"100px"} />
+            <Typography m={"0 1rem"} variant="h2">
+              Projects
+            </Typography>
+            <img src={SPELL_SCROLL_SVG} width={"100px"} />
           </HomeSection>
         </HomeContainer>
       </AnimatedPageWrapper>
