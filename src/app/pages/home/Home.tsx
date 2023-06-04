@@ -17,8 +17,6 @@ const Home = () => {
   const [isSkillsModalOpen, setSkillsModalOpen] = useState(false);
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
 
-  const image = new Image();
-
   return (
     <>
       <AnimatedPageWrapper>
