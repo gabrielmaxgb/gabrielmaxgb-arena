@@ -5,6 +5,7 @@ import werewolf from "./imgs/werewolf.png";
 import winesounds from "./imgs/winesounds.jpg";
 
 import adventure_map_svg from "./icons/adventure-map.svg";
+import angry_soldier_svg from "./icons/angry-soldier.svg";
 import api_svg from "./icons/api.svg";
 import armor_svg from "./icons/armor.svg";
 import aws_ec2_svg from "./icons/aws-ec2.svg";
@@ -43,5 +44,6 @@ export const ARMOR_SVG = armor_svg;
 export const ELF_SVG = elf_svg;
 export const ORC_SVG = orc_svg;
 export const BOW_AND_ARROW_SVG = bow_and_arrow_svg;
+export const ANGRY_SOLDIER_SVG = angry_soldier_svg;
 
 export const MY_CV = my_cv_pdf;

@@ -14,6 +14,7 @@ import {
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
+  ANGRY_SOLDIER_SVG,
   DESTRUCTIVE_MAGIC_SVG,
   ELF_SVG,
   KNIGHT_SVG,
@@ -72,11 +73,15 @@ const Home = () => {
               // followCursor
             >
               <CustomButton
-                bgImage={isSkillsModalOpen ? KNIGHT_SVG : VILLAGER_SVG}
+                bgImage={isSkillsModalOpen ? ANGRY_SOLDIER_SVG : VILLAGER_SVG}
                 bgImageOnHover={KNIGHT_SVG}
                 maxWidth="100%"
+                backgroundPosition="center"
+                backgroundSize={isSkillsModalOpen ? "500px 500px" : "cover"}
                 width="350px"
                 height="350px"
+                // width={isSkillsModalOpen ? "650px" : "350px"}
+                // height={isSkillsModalOpen ? "350px" : "350px"}
                 onClick={() => setSkillsModalOpen(true)}
               />
             </Tooltip>
@@ -213,29 +218,52 @@ const Home = () => {
               alt="destructive-magic"
             />
             <section className="specialization-area">
-              <Button>
-                <img
-                  id="front-end"
-                  className="specialization-image"
-                  src={ELF_SVG}
-                  alt="front-end"
-                  width={"80px"}
-                />
-              </Button>
+              <Tooltip
+                title={
+                  <Typography variant="body1">
+                    Looks like you don't like to follow orders, uh?
+                  </Typography>
+                }
+                placement="top"
+                arrow
+                TransitionComponent={Zoom}
+                // followCursor
+              >
+                <Button>
+                  <img
+                    id="front-end"
+                    className="specialization-image"
+                    src={ELF_SVG}
+                    alt="front-end"
+                    width={"80px"}
+                  />
+                </Button>
+              </Tooltip>
               <Typography mt={"1rem"} variant="h5">
                 Front end
               </Typography>
             </section>
             <section className="specialization-area">
-              <Button>
-                <img
-                  id="back-end"
-                  className="specialization-image"
-                  src={ORC_SVG}
-                  alt="back-end"
-                  width={"80px"}
-                />
-              </Button>
+              <Tooltip
+                title={
+                  <Typography variant="body1">
+                    You'll pay for your insolence!
+                  </Typography>
+                }
+                placement="top"
+                arrow
+                TransitionComponent={Zoom}
+              >
+                <Button>
+                  <img
+                    id="back-end"
+                    className="specialization-image"
+                    src={ORC_SVG}
+                    alt="back-end"
+                    width={"80px"}
+                  />
+                </Button>
+              </Tooltip>
               <Typography mt={"1rem"} variant="h5">
                 Back end
               </Typography>

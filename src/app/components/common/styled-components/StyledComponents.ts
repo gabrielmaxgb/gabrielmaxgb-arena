@@ -5,8 +5,8 @@ import { ICustomizableComponent } from "../../../../types/common/types";
 export const CustomButton = styled(Button)<ICustomizableComponent>`
   background-image: ${(props) => `url(${props.bgImage})`};
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: contain;
+  background-position: ${(props) => props.backgroundPosition || "bottom"};
+  background-size: ${(props) => props.backgroundSize || "cover"};
   width: ${(props) => props.width || "5rem"};
   max-width: ${(props) => props.maxWidth || undefined};
   height: ${(props) => props.height || "5rem"};
