@@ -48,8 +48,8 @@ const Home = () => {
                 bgImage={VILLAGER_SVG}
                 bgImageOnHover={KNIGHT_SVG}
                 maxWidth="100%"
-                width="400px"
-                height="400px"
+                width="350px"
+                height="350px"
                 onClick={() => setSkillsModalOpen(true)}
               />
               {/* <img id="me-img" src={VILLAGER_SVG} alt="me" width={"200px"} /> */}
@@ -59,10 +59,10 @@ const Home = () => {
               container
               xs={11}
               md={6}
-              justifyContent={"center"}
+              justifyContent={xs ? "center" : "start"}
               alignItems={"center"}
             >
-              <Typography variant="h5" textAlign={"center"} width={"80%"}>
+              <Typography variant="h5" textAlign={"center"} maxWidth={"70%"}>
                 I am passionate about technology and I seek to improve my
                 technical and personal skills every day, aiming to positively
                 impact as many lives as possible with my work. I have 5 years of
