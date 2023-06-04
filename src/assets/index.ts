@@ -6,12 +6,14 @@ import winesounds from "./imgs/winesounds.jpg";
 
 import adventure_map_svg from "./icons/adventure-map.svg";
 import api_svg from "./icons/api.svg";
+import armor_svg from "./icons/armor.svg";
 import aws_ec2_svg from "./icons/aws-ec2.svg";
 import bootstrap_svg from "./icons/bootstrap.svg";
 import destructive_magic_svg from "./icons/destructive-magic.svg";
 import front_end_svg from "./icons/frontend.svg";
 import knight_svg from "./icons/knight.svg";
 import spell_scroll_svg from "./icons/spell-scroll.svg";
+import sword_svg from "./icons/sword.svg";
 import villager_svg from "./icons/villager.svg";
 import werewolf_svg from "./icons/werewolf.svg";
 
@@ -33,5 +35,7 @@ export const BOOTSTRAP_SVG = bootstrap_svg;
 export const API_SVG = api_svg;
 export const SPELL_SCROLL_SVG = spell_scroll_svg;
 export const ADVENTURE_MAP_SVG = adventure_map_svg;
+export const SWORD_SVG = sword_svg;
+export const ARMOR_SVG = armor_svg;
 
 export const MY_CV = my_cv_pdf;

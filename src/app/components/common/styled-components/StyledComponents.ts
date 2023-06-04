@@ -14,8 +14,10 @@ export const CustomButton = styled(Button)<ICustomizableComponent>`
   transition: 0.5s;
 
   &:hover {
-    border-radius: 100%;
     transition: 0.5s;
-    background-image: ${(props) => `url(${props.bgImageOnHover})`};
+    background-image: ${(props) =>
+      props.bgImageOnHover
+        ? `url(${props.bgImageOnHover})`
+        : `url(${props.bgImage})`};
   }
 `;

@@ -9,12 +9,8 @@ declare module "@mui/material/styles" {
     extraColors: {
       white: string;
       black: string;
-      yellow?: strinh;
-    };
-    typography?: {
-      monofett?: {
-        fontFamily?: string;
-      };
+      yellow?: string;
+      emphasis?: string;
     };
     palette: {
       background: {
@@ -27,6 +23,11 @@ declare module "@mui/material/styles" {
         main: string;
       };
     };
+    typography?: {
+      monofett?: {
+        fontFamily?: string;
+      };
+    };
     status: {
       danger: string;
     };
@@ -36,7 +37,19 @@ declare module "@mui/material/styles" {
     extraColors?: {
       white?: string;
       black?: string;
-      yellow?: strinh;
+      yellow?: string;
+      emphasis?: string;
+    };
+    palette: {
+      background: {
+        default: string;
+      };
+      primary: {
+        main: string;
+      };
+      secondary: {
+        main: string;
+      };
     };
     typography?: {
       monofett?: {
@@ -54,6 +67,7 @@ const themeCreator = createTheme({
     white: "#ffffff",
     black: "#000000",
     yellow: "#cbac64",
+    emphasis: "#b19c32",
   },
   palette: {
     background: {
