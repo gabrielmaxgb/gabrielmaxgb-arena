@@ -12,5 +12,7 @@ export interface ICustomizableComponent extends ThemeOptions {
   bgImage?: string;
   bgImageOnHover?: string;
   width?: string;
+  maxWidth?: string;
   height?: string;
+  backgroundColor?: string;
 }
