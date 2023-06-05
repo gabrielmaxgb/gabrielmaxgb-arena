@@ -1,14 +1,12 @@
-import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
 import { ProjectCardContainer } from "./ProjectCardStyled";
+import { IProjectCardProps } from "./types";
 
-const ProjectCard = ({ name }: { name: string }) => {
+const ProjectCard = ({ project }: IProjectCardProps) => {
+  const { name, company, description, imageSource } = project;
+
   return (
     <ProjectCardContainer>
-      <div>Project: {name}</div>
-      <Link to={`${name}`}>
-        <Button>Go to {name}</Button>
-      </Link>
+      <img src={imageSource} width={"100%"} />
     </ProjectCardContainer>
   );
 };

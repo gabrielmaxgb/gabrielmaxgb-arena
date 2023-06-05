@@ -1,7 +1,12 @@
+import appen_banner_png from "./imgs/appen-banner.png";
 import fire from "./imgs/fire.png";
 import fullMoon from "./imgs/full-moon.webp";
+import greenmainframe_banner_png from "./imgs/greenmainframe-banner.png";
+import launch_ats_banner_png from "./imgs/launch-ats-banner.png";
+import ourofino_banner_png from "./imgs/ourofino-banner.png";
 import villager_png from "./imgs/villager.png";
 import werewolf from "./imgs/werewolf.png";
+import winesounds_banner_png from "./imgs/winesounds-banner.png";
 import winesounds from "./imgs/winesounds.jpg";
 
 import adventure_map_svg from "./icons/adventure-map.svg";
@@ -29,6 +34,11 @@ export const FULL_MOON_PNG = fullMoon;
 export const VILLAGER_PNG = villager_png;
 export const WEREWOLF_PNG = werewolf;
 export const WINESOUNDS_JPG = winesounds;
+export const APPEN_BANNER_PNG = appen_banner_png;
+export const GREENMAINFRAME_BANNER_PNG = greenmainframe_banner_png;
+export const LAUNCH_ATS_BANNER_PNG = launch_ats_banner_png;
+export const OUROFINO_BANNER_PNG = ourofino_banner_png;
+export const WINESOUNDS_BANNER_PNG = winesounds_banner_png;
 
 export const VILLAGER_SVG = villager_svg;
 export const WEREWOLF_SVG = werewolf_svg;

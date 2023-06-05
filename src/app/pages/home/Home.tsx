@@ -26,7 +26,6 @@ import {
 import BasicModal from "../../components/common/basic-modal/BasicModal";
 import Footer from "../../components/common/footer/Footer";
 import { CustomButton } from "../../components/common/styled-components/StyledComponents";
-import useBagItems from "../../hooks/use-bag-items/useBagItems";
 import useScrollPosition from "../../hooks/use-scroll-position/UseScrollPosition";
 import { HomeContainer, HomeSection, ModalContent } from "./HomeStyled";
 
@@ -36,7 +35,7 @@ const Home = () => {
   const scrollPosition = useScrollPosition();
   const [isSkillsModalOpen, setSkillsModalOpen] = useState(false);
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
-  const { bagItems, setBagItems } = useBagItems();
+  // const { bagItems, setBagItems } = useBagItems();
 
   // console.log("bagItems", bagItems);
 
@@ -69,11 +68,11 @@ const Home = () => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <Button
+            {/* <Button
               onClick={() => setBagItems([...bagItems, { item: "master-key" }])}
             >
               Get Master Key
-            </Button>
+            </Button> */}
             <Tooltip
               title={<Typography variant="h5">STEP BACK!!</Typography>}
               placement="top"
@@ -158,6 +157,13 @@ const Home = () => {
               product stack based on React, Nextjs, Nodejs and code versioning
               with Git.
             </Typography>
+            {/* <div
+              style={{
+                height: "500px",
+                backgroundColor: "red",
+                width: "300px",
+              }}
+            ></div> */}
           </Grid>
           <Button
             onClick={() => sectionTwo?.current?.scrollIntoView()}
@@ -230,7 +236,7 @@ const Home = () => {
                 title={
                   <Typography variant="body1">
                     It appears that you're not the kind of person who likes to
-                    follow orders, right?
+                    follow orders, huh?
                   </Typography>
                 }
                 placement="top"
@@ -255,7 +261,7 @@ const Home = () => {
               <Tooltip
                 title={
                   <Typography variant="body1">
-                    You'll pay for your insolence!
+                    You'll pay for your insolence, human!
                   </Typography>
                 }
                 placement="top"
