@@ -26,6 +26,7 @@ import {
 import BasicModal from "../../components/common/basic-modal/BasicModal";
 import Footer from "../../components/common/footer/Footer";
 import { CustomButton } from "../../components/common/styled-components/StyledComponents";
+import useBagItems from "../../hooks/use-bag-items/useBagItems";
 import useScrollPosition from "../../hooks/use-scroll-position/UseScrollPosition";
 import { HomeContainer, HomeSection, ModalContent } from "./HomeStyled";
 
@@ -35,6 +36,9 @@ const Home = () => {
   const scrollPosition = useScrollPosition();
   const [isSkillsModalOpen, setSkillsModalOpen] = useState(false);
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
+  const { bagItems, setBagItems } = useBagItems();
+
+  // console.log("bagItems", bagItems);
 
   return (
     <>
@@ -65,6 +69,11 @@ const Home = () => {
             justifyContent={"center"}
             alignItems={"center"}
           >
+            <Button
+              onClick={() => setBagItems([...bagItems, { item: "master-key" }])}
+            >
+              Get Master Key
+            </Button>
             <Tooltip
               title={<Typography variant="h5">STEP BACK!!</Typography>}
               placement="top"
@@ -180,7 +189,6 @@ const Home = () => {
             placement="top"
             arrow
             TransitionComponent={Zoom}
-            followCursor
           >
             <Link to="/projects">
               <CustomButton
@@ -221,13 +229,13 @@ const Home = () => {
               <Tooltip
                 title={
                   <Typography variant="body1">
-                    Looks like you don't like to follow orders, uh?
+                    It appears that you're not the kind of person who likes to
+                    follow orders, right?
                   </Typography>
                 }
                 placement="top"
                 arrow
                 TransitionComponent={Zoom}
-                // followCursor
               >
                 <Button>
                   <img

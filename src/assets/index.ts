@@ -14,6 +14,7 @@ import bow_and_arrow_svg from "./icons/bow-and-arrow.svg";
 import destructive_magic_svg from "./icons/destructive-magic.svg";
 import elf_svg from "./icons/elf.svg";
 import front_end_svg from "./icons/frontend.svg";
+import item_bag_svg from "./icons/item-bag.svg";
 import knight_svg from "./icons/knight.svg";
 import orc_svg from "./icons/orc.svg";
 import spell_scroll_svg from "./icons/spell-scroll.svg";
@@ -45,5 +46,6 @@ export const ELF_SVG = elf_svg;
 export const ORC_SVG = orc_svg;
 export const BOW_AND_ARROW_SVG = bow_and_arrow_svg;
 export const ANGRY_SOLDIER_SVG = angry_soldier_svg;
+export const ITEM_BAG_SVG = item_bag_svg;
 
 export const MY_CV = my_cv_pdf;
