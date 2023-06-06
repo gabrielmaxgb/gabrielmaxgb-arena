@@ -2,7 +2,8 @@ import { ProjectCardContainer } from "./ProjectCardStyled";
 import { IProjectCardProps } from "./types";
 
 const ProjectCard = ({ project }: IProjectCardProps) => {
-  const { name, company, description, imageSource } = project;
+  // const { name, company, description, imageSource } = project;
+  const { imageSource } = project;
 
   return (
     <ProjectCardContainer>
