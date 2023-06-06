@@ -9,6 +9,7 @@ import { IProject } from "./types";
 
 export const MY_PROJECTS: IProject[] = [
   {
+    id: 1,
     name: "Winesounds Bistro",
     company: "Fan Projects",
     description:
@@ -16,6 +17,7 @@ export const MY_PROJECTS: IProject[] = [
     imageSource: WINESOUNDS_BANNER_PNG,
   },
   {
+    id: 2,
     name: "Ourofino",
     company: "Sambatech",
     description:
@@ -23,6 +25,7 @@ export const MY_PROJECTS: IProject[] = [
     imageSource: OUROFINO_BANNER_PNG,
   },
   {
+    id: 3,
     name: "Appen",
     company: "Novatics",
     description:
@@ -30,6 +33,7 @@ export const MY_PROJECTS: IProject[] = [
     imageSource: APPEN_BANNER_PNG,
   },
   {
+    id: 4,
     name: "Greenmainframe",
     company: "Webera",
     description:
@@ -37,6 +41,7 @@ export const MY_PROJECTS: IProject[] = [
     imageSource: GREENMAINFRAME_BANNER_PNG,
   },
   {
+    id: 5,
     name: "Launch ATS",
     company: "Pride Innovations Brazil - Pride Global",
     description:

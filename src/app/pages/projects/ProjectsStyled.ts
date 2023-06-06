@@ -3,8 +3,9 @@ import { Grid } from "@mui/material";
 import { ITheme } from "../../../types/common/types";
 
 export const ProjectsContainer = styled(Grid)<ITheme>`
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-color: ${(props) => props.theme.palette?.background?.default};
-  overflow: auto;
+  /* overflow: auto; */
   padding: 2rem 0;
 `;

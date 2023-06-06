@@ -8,7 +8,17 @@ const Projects = () => {
     return MY_PROJECTS.map((project) => {
       console.log("project", project);
       return (
-        <Grid item container xs={12} sm={6} lg={4}>
+        <Grid
+          key={project.id}
+          item
+          container
+          xs={12}
+          sm={6}
+          md={4}
+          justifyContent={"center"}
+          alignItems={"center"}
+          // className="gallery-item"
+        >
           <ProjectCard project={project} />
         </Grid>
       );
@@ -23,17 +33,19 @@ const Projects = () => {
       xs={12}
       // md={12}
       justifyContent={"center"}
-      alignItems={"center"}
+      alignItems={"start"}
     >
       <Grid
         item
         container
         xs={11}
+        sm={10}
         md={8}
         justifyContent={"start"}
-        alignItems={"center"}
+        alignItems={"start"}
         spacing={2}
-        // sx={{ backgroundColor: "red" }}
+        sx={{ maxWidth: "1500px" }}
+        // className="gallery"
       >
         {renderProjects()}
       </Grid>
