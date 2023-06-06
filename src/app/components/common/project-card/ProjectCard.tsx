@@ -4,17 +4,17 @@ import { Button } from "@mui/material";
 import { ProjectCardContainer } from "./ProjectCardStyled";
 import { IProjectCardProps } from "./types";
 
-const ProjectCard = ({ project }: IProjectCardProps) => {
+const ProjectCard = ({ project, knowledgeAccess }: IProjectCardProps) => {
   // const { name, company, description, imageSource } = project;
   const { imageSource } = project;
   const [cardFlip, setCardFlip] = useState(false);
 
   return (
     <>
-      <ProjectCardContainer>
-        <Button>
+      <ProjectCardContainer knowledgeAccess={knowledgeAccess}>
+        <Button disabled={!knowledgeAccess}>
           <img
-            className="front"
+            className="image"
             src={imageSource}
             width={"100%"}
             onClick={() => setCardFlip(!cardFlip)}
