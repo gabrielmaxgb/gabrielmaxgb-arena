@@ -16,6 +16,7 @@ import armor_svg from "./icons/armor.svg";
 import aws_ec2_svg from "./icons/aws-ec2.svg";
 import bootstrap_svg from "./icons/bootstrap.svg";
 import bow_and_arrow_svg from "./icons/bow-and-arrow.svg";
+import construction_danger_exclamantion_svg from "./icons/construction-danger-exclamantion.svg";
 import destructive_magic_svg from "./icons/destructive-magic.svg";
 import elf_svg from "./icons/elf.svg";
 import front_end_svg from "./icons/frontend.svg";
@@ -57,5 +58,7 @@ export const ORC_SVG = orc_svg;
 export const BOW_AND_ARROW_SVG = bow_and_arrow_svg;
 export const ANGRY_SOLDIER_SVG = angry_soldier_svg;
 export const ITEM_BAG_SVG = item_bag_svg;
+export const CONSTRUCTION_DANGER_EXCLAMANTION_SVG =
+  construction_danger_exclamantion_svg;
 
 export const MY_CV = my_cv_pdf;

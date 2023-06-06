@@ -1,27 +1,34 @@
 import { Button, Tooltip, Typography, Zoom } from "@mui/material";
 import "./App.css";
-import { ITEM_BAG_SVG } from "./assets";
+import { FloatButtonsContainer } from "./AppStyled";
+import { CONSTRUCTION_DANGER_EXCLAMANTION_SVG, ITEM_BAG_SVG } from "./assets";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
     <>
-      <Tooltip
-        title={<Typography variant="body1">Items</Typography>}
-        placement="top"
-        arrow
-        TransitionComponent={Zoom}
-      >
-        <Button
-          sx={{
-            position: "fixed",
-            bottom: 10,
-            right: 10,
-          }}
+      <FloatButtonsContainer>
+        <Tooltip
+          title={<Typography variant="body1">Under Development</Typography>}
+          placement="left"
+          arrow
+          TransitionComponent={Zoom}
         >
-          <img src={ITEM_BAG_SVG} width={"70px"} />
-        </Button>
-      </Tooltip>
+          <Button>
+            <img src={CONSTRUCTION_DANGER_EXCLAMANTION_SVG} width={"60px"} />
+          </Button>
+        </Tooltip>
+        <Tooltip
+          title={<Typography variant="body1">Items</Typography>}
+          placement="left"
+          arrow
+          TransitionComponent={Zoom}
+        >
+          <Button>
+            <img src={ITEM_BAG_SVG} width={"60px"} />
+          </Button>
+        </Tooltip>
+      </FloatButtonsContainer>
       <AppRoutes />
     </>
   );
