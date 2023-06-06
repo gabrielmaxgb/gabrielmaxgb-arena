@@ -19,6 +19,7 @@ import bow_and_arrow_svg from "./icons/bow-and-arrow.svg";
 import construction_danger_exclamantion_svg from "./icons/construction-danger-exclamantion.svg";
 import destructive_magic_svg from "./icons/destructive-magic.svg";
 import elf_svg from "./icons/elf.svg";
+import excalibur_sword_svg from "./icons/excalibur-sword.svg";
 import fairy_svg from "./icons/fairy.svg";
 import front_end_svg from "./icons/frontend.svg";
 import item_bag_svg from "./icons/item-bag.svg";
@@ -62,6 +63,7 @@ export const ANGRY_SOLDIER_SVG = angry_soldier_svg;
 export const ITEM_BAG_SVG = item_bag_svg;
 export const FAIRY_SVG = fairy_svg;
 export const SPELL_BOOK_SVG = spell_book_svg;
+export const EXCALIBUR_SWORD_SVG = excalibur_sword_svg;
 export const CONSTRUCTION_DANGER_EXCLAMANTION_SVG =
   construction_danger_exclamantion_svg;
 
