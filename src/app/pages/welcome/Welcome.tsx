@@ -26,7 +26,7 @@ const Welcome = () => {
           to my portfolio
         </Typography>
         <Link to={"/home"} id={"link"}>
-          <Button variant="outlined">Start adventure</Button>
+          <Button variant="outlined">Start adventure!</Button>
         </Link>
         {/* </AnimatedPageWrapper> */}
       </WelcomeContainer>
