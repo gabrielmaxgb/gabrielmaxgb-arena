@@ -1,9 +1,15 @@
-import { Grid } from "@mui/material";
+import { Button, Grid, Tooltip, Typography, Zoom } from "@mui/material";
+import { useState } from "react";
+import { FAIRY_SVG, SPELL_BOOK_SVG } from "../../../assets";
 import ProjectCard from "../../components/common/project-card/ProjectCard";
 import { ProjectsContainer } from "./ProjectsStyled";
 import { MY_PROJECTS } from "./consts";
 
 const Projects = () => {
+  // const [castSpell, setCastSpell] = useState(false);
+  const [spellBook, setSpellBook] = useState(false);
+  const [knowledgeAccess, setKnowledgeAccess] = useState(false);
+
   const renderProjects = () => {
     return MY_PROJECTS.map((project) => {
       console.log("project", project);
@@ -14,12 +20,10 @@ const Projects = () => {
           container
           xs={12}
           sm={6}
-          md={4}
           justifyContent={"center"}
           alignItems={"center"}
-          // className="gallery-item"
         >
-          <ProjectCard project={project} />
+          <ProjectCard project={project} knowledgeAccess={knowledgeAccess} />
         </Grid>
       );
     });
@@ -31,10 +35,40 @@ const Projects = () => {
       item
       container
       xs={12}
-      // md={12}
-      justifyContent={"center"}
-      alignItems={"start"}
+      flexDirection={"column"}
+      justifyContent={"start"}
+      alignItems={"center"}
+      spellBook={spellBook}
     >
+      <Typography m={"0 1rem"} variant="h3">
+        Tomb of the story teller
+      </Typography>
+      <div className="header">
+        <Tooltip
+          title={
+            <>
+              <Typography variant="h5" mb={"1rem"}>
+                Cast the spell in order to reveal what you seek...
+              </Typography>
+              <Button
+                variant="contained"
+                color="secondary"
+                onClick={() => setSpellBook(true)}
+              >
+                How?
+              </Button>
+            </>
+          }
+          placement="bottom"
+          arrow
+          TransitionComponent={Zoom}
+        >
+          <img src={FAIRY_SVG} width={"200px"} className="fairy" />
+        </Tooltip>
+        <Button variant="text" onClick={() => setKnowledgeAccess(true)}>
+          <img src={SPELL_BOOK_SVG} className="spell-book" width={"100px"} />
+        </Button>
+      </div>
       <Grid
         item
         container
@@ -45,7 +79,6 @@ const Projects = () => {
         alignItems={"start"}
         spacing={2}
         sx={{ maxWidth: "1500px" }}
-        // className="gallery"
       >
         {renderProjects()}
       </Grid>
