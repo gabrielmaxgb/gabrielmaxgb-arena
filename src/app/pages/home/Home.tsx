@@ -42,7 +42,7 @@ const Home = () => {
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   // const { bagItems, setBagItems } = useBagItems();
 
-  console.log("last deploy");
+  console.log("last deploy test");
 
   return (
     <>
