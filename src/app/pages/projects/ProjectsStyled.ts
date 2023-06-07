@@ -10,6 +10,13 @@ export const ProjectsContainer = styled(Grid)<IProjectsContainerStyled>`
   padding: 2rem 0;
   box-sizing: border-box;
 
+  .title {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
   .header {
     display: flex;
     align-items: center;
@@ -38,4 +45,8 @@ export const ProjectsContainer = styled(Grid)<IProjectsContainerStyled>`
       display: ${(props) => (props.spellBook ? "" : "none")};
     }
   }
+`;
+
+export const TooltipContent = styled.div`
+  padding: 1rem;
 `;

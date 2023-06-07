@@ -1,6 +1,3 @@
-import DescriptionIcon from "@mui/icons-material/Description";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SouthIcon from "@mui/icons-material/South";
 import {
   Button,
@@ -15,12 +12,15 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ANGRY_SOLDIER_SVG,
+  ARMOR_SVG,
   DESTRUCTIVE_MAGIC_SVG,
   ELF_SVG,
+  HELMET_SVG,
   KNIGHT_SVG,
   MY_CV,
   ORC_SVG,
   SPELL_SCROLL_SVG,
+  SWORD_SVG,
   VILLAGER_SVG,
 } from "../../../assets";
 import BasicModal from "../../components/common/basic-modal/BasicModal";
@@ -78,7 +78,6 @@ const Home = () => {
               placement="top"
               arrow
               TransitionComponent={Zoom}
-              // followCursor
             >
               <CustomButton
                 bgImage={isSkillsModalOpen ? ANGRY_SOLDIER_SVG : VILLAGER_SVG}
@@ -88,8 +87,6 @@ const Home = () => {
                 backgroundSize={isSkillsModalOpen ? "500px 500px" : "cover"}
                 width="350px"
                 height="350px"
-                // width={isSkillsModalOpen ? "650px" : "350px"}
-                // height={isSkillsModalOpen ? "350px" : "350px"}
                 onClick={() => setSkillsModalOpen(true)}
               />
             </Tooltip>
@@ -99,11 +96,16 @@ const Home = () => {
                 placement="top"
                 arrow
                 TransitionComponent={Zoom}
-                // followCursor
               >
                 <Button>
                   <a href="https://github.com/gabrielmaxgb" target="_blank">
-                    <GitHubIcon />
+                    {/* <GitHubIcon /> */}
+                    <img
+                      id="sword"
+                      src={SWORD_SVG}
+                      alt="sword"
+                      width={"50px"}
+                    />
                   </a>
                 </Button>
               </Tooltip>
@@ -119,7 +121,13 @@ const Home = () => {
                     href="https://www.linkedin.com/in/gabriel-max-dev/"
                     target="_blank"
                   >
-                    <LinkedInIcon />
+                    {/* <LinkedInIcon /> */}
+                    <img
+                      id="sword"
+                      src={HELMET_SVG}
+                      alt="sword"
+                      width={"50px"}
+                    />
                   </a>
                 </Button>
               </Tooltip>
@@ -132,7 +140,13 @@ const Home = () => {
               >
                 <Button>
                   <a href={MY_CV} target="_blank">
-                    <DescriptionIcon />
+                    {/* <DescriptionIcon /> */}
+                    <img
+                      id="sword"
+                      src={ARMOR_SVG}
+                      alt="sword"
+                      width={"50px"}
+                    />
                   </a>
                 </Button>
               </Tooltip>
