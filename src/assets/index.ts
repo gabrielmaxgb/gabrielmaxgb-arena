@@ -21,6 +21,7 @@ import destructive_magic_svg from "./icons/destructive-magic.svg";
 import elf_svg from "./icons/elf.svg";
 import fairy_svg from "./icons/fairy.svg";
 import front_end_svg from "./icons/frontend.svg";
+import helmet_svg from "./icons/helmet.svg";
 import item_bag_svg from "./icons/item-bag.svg";
 import knight_svg from "./icons/knight.svg";
 import orc_svg from "./icons/orc.svg";
@@ -62,6 +63,7 @@ export const ANGRY_SOLDIER_SVG = angry_soldier_svg;
 export const ITEM_BAG_SVG = item_bag_svg;
 export const FAIRY_SVG = fairy_svg;
 export const SPELL_BOOK_SVG = spell_book_svg;
+export const HELMET_SVG = helmet_svg;
 export const CONSTRUCTION_DANGER_EXCLAMANTION_SVG =
   construction_danger_exclamantion_svg;
 
