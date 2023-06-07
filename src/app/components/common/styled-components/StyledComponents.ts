@@ -10,8 +10,9 @@ export const CustomButton = styled(Button)<ICustomizableComponent>`
   width: ${(props) => props.width || "5rem"};
   max-width: ${(props) => props.maxWidth || undefined};
   height: ${(props) => props.height || "5rem"};
-  border-radius: 100%;
+  border-radius: 70%;
   transition: 0.5s;
+  margin: ${(props) => props.margin || undefined};
 
   &:hover {
     transition: 0.5s;
@@ -20,4 +21,8 @@ export const CustomButton = styled(Button)<ICustomizableComponent>`
         ? `url(${props.bgImageOnHover})`
         : `url(${props.bgImage})`};
   }
+`;
+
+export const TooltipContent = styled.div`
+  padding: 1rem;
 `;

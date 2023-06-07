@@ -6,6 +6,7 @@ export interface IProject {
   company: string;
   description: string;
   imageSource: string;
+  link: string;
 }
 
 export interface IProjectsContainerStyled extends ITheme {

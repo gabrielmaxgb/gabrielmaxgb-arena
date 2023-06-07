@@ -11,21 +11,26 @@ import {
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ANGRY_SOLDIER_SVG,
   ARMOR_SVG,
+  BOOTS_SVG,
   DESTRUCTIVE_MAGIC_SVG,
   ELF_SVG,
   HELMET_SVG,
   KNIGHT_SVG,
   MY_CV,
   ORC_SVG,
+  SHIELD_SVG,
   SPELL_SCROLL_SVG,
   SWORD_SVG,
   VILLAGER_SVG,
 } from "../../../assets";
 import BasicModal from "../../components/common/basic-modal/BasicModal";
 import Footer from "../../components/common/footer/Footer";
-import { CustomButton } from "../../components/common/styled-components/StyledComponents";
+import GearSet from "../../components/common/gear-set/GearSet";
+import {
+  CustomButton,
+  TooltipContent,
+} from "../../components/common/styled-components/StyledComponents";
 import useScrollPosition from "../../hooks/use-scroll-position/UseScrollPosition";
 import { HomeContainer, HomeSection, ModalContent } from "./HomeStyled";
 
@@ -74,23 +79,128 @@ const Home = () => {
               Get Master Key
             </Button> */}
             <Tooltip
-              title={<Typography variant="h5">STEP BACK!!</Typography>}
+              title={
+                <TooltipContent>
+                  <Typography variant="h5">
+                    Welcome!! (click here to) Meet my friends!
+                  </Typography>
+                </TooltipContent>
+              }
               placement="top"
               arrow
               TransitionComponent={Zoom}
             >
               <CustomButton
-                bgImage={isSkillsModalOpen ? ANGRY_SOLDIER_SVG : VILLAGER_SVG}
+                // bgImage={isSkillsModalOpen ? ANGRY_SOLDIER_SVG : VILLAGER_SVG}
+                bgImage={isSkillsModalOpen ? KNIGHT_SVG : VILLAGER_SVG}
                 bgImageOnHover={KNIGHT_SVG}
                 maxWidth="100%"
                 backgroundPosition="center"
-                backgroundSize={isSkillsModalOpen ? "500px 500px" : "cover"}
+                // backgroundSize={isSkillsModalOpen ? "500px 500px" : "cover"}
                 width="350px"
                 height="350px"
                 onClick={() => setSkillsModalOpen(true)}
+                margin={"0 0 1rem 0"}
               />
             </Tooltip>
-            <div id="icons">
+            <GearSet
+              head={
+                <Tooltip
+                  title={<Typography variant="body1">Linkedin</Typography>}
+                  placement="top"
+                  arrow
+                  TransitionComponent={Zoom}
+                >
+                  <Button>
+                    <a
+                      href="https://www.linkedin.com/in/gabriel-max-dev/"
+                      target="_blank"
+                    >
+                      <img
+                        id="helmet"
+                        src={HELMET_SVG}
+                        alt="helmet"
+                        width="50px"
+                      />
+                    </a>
+                  </Button>
+                </Tooltip>
+              }
+              rightArm={
+                <Tooltip
+                  title={<Typography variant="body1">Github</Typography>}
+                  placement="top"
+                  arrow
+                  TransitionComponent={Zoom}
+                >
+                  <Button>
+                    <a href="https://github.com/gabrielmaxgb" target="_blank">
+                      <img
+                        id="sword"
+                        src={SWORD_SVG}
+                        alt="sword"
+                        width="50px"
+                      />
+                    </a>
+                  </Button>
+                </Tooltip>
+              }
+              body={
+                <Tooltip
+                  title={
+                    <Typography variant="body1">Check out my CV</Typography>
+                  }
+                  placement="top"
+                  arrow
+                  TransitionComponent={Zoom}
+                >
+                  <Button>
+                    <a href={MY_CV} target="_blank">
+                      <img
+                        id="armor"
+                        src={ARMOR_SVG}
+                        alt="armor"
+                        width="50px"
+                      />
+                    </a>
+                  </Button>
+                </Tooltip>
+              }
+              leftArm={
+                <Tooltip
+                  title={<Typography variant="body1">Shield</Typography>}
+                  placement="top"
+                  arrow
+                  TransitionComponent={Zoom}
+                >
+                  <Button>
+                    {/* <a href="https://github.com/gabrielmaxgb" target="_blank"> */}
+                    <img
+                      id="shield"
+                      src={SHIELD_SVG}
+                      alt="shield"
+                      width="50px"
+                    />
+                    {/* </a> */}
+                  </Button>
+                </Tooltip>
+              }
+              foot={
+                <Tooltip
+                  title={<Typography variant="body1">Boot</Typography>}
+                  placement="top"
+                  arrow
+                  TransitionComponent={Zoom}
+                >
+                  <Button>
+                    {/* <a href="https://github.com/gabrielmaxgb" target="_blank"> */}
+                    <img id="boots" src={BOOTS_SVG} alt="boots" width="50px" />
+                    {/* </a> */}
+                  </Button>
+                </Tooltip>
+              }
+            />
+            {/* <div id="icons">
               <Tooltip
                 title={<Typography variant="body1">Github</Typography>}
                 placement="top"
@@ -99,13 +209,7 @@ const Home = () => {
               >
                 <Button>
                   <a href="https://github.com/gabrielmaxgb" target="_blank">
-                    {/* <GitHubIcon /> */}
-                    <img
-                      id="sword"
-                      src={SWORD_SVG}
-                      alt="sword"
-                      width={"50px"}
-                    />
+                    <GitHubIcon />
                   </a>
                 </Button>
               </Tooltip>
@@ -114,20 +218,13 @@ const Home = () => {
                 placement="top"
                 arrow
                 TransitionComponent={Zoom}
-                // followCursor
               >
                 <Button>
                   <a
                     href="https://www.linkedin.com/in/gabriel-max-dev/"
                     target="_blank"
                   >
-                    {/* <LinkedInIcon /> */}
-                    <img
-                      id="sword"
-                      src={HELMET_SVG}
-                      alt="sword"
-                      width={"50px"}
-                    />
+                    <LinkedInIcon />
                   </a>
                 </Button>
               </Tooltip>
@@ -136,21 +233,14 @@ const Home = () => {
                 placement="top"
                 arrow
                 TransitionComponent={Zoom}
-                // followCursor
               >
                 <Button>
                   <a href={MY_CV} target="_blank">
-                    {/* <DescriptionIcon /> */}
-                    <img
-                      id="sword"
-                      src={ARMOR_SVG}
-                      alt="sword"
-                      width={"50px"}
-                    />
+                    <DescriptionIcon />
                   </a>
                 </Button>
               </Tooltip>
-            </div>
+            </div> */}
           </Grid>
           <Grid
             item
@@ -248,10 +338,13 @@ const Home = () => {
             <section className="specialization-area">
               <Tooltip
                 title={
-                  <Typography variant="body1">
-                    It appears that you're not the kind of person who likes to
-                    follow orders, huh?
-                  </Typography>
+                  <TooltipContent>
+                    <Typography variant="body1">
+                      Hey, hi! I'm Farryn Yllafaren! It's nice to have you here.
+                      If you would like to check Gabriel's front end main skills
+                      I'm the right person!
+                    </Typography>
+                  </TooltipContent>
                 }
                 placement="top"
                 arrow
@@ -274,9 +367,9 @@ const Home = () => {
             <section className="specialization-area">
               <Tooltip
                 title={
-                  <Typography variant="body1">
-                    You'll pay for your insolence, human!
-                  </Typography>
+                  <TooltipContent>
+                    <Typography variant="body1">Hi :/</Typography>
+                  </TooltipContent>
                 }
                 placement="top"
                 arrow

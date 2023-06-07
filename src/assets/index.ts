@@ -14,6 +14,7 @@ import angry_soldier_svg from "./icons/angry-soldier.svg";
 import api_svg from "./icons/api.svg";
 import armor_svg from "./icons/armor.svg";
 import aws_ec2_svg from "./icons/aws-ec2.svg";
+import boots_svg from "./icons/boots.svg";
 import bootstrap_svg from "./icons/bootstrap.svg";
 import bow_and_arrow_svg from "./icons/bow-and-arrow.svg";
 import construction_danger_exclamantion_svg from "./icons/construction-danger-exclamantion.svg";
@@ -25,6 +26,7 @@ import helmet_svg from "./icons/helmet.svg";
 import item_bag_svg from "./icons/item-bag.svg";
 import knight_svg from "./icons/knight.svg";
 import orc_svg from "./icons/orc.svg";
+import shield_svg from "./icons/shield.svg";
 import spell_book_svg from "./icons/spell-book.svg";
 import spell_scroll_svg from "./icons/spell-scroll.svg";
 import sword_svg from "./icons/sword.svg";
@@ -64,6 +66,8 @@ export const ITEM_BAG_SVG = item_bag_svg;
 export const FAIRY_SVG = fairy_svg;
 export const SPELL_BOOK_SVG = spell_book_svg;
 export const HELMET_SVG = helmet_svg;
+export const SHIELD_SVG = shield_svg;
+export const BOOTS_SVG = boots_svg;
 export const CONSTRUCTION_DANGER_EXCLAMANTION_SVG =
   construction_danger_exclamantion_svg;
 

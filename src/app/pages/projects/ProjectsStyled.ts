@@ -46,7 +46,3 @@ export const ProjectsContainer = styled(Grid)<IProjectsContainerStyled>`
     }
   }
 `;
-
-export const TooltipContent = styled.div`
-  padding: 1rem;
-`;

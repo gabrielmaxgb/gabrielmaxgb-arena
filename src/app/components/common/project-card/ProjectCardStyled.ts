@@ -132,12 +132,33 @@ export const ProjectCardContainer = styled.div<IProjectCardContainer>`
 `;
 
 export const ModalContent = styled.div`
-  width: 400px;
+  /* width: 400px; */
+  /* max-width: 90vw; */
+  max-width: 90vw;
+  max-height: 500px;
+  overflow-y: auto;
 
   #spell-scroll {
     width: 100px;
     position: absolute;
     right: 85%;
     bottom: 90%;
+  }
+
+  .project-link {
+    display: flex;
+    align-items: center;
+
+    background-color: black;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 1rem;
+
+    #project-name {
+      margin: 0 0.5rem 0 0;
+      padding: 0;
+    }
   }
 `;

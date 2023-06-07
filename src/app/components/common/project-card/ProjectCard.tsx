@@ -1,5 +1,6 @@
 import { useState } from "react";
 // import "./ProjectCard.css";
+import LaunchIcon from "@mui/icons-material/Launch";
 import { Button, Typography } from "@mui/material";
 import { SPELL_SCROLL_SVG } from "../../../../assets";
 import BasicModal from "../basic-modal/BasicModal";
@@ -48,9 +49,12 @@ const ProjectCard = ({ project, knowledgeAccess }: IProjectCardProps) => {
         >
           <ModalContent>
             <img id="spell-scroll" src={SPELL_SCROLL_SVG} alt="spell-scroll" />
-            <Typography variant="h5" mb={"1rem"}>
-              {project.name}
-            </Typography>
+            <a className="project-link" href={project.link} target={"_blank"}>
+              <Typography id="project-name" variant="h5" mb={"1rem"}>
+                {project.name}
+              </Typography>
+              <LaunchIcon fontSize="small" />
+            </a>
             <Typography variant="h6" mb={"1rem"}>
               Company: {project.company}
             </Typography>

@@ -2,7 +2,8 @@ import { Button, Grid, Tooltip, Typography, Zoom } from "@mui/material";
 import { useState } from "react";
 import { FAIRY_SVG, SPELL_BOOK_SVG } from "../../../assets";
 import ProjectCard from "../../components/common/project-card/ProjectCard";
-import { ProjectsContainer, TooltipContent } from "./ProjectsStyled";
+import { TooltipContent } from "../../components/common/styled-components/StyledComponents";
+import { ProjectsContainer } from "./ProjectsStyled";
 import { MY_PROJECTS } from "./consts";
 
 const Projects = () => {

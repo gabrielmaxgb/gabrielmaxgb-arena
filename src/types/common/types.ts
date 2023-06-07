@@ -18,4 +18,5 @@ export interface ICustomizableComponent extends ThemeOptions {
   bg?: string;
   backgroundPosition?: string;
   backgroundSize?: string;
+  margin?: string;
 }
