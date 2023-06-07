@@ -11,7 +11,7 @@ const ProjectCard = ({ project, knowledgeAccess }: IProjectCardProps) => {
   const [cardFlip, setCardFlip] = useState<boolean>(false);
   const [isProjectModalOpen, setProjectModalOpen] = useState<boolean>(false);
 
-  console.log("project", project);
+  // console.log("project", project);
 
   return (
     <>
