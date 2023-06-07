@@ -11,7 +11,7 @@ const ItemBagModal = ({ open, handleClose }: IBasicModalProps) => {
 
   const renderBagItems = () => {
     return sessionBagItems.data?.map((item: IBagItem) => {
-      return <BagItem item={item} />;
+      return <BagItem key={item.name} item={item} />;
     });
   };
 
