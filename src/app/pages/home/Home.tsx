@@ -42,8 +42,6 @@ const Home = () => {
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   // const { bagItems, setBagItems } = useBagItems();
 
-  // console.log("bagItems", bagItems);
-
   return (
     <>
       {/* <AnimatedPageWrapper> */}
@@ -277,13 +275,6 @@ const Home = () => {
               product stack based on React, Nextjs, Nodejs and code versioning
               with Git.
             </Typography>
-            {/* <div
-              style={{
-                height: "500px",
-                backgroundColor: "red",
-                width: "300px",
-              }}
-            ></div> */}
           </Grid>
           <Button
             onClick={() => sectionTwo?.current?.scrollIntoView()}
@@ -302,7 +293,7 @@ const Home = () => {
         </HomeSection>
         <HomeSection
           ref={sectionTwo}
-          id="projects"
+          id="other-options"
           item
           container
           xs={12}

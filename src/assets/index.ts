@@ -26,6 +26,7 @@ import helmet_svg from "./icons/helmet.svg";
 import item_bag_svg from "./icons/item-bag.svg";
 import knight_svg from "./icons/knight.svg";
 import orc_svg from "./icons/orc.svg";
+import scroll_note_svg from "./icons/scroll-note.svg";
 import shield_svg from "./icons/shield.svg";
 import spell_book_svg from "./icons/spell-book.svg";
 import spell_scroll_svg from "./icons/spell-scroll.svg";
@@ -68,6 +69,7 @@ export const SPELL_BOOK_SVG = spell_book_svg;
 export const HELMET_SVG = helmet_svg;
 export const SHIELD_SVG = shield_svg;
 export const BOOTS_SVG = boots_svg;
+export const SCROLL_NOTE_SVG = scroll_note_svg;
 export const CONSTRUCTION_DANGER_EXCLAMANTION_SVG =
   construction_danger_exclamantion_svg;
 

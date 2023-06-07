@@ -20,3 +20,9 @@ export interface ICustomizableComponent extends ThemeOptions {
   backgroundSize?: string;
   margin?: string;
 }
+
+export interface IBagItem {
+  name: string;
+  imageSource: string;
+  message: string;
+}

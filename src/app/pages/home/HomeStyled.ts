@@ -35,7 +35,7 @@ export const HomeContainer = styled(Grid)<ICustomizableComponent>`
     }
   }
 
-  #projects {
+  #other-options {
     padding: 1rem 0;
   }
 

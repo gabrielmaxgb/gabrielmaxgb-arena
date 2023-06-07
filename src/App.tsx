@@ -1,34 +1,27 @@
-import { Button, Tooltip, Typography, Zoom } from "@mui/material";
+import { useEffect } from "react";
 import "./App.css";
-import { FloatButtonsContainer } from "./AppStyled";
-import { CONSTRUCTION_DANGER_EXCLAMANTION_SVG, ITEM_BAG_SVG } from "./assets";
+import UserInteractivePanel from "./app/components/common/user-interactive-panel/UserInteractivePanel";
+import { SCROLL_NOTE_SVG } from "./assets";
 import AppRoutes from "./routes/AppRoutes";
+import { IBagItem } from "./types/common/types";
+
+const INITIAL_BAG_ITEM: IBagItem[] = [
+  {
+    name: "Session hero note",
+    message:
+      "Thank you for checking out my portfolio! As you can see, I'm a huge enthusiast of RPG and fantasy adventure stories. I hope you enjoyed exploring it! I'm truly passionate about how programming can make a positive difference in people's lives. With that in mind, I'm excited to collaborate with you and create something extraordinary together! - Gabriel Max",
+    imageSource: SCROLL_NOTE_SVG,
+  },
+];
 
 function App() {
+  useEffect(() => {
+    sessionStorage.setItem("BAG_ITEMS", JSON.stringify(INITIAL_BAG_ITEM));
+  }, []);
+
   return (
     <>
-      <FloatButtonsContainer>
-        <Tooltip
-          title={<Typography variant="body1">Under Development</Typography>}
-          placement="left"
-          arrow
-          TransitionComponent={Zoom}
-        >
-          <Button>
-            <img src={CONSTRUCTION_DANGER_EXCLAMANTION_SVG} width={"60px"} />
-          </Button>
-        </Tooltip>
-        <Tooltip
-          title={<Typography variant="body1">Items</Typography>}
-          placement="left"
-          arrow
-          TransitionComponent={Zoom}
-        >
-          <Button>
-            <img src={ITEM_BAG_SVG} width={"60px"} />
-          </Button>
-        </Tooltip>
-      </FloatButtonsContainer>
+      <UserInteractivePanel />
       <AppRoutes />
     </>
   );
