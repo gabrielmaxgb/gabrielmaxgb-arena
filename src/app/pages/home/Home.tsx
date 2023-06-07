@@ -1,6 +1,7 @@
 import SouthIcon from "@mui/icons-material/South";
 import {
   Button,
+  CircularProgress,
   Grid,
   Tooltip,
   Typography,
@@ -31,6 +32,7 @@ import {
   CustomButton,
   TooltipContent,
 } from "../../components/common/styled-components/StyledComponents";
+import useImagePreloader from "../../hooks/use-image-preloader/useImagePreloader";
 import useScrollPosition from "../../hooks/use-scroll-position/UseScrollPosition";
 import { HomeContainer, HomeSection, ModalContent } from "./HomeStyled";
 
@@ -40,9 +42,39 @@ const Home = () => {
   const scrollPosition = useScrollPosition();
   const [isSkillsModalOpen, setSkillsModalOpen] = useState(false);
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
-  // const { bagItems, setBagItems } = useBagItems();
+  const imgPreloader = useImagePreloader([
+    ARMOR_SVG,
+    BOOTS_SVG,
+    DESTRUCTIVE_MAGIC_SVG,
+    ELF_SVG,
+    HELMET_SVG,
+    KNIGHT_SVG,
+    MY_CV,
+    ORC_SVG,
+    SHIELD_SVG,
+    SPELL_SCROLL_SVG,
+    SWORD_SVG,
+    VILLAGER_SVG,
+  ]);
 
-  console.log("last deploy test");
+  console.log("imgPreloader", imgPreloader);
+  // const { bagItems, setBagItems } = useBagItems();
+  // console.log("last deploy test");
+
+  if (!imgPreloader) {
+    return (
+      <HomeContainer
+        item
+        container
+        xs={12}
+        justifyContent={"center"}
+        alignItems={"center"}
+        height={xs ? "auto" : "100vh"}
+      >
+        <CircularProgress />
+      </HomeContainer>
+    );
+  }
 
   return (
     <>
