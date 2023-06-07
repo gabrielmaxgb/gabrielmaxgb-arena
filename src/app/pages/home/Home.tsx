@@ -187,14 +187,14 @@ const Home = () => {
               }
               foot={
                 <Tooltip
-                  title={<Typography variant="body1">Boot</Typography>}
+                  title={<Typography variant="body1">Boots</Typography>}
                   placement="top"
                   arrow
                   TransitionComponent={Zoom}
                 >
                   <Button>
                     {/* <a href="https://github.com/gabrielmaxgb" target="_blank"> */}
-                    <img id="boots" src={BOOTS_SVG} alt="boots" width="50px" />
+                    <img id="boots" src={BOOTS_SVG} alt="boots" width="30px" />
                     {/* </a> */}
                   </Button>
                 </Tooltip>
