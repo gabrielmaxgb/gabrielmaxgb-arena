@@ -17,14 +17,7 @@ export const ProjectCardContainer = styled.div<IProjectCardContainer>`
     cursor: pointer;
     filter: grayscale();
     transition: 0.3s;
-  }
-  img:hover {
-    --_p: 75%;
-    filter: grayscale(0%);
-    filter: none;
-  }
 
-  img {
     --m: radial-gradient(circle farthest-side at right, #000 99%, #0000) 0 100%/46%
         92% no-repeat,
       radial-gradient(circle farthest-side at left, #000 99%, #0000) 100% 0/46%
@@ -36,6 +29,10 @@ export const ProjectCardContainer = styled.div<IProjectCardContainer>`
     cursor: pointer;
   }
   img:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+    filter: none;
+
     -webkit-mask-position: 7.5% 50%, 92.5% 50%;
     mask-position: 7.5% 50%, 92.5% 50%;
   }
@@ -132,8 +129,6 @@ export const ProjectCardContainer = styled.div<IProjectCardContainer>`
 `;
 
 export const ModalContent = styled.div`
-  /* width: 400px; */
-  /* max-width: 90vw; */
   max-width: 90vw;
   max-height: 500px;
   overflow-y: auto;

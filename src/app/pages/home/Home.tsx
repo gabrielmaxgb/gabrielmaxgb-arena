@@ -168,7 +168,15 @@ const Home = () => {
               }
               leftArm={
                 <Tooltip
-                  title={<Typography variant="body1">Shield</Typography>}
+                  title={
+                    <Typography variant="body1">
+                      Behold the shield of the legendary adventurer, the
+                      ultimate multitasking tool - protecting against dragons,
+                      deflecting axes, and doubling as a pizza tray when hunger
+                      strikes! It's the hero's secret weapon for battles and
+                      impromptu snack breaks.
+                    </Typography>
+                  }
                   placement="top"
                   arrow
                   TransitionComponent={Zoom}
@@ -187,8 +195,16 @@ const Home = () => {
               }
               foot={
                 <Tooltip
-                  title={<Typography variant="body1">Boots</Typography>}
-                  placement="top"
+                  title={
+                    <Typography variant="body1">
+                      The greaves of the great adventurer: the ultimate fashion
+                      statement for those who like their shins protected and
+                      their enemies impressed. It's like strapping on
+                      shin-spired swag and saying, "Watch out, world! My calves
+                      mean business!"
+                    </Typography>
+                  }
+                  placement="bottom"
                   arrow
                   TransitionComponent={Zoom}
                 >
