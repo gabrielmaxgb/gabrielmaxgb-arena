@@ -16,7 +16,7 @@ const ProjectCard = ({ project, knowledgeAccess }: IProjectCardProps) => {
 
   console.log("imgPreloader", imgPreloader);
 
-  if (!imgPreloader) {
+  if (imgPreloader) {
     return (
       <ProjectCardContainer knowledgeAccess={knowledgeAccess}>
         <CircularProgress />
