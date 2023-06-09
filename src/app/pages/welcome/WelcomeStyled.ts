@@ -8,6 +8,7 @@ export const WelcomeContainer = styled(Grid)<IWelcomeContainerStyled>`
   background-color: ${(props) => props.theme.palette?.background?.default};
   box-sizing: border-box;
   text-align: center;
+  overflow-x: hidden;
 
   #link {
     display: flex;
