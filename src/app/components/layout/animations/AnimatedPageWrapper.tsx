@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { IChildren } from "../../../../types/common/types";
 
 const animations = {
-  initial: { opacity: 0, y: 500 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -500 },
+  initial: { opacity: 0, x: 500 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -500 },
 };
 
 const AnimatedPageWrapper = ({ children }: IChildren) => {

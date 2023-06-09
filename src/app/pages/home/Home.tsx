@@ -136,159 +136,39 @@ const Home = () => {
               />
             </Tooltip>
             <GearSet
-              head={
-                <Tooltip
-                  title={<Typography variant="body1">Linkedin</Typography>}
-                  placement="top"
-                  arrow
-                  TransitionComponent={Zoom}
-                >
-                  <Button>
-                    <a
-                      href="https://www.linkedin.com/in/gabriel-max-dev/"
-                      target="_blank"
-                    >
-                      <img
-                        id="helmet"
-                        src={HELMET_SVG}
-                        alt="helmet"
-                        width="50px"
-                      />
-                    </a>
-                  </Button>
-                </Tooltip>
-              }
-              rightArm={
-                <Tooltip
-                  title={<Typography variant="body1">Github</Typography>}
-                  placement="top"
-                  arrow
-                  TransitionComponent={Zoom}
-                >
-                  <Button>
-                    <a href="https://github.com/gabrielmaxgb" target="_blank">
-                      <img
-                        id="sword"
-                        src={SWORD_SVG}
-                        alt="sword"
-                        width="50px"
-                      />
-                    </a>
-                  </Button>
-                </Tooltip>
-              }
-              body={
-                <Tooltip
-                  title={
-                    <Typography variant="body1">Check out my CV</Typography>
-                  }
-                  placement="top"
-                  arrow
-                  TransitionComponent={Zoom}
-                >
-                  <Button>
-                    <a href={MY_CV} target="_blank">
-                      <img
-                        id="armor"
-                        src={ARMOR_SVG}
-                        alt="armor"
-                        width="50px"
-                      />
-                    </a>
-                  </Button>
-                </Tooltip>
-              }
-              leftArm={
-                <Tooltip
-                  title={
-                    <Typography variant="body1">
-                      Behold the shield of the legendary adventurer, the
-                      ultimate multitasking tool - protecting against dragons,
-                      deflecting axes, and doubling as a pizza tray when hunger
-                      strikes! It's the hero's secret weapon for battles and
-                      impromptu snack breaks.
-                    </Typography>
-                  }
-                  placement="top"
-                  arrow
-                  TransitionComponent={Zoom}
-                >
-                  <Button>
-                    {/* <a href="https://github.com/gabrielmaxgb" target="_blank"> */}
-                    <img
-                      id="shield"
-                      src={SHIELD_SVG}
-                      alt="shield"
-                      width="50px"
-                    />
-                    {/* </a> */}
-                  </Button>
-                </Tooltip>
-              }
-              foot={
-                <Tooltip
-                  title={
-                    <Typography variant="body1">
-                      The greaves of the great adventurer: the ultimate fashion
-                      statement for those who like their shins protected and
-                      their enemies impressed. It's like strapping on
-                      shin-spired swag and saying, "Watch out, world! My calves
-                      mean business!"
-                    </Typography>
-                  }
-                  placement="bottom"
-                  arrow
-                  TransitionComponent={Zoom}
-                >
-                  <Button>
-                    {/* <a href="https://github.com/gabrielmaxgb" target="_blank"> */}
-                    <img id="boots" src={BOOTS_SVG} alt="boots" width="30px" />
-                    {/* </a> */}
-                  </Button>
-                </Tooltip>
-              }
+              head={{
+                tooltipMessage: "Linkedin",
+                link: "https://www.linkedin.com/in/gabriel-max-dev/",
+                imgSrc: HELMET_SVG,
+                itemName: "helmet",
+              }}
+              rightArm={{
+                tooltipMessage: "Github",
+                link: "https://github.com/gabrielmaxgb",
+                imgSrc: SWORD_SVG,
+                itemName: "sword",
+              }}
+              body={{
+                tooltipMessage: "Check out my CV",
+                link: MY_CV,
+                imgSrc: ARMOR_SVG,
+                itemName: "armor",
+              }}
+              leftArm={{
+                tooltipMessage:
+                  "Behold the shield of the legendary adventurer, the ultimate multitasking tool - protecting against dragons, deflecting axes, and doubling as a pizza tray when hunger strikes! It's the hero's secret weapon for battles and impromptu snack breaks.",
+                link: "",
+                imgSrc: SHIELD_SVG,
+                itemName: "shield",
+              }}
+              foot={{
+                tooltipMessage:
+                  "The greaves of the great adventurer: the ultimate fashion statement for those who like their shins protected and their enemies impressed. It's like strapping on shin-spired swag and saying, 'Watch out, world! My calves mean business!'",
+                link: "",
+                imgSrc: BOOTS_SVG,
+                itemName: "boots",
+              }}
             />
-            {/* <div id="icons">
-              <Tooltip
-                title={<Typography variant="body1">Github</Typography>}
-                placement="top"
-                arrow
-                TransitionComponent={Zoom}
-              >
-                <Button>
-                  <a href="https://github.com/gabrielmaxgb" target="_blank">
-                    <GitHubIcon />
-                  </a>
-                </Button>
-              </Tooltip>
-              <Tooltip
-                title={<Typography variant="body1">Linkedin</Typography>}
-                placement="top"
-                arrow
-                TransitionComponent={Zoom}
-              >
-                <Button>
-                  <a
-                    href="https://www.linkedin.com/in/gabriel-max-dev/"
-                    target="_blank"
-                  >
-                    <LinkedInIcon />
-                  </a>
-                </Button>
-              </Tooltip>
-              <Tooltip
-                title={<Typography variant="body1">Check out my cv</Typography>}
-                placement="top"
-                arrow
-                TransitionComponent={Zoom}
-              >
-                <Button>
-                  <a href={MY_CV} target="_blank">
-                    <DescriptionIcon />
-                  </a>
-                </Button>
-              </Tooltip>
-            </div> */}
           </Grid>
           <Grid
             item
