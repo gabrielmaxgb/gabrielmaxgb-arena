@@ -1,8 +1,16 @@
-import { Button, Grid, Tooltip, Typography, Zoom } from "@mui/material";
+import {
+  Button,
+  CircularProgress,
+  Grid,
+  Tooltip,
+  Typography,
+  Zoom,
+} from "@mui/material";
 import { useState } from "react";
 import { FAIRY_SVG, SPELL_BOOK_SVG } from "../../../assets";
 import ProjectCard from "../../components/common/project-card/ProjectCard";
 import { TooltipContent } from "../../components/common/styled-components/StyledComponents";
+import useImagePreloader from "../../hooks/use-image-preloader/useImagePreloader";
 import { ProjectsContainer } from "./ProjectsStyled";
 import { MY_PROJECTS } from "./consts";
 
@@ -10,6 +18,7 @@ const Projects = () => {
   // const [castSpell, setCastSpell] = useState(false);
   const [spellBook, setSpellBook] = useState(false);
   const [knowledgeAccess, setKnowledgeAccess] = useState(false);
+  const imgPreloader = useImagePreloader([FAIRY_SVG, SPELL_BOOK_SVG]);
 
   const renderProjects = () => {
     return MY_PROJECTS.map((project) => {
@@ -29,6 +38,22 @@ const Projects = () => {
       );
     });
   };
+
+  if (!imgPreloader) {
+    return (
+      <ProjectsContainer
+        item
+        container
+        xs={12}
+        flexDirection={"column"}
+        justifyContent={"start"}
+        alignItems={"center"}
+        spellBook={spellBook}
+      >
+        <CircularProgress />
+      </ProjectsContainer>
+    );
+  }
 
   return (
     // <AnimatedPageWrapper>

@@ -1,8 +1,9 @@
 import { useState } from "react";
 // import "./ProjectCard.css";
 import LaunchIcon from "@mui/icons-material/Launch";
-import { Button, Typography } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 import { SPELL_SCROLL_SVG } from "../../../../assets";
+import useImagePreloader from "../../../hooks/use-image-preloader/useImagePreloader";
 import BasicModal from "../basic-modal/BasicModal";
 import { ModalContent, ProjectCardContainer } from "./ProjectCardStyled";
 import { IProjectCardProps } from "./types";
@@ -11,6 +12,17 @@ const ProjectCard = ({ project, knowledgeAccess }: IProjectCardProps) => {
   const { imageSource } = project;
   const [cardFlip, setCardFlip] = useState<boolean>(false);
   const [isProjectModalOpen, setProjectModalOpen] = useState<boolean>(false);
+  const imgPreloader = useImagePreloader([SPELL_SCROLL_SVG, imageSource]);
+
+  console.log("imgPreloader", imgPreloader);
+
+  if (!imgPreloader) {
+    return (
+      <ProjectCardContainer knowledgeAccess={knowledgeAccess}>
+        <CircularProgress />
+      </ProjectCardContainer>
+    );
+  }
 
   return (
     <>
