@@ -64,6 +64,7 @@ const Home = () => {
     SPELL_SCROLL_SVG,
     SWORD_SVG,
     VILLAGER_SVG,
+    VAULT_KEEPER_SVG,
   ]);
 
   if (!imgPreloader) {
