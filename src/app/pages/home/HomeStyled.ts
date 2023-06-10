@@ -56,8 +56,8 @@ export const ModalContent = styled.div<ITheme>`
   align-items: center;
   justify-content: center;
 
-  #destructive-magic {
-    width: 100px;
+  #treasure-chest {
+    width: 50px;
     position: absolute;
     right: 85%;
     bottom: 90%;

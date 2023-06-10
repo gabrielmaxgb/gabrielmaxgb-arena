@@ -1,15 +1,16 @@
 import { Button, Tooltip, Typography, Zoom } from "@mui/material";
-import { useState } from "react";
 import {
   CONSTRUCTION_DANGER_EXCLAMANTION_SVG,
   ITEM_BAG_SVG,
 } from "../../../../assets";
 import ItemBagModal from "../basic-modal/item-bag-modal/ItemBagModal";
 import { UserInteractivePanelContainer } from "./UserInteractivePanelStyled";
+import { IUserInteractivePanelProps } from "./types";
 
-const UserInteractivePanel = () => {
-  const [isItemBagOpen, setItemBagOpen] = useState(false);
-
+const UserInteractivePanel = ({
+  isItemBagOpen,
+  setItemBagOpen,
+}: IUserInteractivePanelProps) => {
   return (
     <>
       <UserInteractivePanelContainer>
@@ -20,7 +21,7 @@ const UserInteractivePanel = () => {
           TransitionComponent={Zoom}
         >
           <Button>
-            <img src={CONSTRUCTION_DANGER_EXCLAMANTION_SVG} width={"60px"} />
+            <img src={CONSTRUCTION_DANGER_EXCLAMANTION_SVG} width={"50px"} />
           </Button>
         </Tooltip>
         <Tooltip
@@ -30,7 +31,7 @@ const UserInteractivePanel = () => {
           TransitionComponent={Zoom}
         >
           <Button onClick={() => setItemBagOpen(true)}>
-            <img src={ITEM_BAG_SVG} width={"60px"} />
+            <img src={ITEM_BAG_SVG} width={"50px"} />
           </Button>
         </Tooltip>
       </UserInteractivePanelContainer>

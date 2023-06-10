@@ -67,7 +67,7 @@ const themeCreator = createTheme({
     white: "#ffffff",
     black: "#000000",
     yellow: "#cbac64",
-    emphasis: "#b19c32",
+    emphasis: "#000000",
   },
   palette: {
     background: {

@@ -17,6 +17,7 @@ import aws_ec2_svg from "./icons/aws-ec2.svg";
 import boots_svg from "./icons/boots.svg";
 import bootstrap_svg from "./icons/bootstrap.svg";
 import bow_and_arrow_svg from "./icons/bow-and-arrow.svg";
+import coins_svg from "./icons/coins.svg";
 import construction_danger_exclamantion_svg from "./icons/construction-danger-exclamantion.svg";
 import destructive_magic_svg from "./icons/destructive-magic.svg";
 import elf_svg from "./icons/elf.svg";
@@ -28,9 +29,12 @@ import knight_svg from "./icons/knight.svg";
 import orc_svg from "./icons/orc.svg";
 import scroll_note_svg from "./icons/scroll-note.svg";
 import shield_svg from "./icons/shield.svg";
+import sorceress_witch_svg from "./icons/sorceress-witch.svg";
 import spell_book_svg from "./icons/spell-book.svg";
 import spell_scroll_svg from "./icons/spell-scroll.svg";
 import sword_svg from "./icons/sword.svg";
+import treasure_chest_svg from "./icons/treasure-chest.svg";
+import vault_keeper_svg from "./icons/vault-keeper.svg";
 import villager_svg from "./icons/villager.svg";
 import werewolf_svg from "./icons/werewolf.svg";
 
@@ -70,6 +74,10 @@ export const HELMET_SVG = helmet_svg;
 export const SHIELD_SVG = shield_svg;
 export const BOOTS_SVG = boots_svg;
 export const SCROLL_NOTE_SVG = scroll_note_svg;
+export const VAULT_KEEPER_SVG = vault_keeper_svg;
+export const TREASURE_CHEST_SVG = treasure_chest_svg;
+export const COINS_SVG = coins_svg;
+export const SORCERESS_WITCH_SVG = sorceress_witch_svg;
 export const CONSTRUCTION_DANGER_EXCLAMANTION_SVG =
   construction_danger_exclamantion_svg;
 

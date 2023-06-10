@@ -19,10 +19,15 @@ export interface ICustomizableComponent extends ThemeOptions {
   backgroundPosition?: string;
   backgroundSize?: string;
   margin?: string;
+  flexDirection?: string;
+  alignItems?: string;
+  borderRadius?: string;
 }
 
 export interface IBagItem {
   name: string;
   imageSource: string;
-  message: string;
+  message?: string;
+  ammount?: number;
+  type: string;
 }

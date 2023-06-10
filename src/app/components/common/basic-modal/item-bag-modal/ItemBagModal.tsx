@@ -20,7 +20,7 @@ const ItemBagModal = ({ open, handleClose }: IBasicModalProps) => {
       <Typography variant="h5" mb={"1rem"}>
         My items:
       </Typography>
-      <ModalContent>{renderBagItems()}</ModalContent>
+      <ModalContent className="bag">{renderBagItems()}</ModalContent>
     </BasicModal>
   );
 };

@@ -23,6 +23,15 @@ export const CustomButton = styled(Button)<ICustomizableComponent>`
   }
 `;
 
-export const TooltipContent = styled.div`
+export const TooltipContent = styled.div<ICustomizableComponent>`
+  display: flex;
+  flex-direction: ${(props) => props.flexDirection || "column"};
+  align-items: ${(props) => props.alignItems || "center"};
+
   padding: 1rem;
+  box-sizing: border-box;
+
+  #dialog-buttons {
+    display: flex;
+  }
 `;

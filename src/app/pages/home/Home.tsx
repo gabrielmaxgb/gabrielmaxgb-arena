@@ -9,7 +9,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ARMOR_SVG,
@@ -23,6 +23,8 @@ import {
   SHIELD_SVG,
   SPELL_SCROLL_SVG,
   SWORD_SVG,
+  TREASURE_CHEST_SVG,
+  VAULT_KEEPER_SVG,
   VILLAGER_SVG,
 } from "../../../assets";
 import BasicModal from "../../components/common/basic-modal/BasicModal";
@@ -32,15 +34,22 @@ import {
   CustomButton,
   TooltipContent,
 } from "../../components/common/styled-components/StyledComponents";
+import { InteractivePanelContext } from "../../contexts/interactive-panel-context/InteractivePanelContext";
+import { IInteractivePanelContext } from "../../contexts/interactive-panel-context/types";
 import useImagePreloader from "../../hooks/use-image-preloader/useImagePreloader";
 import useScrollPosition from "../../hooks/use-scroll-position/UseScrollPosition";
 import { HomeContainer, HomeSection, ModalContent } from "./HomeStyled";
 
 const Home = () => {
   const theme = useTheme();
+  const { isItemBagOpen, setItemBagOpen } = useContext(
+    InteractivePanelContext
+  ) as IInteractivePanelContext;
+  console.log("isItemBagOpen", isItemBagOpen);
   const sectionTwo = useRef<null | HTMLDivElement>(null);
   const scrollPosition = useScrollPosition();
   const [isSkillsModalOpen, setSkillsModalOpen] = useState(false);
+  const [isVaultKeeperModalOpen, setVaultKeeperModal] = useState(false);
   const xs = useMediaQuery(theme.breakpoints.only("xs"));
   const imgPreloader = useImagePreloader([
     ARMOR_SVG,
@@ -56,10 +65,6 @@ const Home = () => {
     SWORD_SVG,
     VILLAGER_SVG,
   ]);
-
-  console.log("imgPreloader", imgPreloader);
-  // const { bagItems, setBagItems } = useBagItems();
-  // console.log("last deploy test");
 
   if (!imgPreloader) {
     return (
@@ -105,16 +110,12 @@ const Home = () => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            {/* <Button
-              onClick={() => setBagItems([...bagItems, { item: "master-key" }])}
-            >
-              Get Master Key
-            </Button> */}
             <Tooltip
               title={
                 <TooltipContent>
                   <Typography variant="h5">
-                    Welcome!! (click here to) Meet my friends!
+                    {/* Welcome!! (click here to) Meet my friends! */}
+                    HEY!! STEP BACK!!
                   </Typography>
                 </TooltipContent>
               }
@@ -124,14 +125,14 @@ const Home = () => {
             >
               <CustomButton
                 // bgImage={isSkillsModalOpen ? ANGRY_SOLDIER_SVG : VILLAGER_SVG}
-                bgImage={isSkillsModalOpen ? KNIGHT_SVG : VILLAGER_SVG}
+                bgImage={isVaultKeeperModalOpen ? KNIGHT_SVG : VILLAGER_SVG}
                 bgImageOnHover={KNIGHT_SVG}
                 maxWidth="100%"
                 backgroundPosition="center"
                 // backgroundSize={isSkillsModalOpen ? "500px 500px" : "cover"}
                 width="350px"
                 height="350px"
-                onClick={() => setSkillsModalOpen(true)}
+                onClick={() => setVaultKeeperModal(true)}
                 margin={"0 0 1rem 0"}
               />
             </Tooltip>
@@ -248,47 +249,6 @@ const Home = () => {
                 </Tooltip>
               }
             />
-            {/* <div id="icons">
-              <Tooltip
-                title={<Typography variant="body1">Github</Typography>}
-                placement="top"
-                arrow
-                TransitionComponent={Zoom}
-              >
-                <Button>
-                  <a href="https://github.com/gabrielmaxgb" target="_blank">
-                    <GitHubIcon />
-                  </a>
-                </Button>
-              </Tooltip>
-              <Tooltip
-                title={<Typography variant="body1">Linkedin</Typography>}
-                placement="top"
-                arrow
-                TransitionComponent={Zoom}
-              >
-                <Button>
-                  <a
-                    href="https://www.linkedin.com/in/gabriel-max-dev/"
-                    target="_blank"
-                  >
-                    <LinkedInIcon />
-                  </a>
-                </Button>
-              </Tooltip>
-              <Tooltip
-                title={<Typography variant="body1">Check out my cv</Typography>}
-                placement="top"
-                arrow
-                TransitionComponent={Zoom}
-              >
-                <Button>
-                  <a href={MY_CV} target="_blank">
-                    <DescriptionIcon />
-                  </a>
-                </Button>
-              </Tooltip>
-            </div> */}
           </Grid>
           <Grid
             item
@@ -428,6 +388,65 @@ const Home = () => {
               </Tooltip>
               <Typography mt={"1rem"} variant="h5">
                 Back end
+              </Typography>
+            </section>
+          </ModalContent>
+        </BasicModal>
+      )}
+
+      {isVaultKeeperModalOpen && (
+        <BasicModal
+          open={isVaultKeeperModalOpen}
+          handleClose={() => setVaultKeeperModal(false)}
+        >
+          <ModalContent>
+            <img
+              id="treasure-chest"
+              src={TREASURE_CHEST_SVG}
+              alt="treasure-chest"
+            />
+            <section className="specialization-area">
+              <Tooltip
+                title={
+                  <TooltipContent>
+                    <Typography variant="h5" mb={"1rem"}>
+                      Yo, man! You shouldn't be here! I think...
+                    </Typography>
+                    <div id="dialog-buttons">
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={() => setVaultKeeperModal(false)}
+                        sx={{ marginRight: "0.5rem" }}
+                      >
+                        Appologize and get out
+                      </Button>
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={() => setItemBagOpen(true)}
+                      >
+                        Bribe him (think twice)
+                      </Button>
+                    </div>
+                  </TooltipContent>
+                }
+                placement="top"
+                arrow
+                TransitionComponent={Zoom}
+              >
+                <Button>
+                  <img
+                    id="vault-keeper"
+                    className="vault-keeper"
+                    src={VAULT_KEEPER_SVG}
+                    alt="vault-keeper"
+                    width={"80px"}
+                  />
+                </Button>
+              </Tooltip>
+              <Typography mt={"1rem"} variant="h5">
+                Vault keeper
               </Typography>
             </section>
           </ModalContent>
