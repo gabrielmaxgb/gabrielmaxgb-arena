@@ -39,6 +39,22 @@ export const HomeContainer = styled(Grid)<ICustomizableComponent>`
     padding: 1rem 0;
   }
 
+  #tavern {
+    padding: 2rem 0;
+
+    .tavern-header {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      width: 100%;
+    }
+
+    .tavern-doors {
+      cursor: pointer;
+    }
+  }
+
   #footer {
   }
 `;

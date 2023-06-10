@@ -20,6 +20,7 @@ import bow_and_arrow_svg from "./icons/bow-and-arrow.svg";
 import coins_svg from "./icons/coins.svg";
 import construction_danger_exclamantion_svg from "./icons/construction-danger-exclamantion.svg";
 import destructive_magic_svg from "./icons/destructive-magic.svg";
+import doors_entrance_svg from "./icons/doors-entrance.svg";
 import elf_svg from "./icons/elf.svg";
 import fairy_svg from "./icons/fairy.svg";
 import front_end_svg from "./icons/frontend.svg";
@@ -33,11 +34,11 @@ import sorceress_witch_svg from "./icons/sorceress-witch.svg";
 import spell_book_svg from "./icons/spell-book.svg";
 import spell_scroll_svg from "./icons/spell-scroll.svg";
 import sword_svg from "./icons/sword.svg";
+import tavern_indicator_svg from "./icons/tavern-indicator.svg";
 import treasure_chest_svg from "./icons/treasure-chest.svg";
 import vault_keeper_svg from "./icons/vault-keeper.svg";
 import villager_svg from "./icons/villager.svg";
 import werewolf_svg from "./icons/werewolf.svg";
-
 import my_cv_pdf from "./pdf/GabrielMaxGB.pdf";
 
 export const FIRE_PNG = fire;
@@ -78,6 +79,8 @@ export const VAULT_KEEPER_SVG = vault_keeper_svg;
 export const TREASURE_CHEST_SVG = treasure_chest_svg;
 export const COINS_SVG = coins_svg;
 export const SORCERESS_WITCH_SVG = sorceress_witch_svg;
+export const TAVERN_INDICATOR_SVG = tavern_indicator_svg;
+export const DOORS_ENTRANCE_SVG = doors_entrance_svg;
 export const CONSTRUCTION_DANGER_EXCLAMANTION_SVG =
   construction_danger_exclamantion_svg;
 

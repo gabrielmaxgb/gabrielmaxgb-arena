@@ -15,6 +15,7 @@ import {
   ARMOR_SVG,
   BOOTS_SVG,
   DESTRUCTIVE_MAGIC_SVG,
+  DOORS_ENTRANCE_SVG,
   ELF_SVG,
   HELMET_SVG,
   KNIGHT_SVG,
@@ -23,6 +24,7 @@ import {
   SHIELD_SVG,
   SPELL_SCROLL_SVG,
   SWORD_SVG,
+  TAVERN_INDICATOR_SVG,
   TREASURE_CHEST_SVG,
   VAULT_KEEPER_SVG,
   VILLAGER_SVG,
@@ -309,6 +311,62 @@ const Home = () => {
               ></CustomButton>
             </Link>
           </Tooltip>
+        </HomeSection>
+        <HomeSection
+          id="tavern"
+          item
+          container
+          xs={12}
+          justifyContent={"center"}
+          alignItems={"center"}
+          // backgroundColor={theme.extraColors.yellow}
+          backgroundColor={theme.palette.background.default}
+        >
+          <Grid
+            item
+            container
+            xs={11}
+            md={4}
+            flexDirection={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <div className="tavern-header">
+              <img
+                src={TAVERN_INDICATOR_SVG}
+                width="200rem"
+                style={{ alignSelf: "start" }}
+              />
+              <Typography variant="h2">The Tipsy Goblin's Mug</Typography>
+            </div>
+            <Tooltip
+              title={
+                <TooltipContent>
+                  <Typography variant="body1">
+                    Hi :/ Welcome to "THE TIPSY GOBLIN'S MUG" tavern!! Please
+                    come in!!
+                  </Typography>
+                </TooltipContent>
+              }
+              placement="top"
+              arrow
+              TransitionComponent={Zoom}
+            >
+              <img id="orc" src={ORC_SVG} width="160px" />
+            </Tooltip>
+          </Grid>
+          <Grid
+            item
+            container
+            xs={11}
+            md={4}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            <Button>
+              <img id="tavern-doors" src={DOORS_ENTRANCE_SVG} width="70%" />
+            </Button>
+          </Grid>
         </HomeSection>
         <HomeSection
           id="footer"
