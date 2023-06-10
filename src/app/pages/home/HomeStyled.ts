@@ -39,6 +39,22 @@ export const HomeContainer = styled(Grid)<ICustomizableComponent>`
     padding: 1rem 0;
   }
 
+  #tavern {
+    padding: 2rem 0;
+
+    .tavern-header {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      width: 100%;
+    }
+
+    .tavern-doors {
+      cursor: pointer;
+    }
+  }
+
   #footer {
   }
 `;
@@ -56,8 +72,8 @@ export const ModalContent = styled.div<ITheme>`
   align-items: center;
   justify-content: center;
 
-  #destructive-magic {
-    width: 100px;
+  #treasure-chest {
+    width: 50px;
     position: absolute;
     right: 85%;
     bottom: 90%;

@@ -11,7 +11,7 @@ export const ProjectsContainer = styled(Grid)<IProjectsContainerStyled>`
   box-sizing: border-box;
 
   .title {
-    background-color: black;
+    background-color: ${(props) => props.theme.extraColors?.yellow};
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 2rem;

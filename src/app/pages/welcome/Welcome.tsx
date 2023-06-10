@@ -1,5 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { FAIRY_SVG } from "../../../assets";
 import { WelcomeContainer } from "./WelcomeStyled";
 
 const Welcome = () => {
@@ -25,9 +26,16 @@ const Welcome = () => {
         <Typography variant="h4" mb={"1rem"}>
           to my portfolio
         </Typography>
-        <Link to={"/home"} id={"link"}>
-          <Button variant="outlined">Start adventure!</Button>
-        </Link>
+        <div id="start-adventure-button">
+          <Link to={"/home"} id={"link"}>
+            <Button variant="outlined">Start adventure!</Button>
+          </Link>
+        </div>
+        <Typography className="tip" variant="caption" mt={"1rem"}>
+          (There are many features hidden through mouse hover! Go ahead and
+          click everything!)
+        </Typography>
+        <img className="fairy" src={FAIRY_SVG} width={"65px"} />
         {/* </AnimatedPageWrapper> */}
       </WelcomeContainer>
     </>

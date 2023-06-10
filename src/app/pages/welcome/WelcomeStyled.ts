@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
-import { IMoonContainer, IWelcomeContainerStyled } from "./types";
+import { IWelcomeContainerStyled } from "./types";
 
 export const WelcomeContainer = styled(Grid)<IWelcomeContainerStyled>`
   min-width: 100vw;
@@ -16,6 +16,23 @@ export const WelcomeContainer = styled(Grid)<IWelcomeContainerStyled>`
 
     width: 100%;
     text-decoration: none;
+  }
+
+  #start-adventure-button {
+    display: flex;
+  }
+
+  .fairy {
+    /* background-color: ${(props) => props.theme.extraColors?.yellow}; */
+    position: fixed;
+    bottom: 5rem;
+    margin: auto;
+  }
+
+  .tip {
+    max-width: 100%;
+    padding: 0 0.5rem;
+    /* color: red; */
   }
 
   // incredible button
@@ -73,22 +90,22 @@ export const WelcomeContainer = styled(Grid)<IWelcomeContainerStyled>`
   } */
 `;
 
-export const MoonContainer = styled.div<IMoonContainer>`
-  display: flex;
-  justify-content: center;
-  align-items: end;
+// export const MoonContainer = styled.div<IMoonContainer>`
+//   display: flex;
+//   justify-content: center;
+//   align-items: end;
 
-  background-image: ${(props) => `url(${props.bgImage})`};
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: contain;
+//   background-image: ${(props) => `url(${props.bgImage})`};
+//   background-repeat: no-repeat;
+//   background-position: top;
+//   background-size: contain;
 
-  height: 20vh;
-  min-width: 100vw;
-  margin-bottom: 3rem;
+//   height: 20vh;
+//   min-width: 100vw;
+//   margin-bottom: 3rem;
 
-  #villager {
-    background-color: transparent;
-    cursor: pointer;
-  }
-`;
+//   #villager {
+//     background-color: transparent;
+//     cursor: pointer;
+//   }
+// `;

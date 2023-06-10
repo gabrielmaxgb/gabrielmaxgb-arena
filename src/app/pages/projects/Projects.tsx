@@ -1,6 +1,6 @@
 import { Button, Grid, Tooltip, Typography, Zoom } from "@mui/material";
 import { useState } from "react";
-import { FAIRY_SVG, SPELL_BOOK_SVG } from "../../../assets";
+import { SORCERESS_WITCH_SVG, SPELL_BOOK_SVG } from "../../../assets";
 import ProjectCard from "../../components/common/project-card/ProjectCard";
 import { TooltipContent } from "../../components/common/styled-components/StyledComponents";
 import { ProjectsContainer } from "./ProjectsStyled";
@@ -45,7 +45,7 @@ const Projects = () => {
         className="title"
         m={"0 1rem"}
         variant="h3"
-        color={"secondary"}
+        // color={"secondary"}
       >
         Tomb of the story teller
       </Typography>
@@ -81,7 +81,11 @@ const Projects = () => {
           arrow
           TransitionComponent={Zoom}
         >
-          <img src={FAIRY_SVG} width={"200px"} className="fairy" />
+          <img
+            src={SORCERESS_WITCH_SVG}
+            width={"200px"}
+            className="sorceress"
+          />
         </Tooltip>
         <Button variant="text" onClick={() => setKnowledgeAccess(true)}>
           <img src={SPELL_BOOK_SVG} className="spell-book" width={"100px"} />
