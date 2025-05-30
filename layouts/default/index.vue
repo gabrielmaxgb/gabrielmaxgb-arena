@@ -2,7 +2,7 @@
 
 <template>
 	<ClientOnly>
-		<div class="w-[100vw] h-[100vh] bg-black/60 overflo-y-auto">
+		<div class="w-[100vw] h-[100vh] overflo-y-auto">
 			<slot />
 		</div>
 	</ClientOnly>

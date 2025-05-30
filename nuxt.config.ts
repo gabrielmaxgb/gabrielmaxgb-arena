@@ -6,10 +6,11 @@ export default defineNuxtConfig({
 	devtools: { enabled: true },
 	css: ["~/assets/css/main.css"],
 
-	ssr: true,
 	nitro: {
-		preset: "github_pages",
+		preset: "static",
 	},
+	ssr: false,
+
 	app: {
 		baseURL: "/gabrielmaxgb-arena/",
 	},
