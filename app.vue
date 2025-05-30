@@ -1,3 +1,9 @@
+<script setup lang="ts"></script>
+
 <template>
-	<div>gabrielmaxgb.me</div>
+	<UApp>
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
+	</UApp>
 </template>
