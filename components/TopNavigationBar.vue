@@ -1,5 +1,15 @@
 <script setup lang="ts">
-const headerLinks = [
+interface IHeaderLink {
+	icon: string;
+	href?: string;
+	routeName?: string;
+}
+
+const headerLinks: IHeaderLink[] = [
+	{
+		icon: "mdi:fountain-pen-tip",
+		routeName: "blog",
+	},
 	{
 		icon: "lucide:github",
 		href: "https://github.com/gabrielmaxgb",
@@ -26,14 +36,19 @@ const openLink = (href: string) => {
 	>
 		<div class="w-11/12 md:w-5/12 px-2">
 			<div class="flex items-center justify-between">
-				<h1 class="text-3xl font-script">Gabrielmaxgb</h1>
+				<NuxtLink to="/">
+					<h1 class="text-3xl font-script">Gabrielmaxgb</h1>
+				</NuxtLink>
 				<div class="flex items-center gap-4">
 					<UIcon
 						v-for="(link, index) in headerLinks"
 						:key="index"
 						:name="link.icon"
-						class="text-xl hover:text-violet-300 transition-colors duration-200 cursor-pointer"
-						@click="() => openLink(link.href)"
+						class="text-xl hover:text-amber-200 transition-colors duration-200 cursor-pointer"
+						@click="
+							() =>
+								link.href ? openLink(link.href) : navigateTo(link.routeName)
+						"
 					/>
 				</div>
 			</div>

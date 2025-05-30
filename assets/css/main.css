@@ -3,8 +3,12 @@
 
 @theme {
 	/* --font-sans: "Chivo", sans-serif; */
-
-	--font-sans: "Nunito", sans-serif;
+	/* --font-sans: "Nunito", sans-serif; */
+	/* --font-sans: "JetBrains Mono", monospace; */
+	/* --font-sans: "Poppins", sans-serif; */
+	/* --font-sans: "Asap", sans-serif; */
+	/* --font-sans: "Chakra Petch", sans-serif; */
+	--font-sans: "Mulish", sans-serif;
 
 	--font-serif: "Gloock", serif;
 	--font-mono: "JetBrains Mono", monospace;
