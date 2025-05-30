@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 		preset: "github_pages",
 	},
 	app: {
-		baseURL: "/gabrielmaxgb/",
+		baseURL: "/gabrielmaxgb-arena/",
 	},
 
 	modules: [
