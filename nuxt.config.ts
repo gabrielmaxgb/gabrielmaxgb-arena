@@ -19,6 +19,16 @@ export default defineNuxtConfig({
 		plugins: [tailwindcss()],
 	},
 
+	fonts: {
+		families: [
+			{ name: "Chivo", provider: "google" },
+			{ name: "Chakra Petch", provider: "google" },
+			{ name: "Gloock", provider: "google" },
+			{ name: "JetBrains Mono", provider: "google" },
+			{ name: "Staatliches", provider: "google" },
+			{ name: "Orbitron", provider: "google" },
+		],
+	},
 	modules: [
 		"@nuxt/content",
 		"@nuxt/eslint",

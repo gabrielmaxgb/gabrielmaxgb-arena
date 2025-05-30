@@ -1,2 +1,29 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme {
+	/* --font-sans: "Chivo", sans-serif; */
+
+	--font-sans: "Nunito", sans-serif;
+
+	--font-serif: "Gloock", serif;
+	--font-mono: "JetBrains Mono", monospace;
+	--font-header: "Staatliches", sans-serif;
+
+	--font-script: "Sacramento", cursive;
+
+	/* --font-script: "Dancing Script", cursive; */
+	/* --font-script: "Orbitron", cursive; */
+	/* --font-script: "Parisienne", cursive; */
+
+	--font-script-1: "Pacifico", cursive; /* vibe descontraída, retrô */
+	--font-script-2: "Dancing Script", cursive; /* fluida, amigável */
+	--font-script-3: "Great Vibes", cursive; /* elegante, perfeita pra nomes/títulos */
+	--font-script-4: "Satisfy", cursive; /* escrita casual e estilosa */
+	--font-script-5: "Marck Script", cursive; /* escrita natural, legível */
+	--font-script-6: "Allura", cursive; /* super delicada e refinada */
+	--font-script-7: "Kalam", cursive; /* meio hand-written, meio print */
+	--font-script-8: "Homemade Apple", cursive; /* parece bilhete escrito à mão */
+	--font-script-9: "Gloria Hallelujah", cursive; /* vibe divertida, como marcador */
+	--font-script-10: "Parisienne", cursive;
+}

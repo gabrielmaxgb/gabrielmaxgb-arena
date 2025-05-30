@@ -8,7 +8,7 @@ onMounted(() => {
 	if (!canvasRef.value) return;
 
 	const scene = new THREE.Scene();
-	// scene.fog = new THREE.Fog(0x000000, 10, 30); // desativado pra evitar esconder o cubo
+	scene.fog = new THREE.Fog(0x000000, 10, 30); // desativado pra evitar esconder o cubo
 
 	const camera = new THREE.PerspectiveCamera(
 		75,
@@ -26,9 +26,9 @@ onMounted(() => {
 	const geometry = new THREE.BoxGeometry(8, 8, 8); // cubo um pouco menor
 	const edges = new THREE.EdgesGeometry(geometry);
 	const material = new THREE.LineBasicMaterial({
-		color: "#fffff",
+		color: "#fff",
 		transparent: true,
-		opacity: 0.8,
+		opacity: 0.6,
 	});
 	const wireframe = new THREE.LineSegments(edges, material);
 	scene.add(wireframe);
@@ -105,6 +105,6 @@ onMounted(() => {
 	height: 100vh;
 	z-index: -1;
 	pointer-events: none;
-	background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+	background: radial-gradient(ellipse at center, #0a0a0a 10%, #000000 90%);
 }
 </style>

@@ -2,7 +2,9 @@
 
 <template>
 	<ClientOnly>
-		<div class="w-[100vw] h-[100vh] overflo-y-auto">
+		<div class="relative pt-28">
+			<TopNavigationBar />
+			<ThreeScene />
 			<slot />
 		</div>
 	</ClientOnly>
