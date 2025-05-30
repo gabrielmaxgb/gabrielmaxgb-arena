@@ -1,0 +1,1 @@
+import{_ as e}from"./Df6Y_oUm.js";import{_ as n,f as _,w as r,o as c,d as s}from"./BTm_Y9Ml.js";const a={};function f(l,o){const t=e;return c(),_(t,null,{default:r(()=>o[0]||(o[0]=[s(" blog ")])),_:1,__:[0]})}const p=n(a,[["render",f]]);export{p as default};
