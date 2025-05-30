@@ -1,0 +1,1 @@
+import{_ as s,c as t,o as a,a as n,r,n as c}from"./0KtPYUGZ.js";const o={},l={class:"w-11/12 md:w-5/12 px-2"};function _(e,i){return a(),t("section",{class:c(["relative flex items-center justify-center z-10 max-w-[100vw] min-w-[100vw] w-full text-amber-50",e.$attrs.class])},[n("div",l,[r(e.$slots,"default")])],2)}const f=s(o,[["render",_]]);export{f as _};
