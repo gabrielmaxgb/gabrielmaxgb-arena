@@ -1,3 +1,3 @@
 <template>
-	<div>gabrielmaxgb</div>
+	<div>gabrielmaxgb.me</div>
 </template>
