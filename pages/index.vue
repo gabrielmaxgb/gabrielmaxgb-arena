@@ -43,7 +43,7 @@ const badgeItems = [
 				<a
 					target="_blank"
 					href="https://www.google.com/maps/place/Bras%C3%ADlia+-+DF/@-15.7756577,-48.1267645,137253m/data=!3m2!1e3!4b1!4m6!3m5!1s0x935a3d18e45b91a3:0x24e8d3620bd85d7f!8m2!3d-15.7975174!4d-47.8918881!16s%2Fg%2F1ypvssh2c?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
-					class="font-semibold"
+					class="font-semibold cursor-pointer"
 					>Brasília, Brazil</a
 				>
 				— if you're nearby or just wanna chat about faith, code, or life, let’s

@@ -28,7 +28,7 @@ onMounted(() => {
 	const material = new THREE.LineBasicMaterial({
 		color: "#FFFBEA",
 		transparent: true,
-		opacity: 1,
+		opacity: 0.5,
 	});
 	const wireframe = new THREE.LineSegments(edges, material);
 	scene.add(wireframe);
@@ -105,6 +105,6 @@ onMounted(() => {
 	height: 100vh;
 	z-index: -1;
 	pointer-events: none;
-	background: radial-gradient(ellipse at center, #0a0a0a 10%, #000000 90%);
+	background: radial-gradient(ellipse at center, #252523 0%, #000000 90%);
 }
 </style>
