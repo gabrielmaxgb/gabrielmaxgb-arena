@@ -26,9 +26,9 @@ onMounted(() => {
 	const geometry = new THREE.BoxGeometry(8, 8, 8); // cubo um pouco menor
 	const edges = new THREE.EdgesGeometry(geometry);
 	const material = new THREE.LineBasicMaterial({
-		color: "#fff",
+		color: "#FFFBEA",
 		transparent: true,
-		opacity: 0.6,
+		opacity: 1,
 	});
 	const wireframe = new THREE.LineSegments(edges, material);
 	scene.add(wireframe);
