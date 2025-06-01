@@ -37,7 +37,7 @@ const openLink = (href: string) => {
 	<nav
 		class="text-amber-50 fixed top-0 w-full py-6 flex items-center justify-center z-50 top-nav backdrop-blur-xs"
 	>
-		<div class="w-11/12 md:w-6/12 px-2">
+		<div class="w-11/12 md:w-5/12 px-2">
 			<div class="flex items-center justify-between">
 				<NuxtLink to="/">
 					<h1 class="text-3xl font-script">Gabrielmaxgb</h1>

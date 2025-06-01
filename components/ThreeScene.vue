@@ -28,7 +28,7 @@ onMounted(() => {
 	const material = new THREE.LineBasicMaterial({
 		color: "#FFFBEA",
 		transparent: true,
-		opacity: 0.5,
+		opacity: 0.2,
 	});
 	const wireframe = new THREE.LineSegments(edges, material);
 	scene.add(wireframe);
