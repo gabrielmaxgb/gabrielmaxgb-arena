@@ -7,6 +7,10 @@ interface IHeaderLink {
 
 const headerLinks: IHeaderLink[] = [
 	{
+		icon: "mdi:home",
+		routeName: "/",
+	},
+	{
 		icon: "ion:language-outline",
 	},
 	{
