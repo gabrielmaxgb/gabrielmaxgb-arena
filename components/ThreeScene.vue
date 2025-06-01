@@ -16,54 +16,57 @@ onMounted(() => {
 		0.1,
 		1000
 	);
-	camera.position.z = 9;
+	camera.position.z = 14;
 
 	const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 	renderer.setSize(canvasRef.value.clientWidth, canvasRef.value.clientHeight);
 	renderer.setPixelRatio(window.devicePixelRatio);
 	canvasRef.value.appendChild(renderer.domElement);
 
-	// CUBO PRINCIPAL (com fog)
-	const geometry = new THREE.BoxGeometry(8, 8, 8);
-	const material = new THREE.MeshBasicMaterial({
-		color: 0xfffbea,
-		wireframe: true,
-		transparent: true,
-		opacity: 0.4,
-		fog: true,
-	});
-	const cubeMesh = new THREE.Mesh(geometry, material);
-	scene.add(cubeMesh);
+	// Cubo principal
+	const mainCube = new THREE.Mesh(
+		new THREE.BoxGeometry(8, 8, 8),
+		new THREE.MeshBasicMaterial({
+			color: 0xfffbea,
+			wireframe: true,
+			transparent: true,
+			opacity: 0.1,
+			fog: true,
+		})
+	);
+	scene.add(mainCube);
 
-	// CUBOS SECUNDÁRIOS
-	const cubes: THREE.Mesh[] = [];
-	const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-	const cubeMaterial = new THREE.MeshBasicMaterial({
-		color: 0xfffbea,
-		transparent: true,
-		opacity: 0.3,
-		fog: true,
-	});
-	for (let i = 0; i < 40; i++) {
-		const cube = new THREE.Mesh(cubeGeometry, cubeMaterial.clone());
-		cube.position.set(
-			Math.random() * 80 - 40,
-			Math.random() * 80 - 40,
-			Math.random() * 80 - 40
-		);
-		scene.add(cube);
-		cubes.push(cube);
-	}
-
-	// LUZES
+	// Luz
 	const light = new THREE.DirectionalLight(0xfffbea, 0.5);
 	light.position.set(10, 10, 10);
 	scene.add(light);
+	scene.add(new THREE.AmbientLight(0xfffbea, 0.2));
 
-	const ambient = new THREE.AmbientLight(0xfffbea, 0.2);
-	scene.add(ambient);
+	// Cubos voadores (monocromáticos)
+	const floatingCubes: THREE.Mesh[] = [];
+	const cubeGeometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+	const cubeMaterial = new THREE.MeshStandardMaterial({
+		color: 0xfffbea,
+		transparent: true,
+		opacity: 0.2,
+	});
+	for (let i = 0; i < 100; i++) {
+		const cube = new THREE.Mesh(cubeGeometry, cubeMaterial.clone());
+		cube.position.set(
+			Math.random() * 100 - 50,
+			Math.random() * 100 - 50,
+			Math.random() * 100 - 50
+		);
+		cube.rotation.set(
+			Math.random() * Math.PI,
+			Math.random() * Math.PI,
+			Math.random() * Math.PI
+		);
+		scene.add(cube);
+		floatingCubes.push(cube);
+	}
 
-	// MOVIMENTO DO CUBO
+	// Scroll influencia
 	const velocity = { x: 0, y: 0 };
 	let lastScrollY = window.scrollY;
 	const friction = 0.9;
@@ -72,7 +75,7 @@ onMounted(() => {
 		const currentScrollY = window.scrollY;
 		const delta = currentScrollY - lastScrollY;
 		lastScrollY = currentScrollY;
-		velocity.y += delta * 0.0004;
+		velocity.y += delta * 0.0005;
 		velocity.x += delta * 0.0002;
 	};
 	window.addEventListener("scroll", onScroll);
@@ -82,18 +85,19 @@ onMounted(() => {
 		requestAnimationFrame(animate);
 		const elapsed = clock.getElapsedTime();
 
-		camera.position.x = Math.sin(elapsed * 0.3) * 0.5;
-		camera.position.y = Math.cos(elapsed * 0.2) * 0.5;
+		camera.position.x = Math.sin(elapsed * 0.2) * 1;
+		camera.position.y = Math.cos(elapsed * 0.3) * 1;
 		camera.lookAt(0, 0, 0);
 
-		cubeMesh.rotation.x += velocity.x + 0.001;
-		cubeMesh.rotation.y += velocity.y + 0.001;
+		mainCube.rotation.x += velocity.x + 0.001;
+		mainCube.rotation.y += velocity.y + 0.001;
 		velocity.x *= friction;
 		velocity.y *= friction;
 
-		cubes.forEach((cube, i) => {
-			cube.rotation.x += 0.001 + i * 0.00003;
-			cube.rotation.y += 0.001 + i * 0.00002;
+		// animação dos cubos
+		floatingCubes.forEach((cube, i) => {
+			cube.rotation.x += 0.001 + i * 0.00001;
+			cube.rotation.y += 0.001 + i * 0.000015;
 			cube.position.y += Math.sin(elapsed + i) * 0.002;
 		});
 
@@ -130,6 +134,6 @@ onMounted(() => {
 	height: 100vh;
 	z-index: -1;
 	pointer-events: none;
-	background: radial-gradient(ellipse at center, #252523 50%, #000000 100%);
+	background: radial-gradient(ellipse at center, #1a1a1a 50%, #000000 100%);
 }
 </style>
