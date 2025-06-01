@@ -8,7 +8,7 @@ onMounted(() => {
 	if (!canvasRef.value) return;
 
 	const scene = new THREE.Scene();
-	scene.fog = new THREE.Fog(0x000000, 10, 30); // desativado pra evitar esconder o cubo
+	scene.fog = new THREE.Fog(0x000000, 10, 60);
 
 	const camera = new THREE.PerspectiveCamera(
 		75,
@@ -16,14 +16,15 @@ onMounted(() => {
 		0.1,
 		1000
 	);
-	camera.position.z = 20;
+	camera.position.z = 9;
 
 	const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 	renderer.setSize(canvasRef.value.clientWidth, canvasRef.value.clientHeight);
 	renderer.setPixelRatio(window.devicePixelRatio);
 	canvasRef.value.appendChild(renderer.domElement);
 
-	const geometry = new THREE.BoxGeometry(8, 8, 8); // cubo um pouco menor
+	// CUBO PRINCIPAL
+	const geometry = new THREE.BoxGeometry(8, 8, 8);
 	const edges = new THREE.EdgesGeometry(geometry);
 	const material = new THREE.LineBasicMaterial({
 		color: "#FFFBEA",
@@ -33,34 +34,68 @@ onMounted(() => {
 	const wireframe = new THREE.LineSegments(edges, material);
 	scene.add(wireframe);
 
-	// Controle de rotação
+	const cubes: any = [];
+	const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+	const cubeMaterial = new THREE.MeshBasicMaterial({
+		color: 0xfffbea,
+		transparent: true,
+		opacity: 0.3,
+	});
+	for (let i = 0; i < 40; i++) {
+		const cube = new THREE.Mesh(cubeGeometry, cubeMaterial.clone());
+		cube.position.set(
+			Math.random() * 80 - 40,
+			Math.random() * 80 - 40,
+			Math.random() * 80 - 40
+		);
+		scene.add(cube);
+		cubes.push(cube);
+	}
+
+	// LUZ E SOMBRA SUAVE
+	const light = new THREE.DirectionalLight(0xfffbea, 0.5);
+	light.position.set(10, 10, 10);
+	scene.add(light);
+
+	const ambient = new THREE.AmbientLight(0xfffbea, 0.2);
+	scene.add(ambient);
+
+	// MOVIMENTO
 	const velocity = { x: 0, y: 0 };
 	let lastScrollY = window.scrollY;
 	const friction = 0.9;
 
-	// Atualiza velocidade com base no delta do scroll
 	const onScroll = () => {
 		const currentScrollY = window.scrollY;
 		const delta = currentScrollY - lastScrollY;
 		lastScrollY = currentScrollY;
-
-		velocity.y += delta * 0.0006;
-		velocity.x += delta * 0.0003;
+		velocity.y += delta * 0.0004;
+		velocity.x += delta * 0.0002;
 	};
-
 	window.addEventListener("scroll", onScroll);
 
-	// Loop de animação
+	const clock = new THREE.Clock();
 	const animate = () => {
 		requestAnimationFrame(animate);
+		const elapsed = clock.getElapsedTime();
 
-		// Rotação do cubo com movimento constante + scroll
+		// Oscilação de câmera
+		camera.position.x = Math.sin(elapsed * 0.3) * 0.5;
+		camera.position.y = Math.cos(elapsed * 0.2) * 0.5;
+		camera.lookAt(0, 0, 0);
+
+		// Cubo principal
 		wireframe.rotation.x += velocity.x + 0.001;
 		wireframe.rotation.y += velocity.y + 0.001;
-
-		// Aplica fricção
 		velocity.x *= friction;
 		velocity.y *= friction;
+
+		// Cubos voadores
+		cubes.forEach((cube, i) => {
+			cube.rotation.x += 0.001 + i * 0.00003;
+			cube.rotation.y += 0.001 + i * 0.00002;
+			cube.position.y += Math.sin(elapsed + i) * 0.002;
+		});
 
 		renderer.render(scene, camera);
 	};
@@ -95,6 +130,6 @@ onMounted(() => {
 	height: 100vh;
 	z-index: -1;
 	pointer-events: none;
-	background: radial-gradient(ellipse at center, #252523 0%, #000000 90%);
+	background: radial-gradient(ellipse at center, #252523 50%, #000000 100%);
 }
 </style>
