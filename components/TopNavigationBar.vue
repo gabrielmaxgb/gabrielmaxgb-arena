@@ -35,7 +35,7 @@ const openLink = (href: string) => {
 
 <template>
 	<nav
-		class="text-amber-50 fixed top-0 left-0 w-full h-16 py-12 flex items-center justify-center z-50 top-nav"
+		class="text-amber-50 fixed top-0 w-full py-6 flex items-center justify-center z-50 top-nav backdrop-blur-xs"
 	>
 		<div class="w-11/12 md:w-6/12 px-2">
 			<div class="flex items-center justify-between">
@@ -59,15 +59,4 @@ const openLink = (href: string) => {
 	</nav>
 </template>
 
-<style scoped>
-.top-nav {
-	/* background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%); */
-	/* background: linear-gradient(
-		180deg,
-		rgba(10, 10, 10, 0.8) 0%,
-		rgba(10, 10, 10, 0.5) 100%
-	);
-	backdrop-filter: blur(10px);
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
-}
-</style>
+<style scoped></style>

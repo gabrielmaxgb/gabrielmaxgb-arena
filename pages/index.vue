@@ -29,7 +29,7 @@ const badgeItems = [
 				books to random rabbit holes of curiosity.
 			</p>
 			<p>
-				Sometimes, I write about what I learn, think out loud
+				Sometimes, I write about what I learn, thinking out loud
 				<NuxtLink to="/blog" class="font-semibold cursor-pointer"
 					>here</NuxtLink
 				>
