@@ -1,9 +1,20 @@
 <script setup lang="ts">
-const badgeItems = [
-	"6+ years coding",
-	"Lead Dev in 2 teams",
-	"Author of ******",
-	"Founder/Creator of Pros4Noobs",
+import p4nLogo from "~/public/p4n-logo.svg";
+
+const badgeItems: { label: string; iconRef?: string }[] = [
+	{
+		label: "6+ years coding",
+	},
+	{
+		label: "Lead Dev in 2 teams",
+	},
+	{
+		label: "Author of ******",
+	},
+	{
+		label: "Founder/Creator of Pros4Noobs",
+		iconRef: p4nLogo,
+	},
 ];
 </script>
 
@@ -44,6 +55,7 @@ const badgeItems = [
 				together.
 			</p>
 			<p>
+				<UIcon name="ion:location-outline" class="inline text-amber-100/80" />
 				I’m currently based in
 				<a
 					target="_blank"
@@ -55,19 +67,30 @@ const badgeItems = [
 				grab a coffee (virtual or not). Always up for good conversations and
 				cool ideas.
 			</p>
-			<p>
-				You can reach out to me through my best email
+			<p class="flex items-center gap-2">
+				<UIcon name="ion:mail-outline" class="inline text-amber-100/80" />
 				<span class="font-semibold italic">gmaxgomes@gmail.com</span>
 			</p>
-			<div class="flex flex-col gap-2">
-				<UBadge
+			<div class="flex flex-col gap-1">
+				<div
 					v-for="(item, index) in badgeItems"
 					:key="index"
-					:label="item"
-					variant="soft"
-					class="w-fit text-xs bg-amber-100/10 text-amber-100"
-					size="sm"
-				/>
+					class="flex gap-2"
+				>
+					<UBadge
+						variant="soft"
+						class="w-fit text-xs bg-amber-100/10 text-amber-100 h-fit"
+						size="sm"
+					>
+						{{ item.label }}
+					</UBadge>
+					<img
+						v-if="item.iconRef"
+						:src="item.iconRef"
+						alt="Gabriel Max Gomes"
+						class="w-6 h-6 rounded-full object-cover"
+					/>
+				</div>
 			</div>
 		</MainSection>
 		<MainSection title="Purpose">

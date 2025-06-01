@@ -10,7 +10,7 @@ onMounted(() => {
 	const scene = new THREE.Scene();
 
 	const camera = new THREE.PerspectiveCamera(
-		75,
+		60,
 		canvasRef.value.clientWidth / canvasRef.value.clientHeight,
 		0.1,
 		1000
@@ -28,7 +28,7 @@ onMounted(() => {
 	const material = new THREE.LineBasicMaterial({
 		color: "#FFFBEA",
 		transparent: true,
-		opacity: 0.1,
+		opacity: 0.2,
 	});
 	const wireframe = new THREE.LineSegments(edges, material);
 	scene.add(wireframe);
