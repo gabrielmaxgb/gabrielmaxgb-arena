@@ -23,23 +23,26 @@ onMounted(() => {
 	renderer.setPixelRatio(window.devicePixelRatio);
 	canvasRef.value.appendChild(renderer.domElement);
 
-	// CUBO PRINCIPAL
+	// CUBO PRINCIPAL (com fog)
 	const geometry = new THREE.BoxGeometry(8, 8, 8);
-	const edges = new THREE.EdgesGeometry(geometry);
-	const material = new THREE.LineBasicMaterial({
-		color: "#FFFBEA",
+	const material = new THREE.MeshBasicMaterial({
+		color: 0xfffbea,
+		wireframe: true,
 		transparent: true,
-		opacity: 0.5,
+		opacity: 0.4,
+		fog: true,
 	});
-	const wireframe = new THREE.LineSegments(edges, material);
-	scene.add(wireframe);
+	const cubeMesh = new THREE.Mesh(geometry, material);
+	scene.add(cubeMesh);
 
-	const cubes: any = [];
+	// CUBOS SECUNDÁRIOS
+	const cubes: THREE.Mesh[] = [];
 	const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 	const cubeMaterial = new THREE.MeshBasicMaterial({
 		color: 0xfffbea,
 		transparent: true,
 		opacity: 0.3,
+		fog: true,
 	});
 	for (let i = 0; i < 40; i++) {
 		const cube = new THREE.Mesh(cubeGeometry, cubeMaterial.clone());
@@ -52,7 +55,7 @@ onMounted(() => {
 		cubes.push(cube);
 	}
 
-	// LUZ E SOMBRA SUAVE
+	// LUZES
 	const light = new THREE.DirectionalLight(0xfffbea, 0.5);
 	light.position.set(10, 10, 10);
 	scene.add(light);
@@ -60,7 +63,7 @@ onMounted(() => {
 	const ambient = new THREE.AmbientLight(0xfffbea, 0.2);
 	scene.add(ambient);
 
-	// MOVIMENTO
+	// MOVIMENTO DO CUBO
 	const velocity = { x: 0, y: 0 };
 	let lastScrollY = window.scrollY;
 	const friction = 0.9;
@@ -79,18 +82,15 @@ onMounted(() => {
 		requestAnimationFrame(animate);
 		const elapsed = clock.getElapsedTime();
 
-		// Oscilação de câmera
 		camera.position.x = Math.sin(elapsed * 0.3) * 0.5;
 		camera.position.y = Math.cos(elapsed * 0.2) * 0.5;
 		camera.lookAt(0, 0, 0);
 
-		// Cubo principal
-		wireframe.rotation.x += velocity.x + 0.001;
-		wireframe.rotation.y += velocity.y + 0.001;
+		cubeMesh.rotation.x += velocity.x + 0.001;
+		cubeMesh.rotation.y += velocity.y + 0.001;
 		velocity.x *= friction;
 		velocity.y *= friction;
 
-		// Cubos voadores
 		cubes.forEach((cube, i) => {
 			cube.rotation.x += 0.001 + i * 0.00003;
 			cube.rotation.y += 0.001 + i * 0.00002;
