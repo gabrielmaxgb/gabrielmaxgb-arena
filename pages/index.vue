@@ -16,6 +16,57 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 		iconRef: p4nLogo,
 	},
 ];
+
+const myJourney = [
+	{
+		period: "Jul 2023 - Present",
+		title: "Frontend Engineer Lead @ Selby Lane Digital",
+		description:
+			"Led the front-end team, scaled the platform from scratch, implemented a reusable component library (NPM), and improved workflows. Stack: Vue.js, TypeScript, TailwindCSS, Pinia, TanStack Query.",
+	},
+	{
+		period: "Feb 2023 - Sep 2023",
+		title: "Contract Full Stack Engineer @ PrimeUp",
+		description:
+			"Built features and fixed production issues using React.js and Node.js. Refactored backend endpoints and collaborated with PMs/designers.",
+	},
+	{
+		period: "Oct 2022 - Feb 2023",
+		title: "Contract Frontend Engineer @ Pride Innovations",
+		description:
+			"Delivered highly interactive UIs using React.js. Collaborated with QA and design teams, optimized rendering, and supported sprints.",
+	},
+	{
+		period: "May 2022 - Aug 2022",
+		title: "Contract Frontend Engineer @ Webera",
+		description:
+			"Integrated front-end modules into microservices architecture. Developed scalable UI using React and Next.js.",
+	},
+	{
+		period: "Mar 2022 - May 2022",
+		title: "Frontend Engineer @ Novatics",
+		description:
+			"Contributed to enterprise front-end solutions in React.js within cross-functional teams, with agile methodologies.",
+	},
+	{
+		period: "Dec 2021 - May 2022",
+		title: "Frontend Developer @ Sambatech",
+		description:
+			"Implemented product features, resolved UI bugs, and supported UX improvements and onboarding.",
+	},
+	{
+		period: "Jan 2021 - Dec 2021",
+		title: "Frontend Developer @ Fan Projects",
+		description:
+			"Worked on UI enhancements, feature delivery and pair programming. Contributed to product development under senior mentorship.",
+	},
+	{
+		period: "May 2019 - May 2021",
+		title: "Frontend Developer Intern @ CAIXA",
+		description:
+			"Built Angular components for internal systems and modernized legacy structures through incremental improvements.",
+	},
+];
 </script>
 
 <template>
@@ -46,7 +97,7 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 			</p>
 			<p>
 				Sometimes, I write about what I learn, thinking out loud
-				<NuxtLink to="/blog" class="font-semibold cursor-pointer"
+				<NuxtLink to="/blog" class="font-semibold cursor-pointer text-amber-100"
 					>here</NuxtLink
 				>
 			</p>
@@ -60,7 +111,7 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 				<a
 					target="_blank"
 					href="https://www.google.com/maps/place/Bras%C3%ADlia+-+DF/@-15.7756577,-48.1267645,137253m/data=!3m2!1e3!4b1!4m6!3m5!1s0x935a3d18e45b91a3:0x24e8d3620bd85d7f!8m2!3d-15.7975174!4d-47.8918881!16s%2Fg%2F1ypvssh2c?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
-					class="font-semibold cursor-pointer"
+					class="font-semibold cursor-pointer text-amber-100"
 					>Brasília, Brazil</a
 				>
 				— if you're nearby or just wanna chat about faith, code, or life, let’s
@@ -69,7 +120,9 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 			</p>
 			<p class="flex items-center gap-2">
 				<UIcon name="ion:mail-outline" class="inline text-amber-100/80" />
-				<span class="font-semibold italic">gmaxgomes@gmail.com</span>
+				<span class="font-semibold italic text-amber-100"
+					>gmaxgomes@gmail.com</span
+				>
 			</p>
 			<div class="flex flex-col gap-1">
 				<div
@@ -113,7 +166,7 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 					-
 					<a
 						href="https://pros4noobs.com"
-						class="font-semibold cursor-pointer"
+						class="font-semibold cursor-pointer text-amber-100"
 						target="_blank"
 						>Selby Lane Digital</a
 					>
@@ -122,7 +175,7 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 					-
 					<a
 						href=""
-						class="opacity-30 font-semibold cursor-not-allowed"
+						class="opacity-30 font-semibold cursor-not-allowed text-amber-100"
 						target="_blank"
 						>Wizhats</a
 					>
@@ -130,7 +183,57 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 			</div>
 		</MainSection>
 
-		<MainSection>
+		<MainSection title="My journey so far">
+			<div class="flex flex-col gap-5">
+				<p class="">
+					I started my career in 2019, and since then, I’ve worked with various
+					technologies and companies, always focusing on front-end development.
+					From Angular to React, Vue.js to TypeScript, I’ve built a solid
+					foundation in creating user-friendly interfaces and scalable
+					applications.
+				</p>
+				<p class="">
+					My journey has taken me through different roles, from intern to lead
+					developer, allowing me to grow my skills and contribute to meaningful
+					projects. I’m passionate about mentoring others and sharing what I’ve
+					learned along the way.
+				</p>
+				<p class="">
+					You can find more about my professional journey on my
+					<a
+						href="https://www.linkedin.com/in/gabrielmaxgb/"
+						class="text-amber-100 font-semibold cursor-pointer"
+						target="_blank"
+						>LinkedIn</a
+					>
+					profile.
+				</p>
+			</div>
+
+			<h2 class="mt-12">Brief summary:</h2>
+
+			<section class="w-full flex flex-col gap-8 mt-8">
+				<div
+					v-for="(item, index) in myJourney"
+					:key="index"
+					class="relative w-full pt-8 pl-6"
+				>
+					<div class="absolute top-0 left-0 opacity-10 text-5xl font-script-4">
+						{{ item.period }}
+					</div>
+					<div>
+						<h3 class="font-semibold text-amber-100">
+							{{ item.title }}
+						</h3>
+						<p class="">
+							{{ item.description }}
+						</p>
+					</div>
+				</div>
+			</section>
+		</MainSection>
+
+		<!-- <MainSection>
 			<p class="">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente velit
 				dolores distinctio asperiores nihil tenetur ipsum sequi, repellendus
@@ -193,6 +296,6 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 				molestiae hic, reprehenderit quibusdam unde rerum in ea nobis quidem
 				esse neque?
 			</p>
-		</MainSection>
+		</MainSection> -->
 	</MainContainer>
 </template>
