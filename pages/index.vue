@@ -20,8 +20,13 @@ const badgeItems = [
 			<p>
 				Most of my work revolves around building tools and platforms that
 				empower others — especially beginners in tech. I’m the creator of
-				Pros4Noobs, a free mentoring platform where I help newcomers grow with
-				guidance, clarity, and purpose.
+				<a
+					href="https://pros4noobs.com"
+					class="text-primary font-semibold cursor-pointer"
+					target="_blank"
+					>Pros4Noobs</a
+				>, a free mentoring platform where I help newcomers grow with guidance,
+				clarity, and purpose.
 			</p>
 			<p>
 				Beyond code, I enjoy jamming on the drums, skating with friends, lifting
@@ -54,13 +59,13 @@ const badgeItems = [
 				You can reach out to me through my best email
 				<span class="font-semibold italic">gmaxgomes@gmail.com</span>
 			</p>
-			<div class="flex gap-2">
+			<div class="flex flex-col gap-2">
 				<UBadge
 					v-for="(item, index) in badgeItems"
 					:key="index"
 					:label="item"
 					variant="subtle"
-					color="neutral"
+					color="warning"
 					class="w-fit text-xs"
 					size="lg"
 				/>
@@ -103,7 +108,7 @@ const badgeItems = [
 			</div>
 		</MainSection>
 
-		<MainSection>
+		<!-- <MainSection>
 			<p class="">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente velit
 				dolores distinctio asperiores nihil tenetur ipsum sequi, repellendus
@@ -134,6 +139,6 @@ const badgeItems = [
 				molestiae hic, reprehenderit quibusdam unde rerum in ea nobis quidem
 				esse neque?
 			</p>
-		</MainSection>
+		</MainSection> -->
 	</MainContainer>
 </template>
