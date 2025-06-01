@@ -1,0 +1,1 @@
+import{x as n,c as s,m as r,r as c,t as l,q as i,o}from"./CZ5NbRnT.js";const m={key:0,class:"text-4xl font-script mb-2"},d=n({__name:"MainSection",props:{title:{}},setup(a){const t=a;return(e,p)=>(o(),s("section",{class:i(["w-11/12 md:w-5/12 px-2",e.$attrs.class])},[t.title?(o(),s("h2",m,l(t.title),1)):r("",!0),c(e.$slots,"default")],2))}});export{d as _};
