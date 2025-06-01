@@ -39,7 +39,7 @@ const openLink = (href: string) => {
 	>
 		<div class="w-11/12 md:w-5/12 px-2">
 			<div class="flex items-center justify-between">
-				<NuxtLink to="/">
+				<NuxtLink to="/" class="">
 					<h1 class="text-3xl font-script">Gabrielmaxgb</h1>
 				</NuxtLink>
 				<div class="flex items-center gap-4">
@@ -50,7 +50,11 @@ const openLink = (href: string) => {
 						class="text-xl hover:text-amber-200 transition-colors duration-200 cursor-pointer"
 						@click="
 							() =>
-								link.href ? openLink(link.href) : navigateTo(link.routeName)
+								link.href
+									? openLink(link.href)
+									: link.routeName
+									? navigateTo(link.routeName)
+									: null
 						"
 					/>
 				</div>
