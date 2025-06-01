@@ -107,7 +107,23 @@ const badgeItems = [
 			</div>
 		</MainSection>
 
-		<!-- <MainSection>
+		<MainSection>
+			<p class="">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente velit
+				dolores distinctio asperiores nihil tenetur ipsum sequi, repellendus
+				molestiae hic, reprehenderit quibusdam unde rerum in ea nobis quidem
+				esse neque?
+			</p>
+		</MainSection>
+		<MainSection>
+			<p class="">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente velit
+				dolores distinctio asperiores nihil tenetur ipsum sequi, repellendus
+				molestiae hic, reprehenderit quibusdam unde rerum in ea nobis quidem
+				esse neque?
+			</p>
+		</MainSection>
+		<MainSection>
 			<p class="">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente velit
 				dolores distinctio asperiores nihil tenetur ipsum sequi, repellendus
@@ -138,6 +154,22 @@ const badgeItems = [
 				molestiae hic, reprehenderit quibusdam unde rerum in ea nobis quidem
 				esse neque?
 			</p>
-		</MainSection> -->
+		</MainSection>
+		<MainSection>
+			<p class="">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente velit
+				dolores distinctio asperiores nihil tenetur ipsum sequi, repellendus
+				molestiae hic, reprehenderit quibusdam unde rerum in ea nobis quidem
+				esse neque?
+			</p>
+		</MainSection>
+		<MainSection>
+			<p class="">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente velit
+				dolores distinctio asperiores nihil tenetur ipsum sequi, repellendus
+				molestiae hic, reprehenderit quibusdam unde rerum in ea nobis quidem
+				esse neque?
+			</p>
+		</MainSection>
 	</MainContainer>
 </template>
