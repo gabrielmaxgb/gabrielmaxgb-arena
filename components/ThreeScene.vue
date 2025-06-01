@@ -54,23 +54,13 @@ onMounted(() => {
 	const animate = () => {
 		requestAnimationFrame(animate);
 
-		// Atualiza rotação
-		wireframe.rotation.x += velocity.x;
-		wireframe.rotation.y += velocity.y;
+		// Rotação do cubo com movimento constante + scroll
+		wireframe.rotation.x += velocity.x + 0.001;
+		wireframe.rotation.y += velocity.y + 0.001;
 
 		// Aplica fricção
 		velocity.x *= friction;
 		velocity.y *= friction;
-
-		// Limita a rotação para evitar sair do campo de visão
-		wireframe.rotation.x = Math.max(
-			Math.min(wireframe.rotation.x, Math.PI),
-			-Math.PI
-		);
-		wireframe.rotation.y = Math.max(
-			Math.min(wireframe.rotation.y, Math.PI),
-			-Math.PI
-		);
 
 		renderer.render(scene, camera);
 	};
