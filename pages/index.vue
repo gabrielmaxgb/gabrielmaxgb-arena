@@ -64,10 +64,9 @@ const badgeItems = [
 					v-for="(item, index) in badgeItems"
 					:key="index"
 					:label="item"
-					variant="subtle"
-					color="warning"
-					class="w-fit text-xs"
-					size="lg"
+					variant="soft"
+					class="w-fit text-xs bg-amber-100/10 text-amber-100"
+					size="sm"
 				/>
 			</div>
 		</MainSection>
