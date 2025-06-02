@@ -34,7 +34,7 @@ onMounted(() => {
 	scene.add(wireframe);
 
 	// Partículas que voam livremente
-	const particleCount = 600;
+	const particleCount = 200;
 	const positions = new Float32Array(particleCount * 3);
 	const velocities = new Float32Array(particleCount * 3);
 
@@ -57,7 +57,7 @@ onMounted(() => {
 
 	const particlesMaterial = new THREE.PointsMaterial({
 		color: 0xffffff,
-		size: 0.06,
+		size: 0.09,
 		transparent: true,
 		opacity: 0.4,
 		blending: THREE.AdditiveBlending,
@@ -69,7 +69,7 @@ onMounted(() => {
 	// Scroll para rotação do cubo
 	const velocity = { x: 0, y: 0 };
 	let lastScrollY = window.scrollY;
-	const friction = 0.9;
+	const friction = 0.85;
 
 	const onScroll = () => {
 		const delta = window.scrollY - lastScrollY;
