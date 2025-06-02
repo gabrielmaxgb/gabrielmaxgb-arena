@@ -12,7 +12,7 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 		label: "Author of ******",
 	},
 	{
-		label: "Founder/Creator of Pros4Noobs",
+		label: "Co-founder of Pros4Noobs",
 		iconRef: p4nLogo,
 	},
 ];
