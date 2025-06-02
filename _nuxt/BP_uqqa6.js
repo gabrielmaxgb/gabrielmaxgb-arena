@@ -1,1 +1,0 @@
-import{_ as t,c as o,o as c,r as s}from"./BtEwLA9M.js";const n={},r={class:"w-full flex flex-col items-center gap-24 py-6 text-amber-50"};function _(e,a){return c(),o("div",r,[s(e.$slots,"default")])}const f=t(n,[["render",_]]);export{f as _};
