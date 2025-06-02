@@ -165,7 +165,7 @@ const myJourney = [
 				<span>
 					-
 					<a
-						href="https://pros4noobs.com"
+						href="https://selbylane.com/"
 						class="font-semibold cursor-pointer text-amber-100"
 						target="_blank"
 						>Selby Lane Digital</a
