@@ -57,7 +57,7 @@ onMounted(() => {
 
 	const particlesMaterial = new THREE.PointsMaterial({
 		color: 0xffffff,
-		size: 0.04,
+		size: 0.06,
 		transparent: true,
 		opacity: 0.4,
 		blending: THREE.AdditiveBlending,
