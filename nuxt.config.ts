@@ -13,6 +13,15 @@ export default defineNuxtConfig({
 
 	app: {
 		baseURL: "/gabrielmaxgb-arena/",
+		head: {
+			link: [
+				{
+					rel: "icon",
+					type: "image/x-icon",
+					href: "/gabrielmaxgb-arena/favicon.ico",
+				},
+			],
+		},
 	},
 
 	vite: {
