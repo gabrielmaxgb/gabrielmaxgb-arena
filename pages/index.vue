@@ -20,49 +20,49 @@ const badgeItems: { label: string; iconRef?: string }[] = [
 const myJourney = [
 	{
 		period: "Jul 2023 - Present",
-		title: "Frontend Engineer Lead @ Selby Lane Digital",
+		title: "Frontend Engineer Lead @Selby Lane Digital",
 		description:
 			"Led the front-end team, scaled the platform from scratch, implemented a reusable component library (NPM), and improved workflows. Stack: Vue.js, TypeScript, TailwindCSS, Pinia, TanStack Query.",
 	},
 	{
 		period: "Feb 2023 - Sep 2023",
-		title: "Contract Full Stack Engineer @ PrimeUp",
+		title: "Contract Full Stack Engineer @PrimeUp",
 		description:
 			"Built features and fixed production issues using React.js and Node.js. Refactored backend endpoints and collaborated with PMs/designers.",
 	},
 	{
 		period: "Oct 2022 - Feb 2023",
-		title: "Contract Frontend Engineer @ Pride Innovations",
+		title: "Contract Frontend Engineer @Pride Innovations",
 		description:
 			"Delivered highly interactive UIs using React.js. Collaborated with QA and design teams, optimized rendering, and supported sprints.",
 	},
 	{
 		period: "May 2022 - Aug 2022",
-		title: "Contract Frontend Engineer @ Webera",
+		title: "Contract Frontend Engineer @Webera",
 		description:
 			"Integrated front-end modules into microservices architecture. Developed scalable UI using React and Next.js.",
 	},
 	{
 		period: "Mar 2022 - May 2022",
-		title: "Frontend Engineer @ Novatics",
+		title: "Frontend Engineer @Novatics",
 		description:
 			"Contributed to enterprise front-end solutions in React.js within cross-functional teams, with agile methodologies.",
 	},
 	{
 		period: "Dec 2021 - May 2022",
-		title: "Frontend Developer @ Sambatech",
+		title: "Frontend Developer @Sambatech",
 		description:
 			"Implemented product features, resolved UI bugs, and supported UX improvements and onboarding.",
 	},
 	{
 		period: "Jan 2021 - Dec 2021",
-		title: "Frontend Developer @ Fan Projects",
+		title: "Frontend Developer @Fan Projects",
 		description:
 			"Worked on UI enhancements, feature delivery and pair programming. Contributed to product development under senior mentorship.",
 	},
 	{
 		period: "May 2019 - May 2021",
-		title: "Frontend Developer Intern @ CAIXA",
+		title: "Frontend Developer Intern @Caixa Econômica Federal",
 		description:
 			"Built Angular components for internal systems and modernized legacy structures through incremental improvements.",
 	},
@@ -212,22 +212,32 @@ const myJourney = [
 
 			<h2 class="mt-12">Brief summary:</h2>
 
-			<section class="w-full flex flex-col gap-8 mt-8">
+			<section class="w-full flex flex-col gap-16 mt-8">
 				<div
 					v-for="(item, index) in myJourney"
 					:key="index"
-					class="relative w-full pt-8 pl-6"
+					class="w-full pt-8"
 				>
-					<div class="absolute top-0 left-0 opacity-10 text-5xl font-script-4">
+					<div
+						class="w-full flex justify-end items-center opacity-30 text-2xl md:text-5xl font-script"
+					>
 						{{ item.period }}
 					</div>
-					<div>
-						<h3 class="font-semibold text-amber-100">
-							{{ item.title }}
-						</h3>
-						<p class="">
-							{{ item.description }}
-						</p>
+					<div class="flex gap-3">
+						<div>
+							<UIcon
+								name="mdi:code-block-tags"
+								class="text-amber-100/30 text-xl md:text-2xl"
+							/>
+						</div>
+						<div>
+							<h3 class="font-semibold text-amber-100">
+								{{ item.title }}
+							</h3>
+							<p class="">
+								{{ item.description }}
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
