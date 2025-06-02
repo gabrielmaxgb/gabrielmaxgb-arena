@@ -34,7 +34,7 @@ onMounted(() => {
 	scene.add(wireframe);
 
 	// Partículas que voam livremente
-	const particleCount = 200;
+	const particleCount = 300;
 	const positions = new Float32Array(particleCount * 3);
 	const velocities = new Float32Array(particleCount * 3);
 
