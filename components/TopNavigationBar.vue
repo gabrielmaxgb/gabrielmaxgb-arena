@@ -27,7 +27,7 @@ const headerLinks: IHeaderLink[] = [
 	},
 	{
 		icon: "entypo-social:instagram",
-		href: "https://www.instagram.com/_gabriellmax/",
+		href: "https://www.instagram.com/gabrielmaxgb/",
 	},
 ];
 
