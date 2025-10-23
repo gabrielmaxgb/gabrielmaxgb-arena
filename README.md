@@ -1,200 +1,200 @@
 # Gabriel Max Gomes - Portfolio
 
-## 📖 Sobre o Projeto
+## 📖 About the Project
 
-Este é o portfolio pessoal de Gabriel Max Gomes de Bessa (aka gabrielmaxgb), um desenvolvedor front-end apaixonado por criar experiências digitais intuitivas e belas. O projeto apresenta uma interface moderna com animações 3D interativas usando Three.js, destacando sua jornada profissional, projetos e artigos técnicos.
+This is the personal portfolio of Gabriel Max Gomes de Bessa (aka gabrielmaxgb), a front-end developer passionate about creating intuitive and beautiful digital experiences. The project features a modern interface with interactive 3D animations using Three.js, showcasing his professional journey, projects, and technical articles.
 
-O portfolio reflete a filosofia de transformar complexidade em simplicidade através de interfaces intuitivas, combinando design moderno com funcionalidade robusta. Inclui seções para apresentação pessoal, jornada profissional, projetos atuais e blog com artigos técnicos.
+The portfolio reflects the philosophy of transforming complexity into simplicity through intuitive interfaces, combining modern design with robust functionality. It includes sections for personal introduction, professional journey, current projects, and a blog with technical articles.
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Technologies Used
 
 ### Core Framework
 
-- **[Nuxt 3](https://nuxt.com/)** - Framework Vue.js para aplicações universais
-- **[Vue 3](https://vuejs.org/)** - Framework progressivo para interfaces de usuário
-- **[TypeScript](https://www.typescriptlang.org/)** - Superset JavaScript com tipagem estática
+- **[Nuxt 3](https://nuxt.com/)** - Vue.js framework for universal applications
+- **[Vue 3](https://vuejs.org/)** - Progressive framework for building user interfaces
+- **[TypeScript](https://www.typescriptlang.org/)** - JavaScript superset with static typing
 
 ### UI & Styling
 
-- **[Nuxt UI](https://ui.nuxt.com/)** - Biblioteca de componentes Vue 3
-- **[Tailwind CSS 4](https://tailwindcss.com/)** - Framework CSS utilitário
-- **[Tailwind Merge](https://github.com/dcastil/tailwind-merge)** - Utilitário para mesclar classes Tailwind
+- **[Nuxt UI](https://ui.nuxt.com/)** - Vue 3 component library
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Tailwind Merge](https://github.com/dcastil/tailwind-merge)** - Utility for merging Tailwind classes
 
 ### 3D & Animations
 
-- **[Three.js](https://threejs.org/)** - Biblioteca 3D para WebGL
-- **[@types/three](https://www.npmjs.com/package/@types/three)** - Tipos TypeScript para Three.js
+- **[Three.js](https://threejs.org/)** - 3D library for WebGL
+- **[@types/three](https://www.npmjs.com/package/@types/three)** - TypeScript types for Three.js
 
 ### Development Tools
 
-- **[ESLint](https://eslint.org/)** - Linter para JavaScript/TypeScript
-- **[Nuxt Content](https://content.nuxt.com/)** - Sistema de gerenciamento de conteúdo
-- **[Nuxt Icon](https://github.com/nuxt-modules/icon)** - Sistema de ícones
-- **[Nuxt Image](https://image.nuxt.com/)** - Otimização de imagens
-- **[Nuxt Fonts](https://github.com/nuxt-modules/fonts)** - Gerenciamento de fontes
+- **[ESLint](https://eslint.org/)** - Linter for JavaScript/TypeScript
+- **[Nuxt Content](https://content.nuxt.com/)** - Content management system
+- **[Nuxt Icon](https://github.com/nuxt-modules/icon)** - Icon system
+- **[Nuxt Image](https://image.nuxt.com/)** - Image optimization
+- **[Nuxt Fonts](https://github.com/nuxt-modules/fonts)** - Font management
 
 ### Deployment
 
-- **[GitHub Pages](https://pages.github.com/)** - Hospedagem estática
-- **[gh-pages](https://www.npmjs.com/package/gh-pages)** - Deploy automatizado
+- **[GitHub Pages](https://pages.github.com/)** - Static hosting
+- **[gh-pages](https://www.npmjs.com/package/gh-pages)** - Automated deploy
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 nuxt-app/
 ├── assets/
 │   └── css/
-│       └── main.css              # Estilos globais e configuração Tailwind
+│       └── main.css              # Global styles and Tailwind configuration
 ├── components/
-│   ├── ArticleItem.vue           # Componente para exibir artigos do blog
-│   ├── MainContainer.vue         # Container principal com layout responsivo
-│   ├── MainSection.vue           # Seção de conteúdo reutilizável
-│   ├── ThreeScene.vue            # Cena 3D interativa com Three.js
-│   └── TopNavigationBar.vue      # Barra de navegação superior
+│   ├── ArticleItem.vue           # Component to display blog articles
+│   ├── MainContainer.vue         # Main container with responsive layout
+│   ├── MainSection.vue           # Reusable content section
+│   ├── ThreeScene.vue            # Interactive 3D scene with Three.js
+│   └── TopNavigationBar.vue      # Top navigation bar
 ├── layouts/
 │   └── default/
-│       └── index.vue             # Layout padrão com ThreeScene
+│       └── index.vue             # Default layout with ThreeScene
 ├── pages/
-│   ├── [...all].vue              # Página catch-all para rotas dinâmicas
-│   ├── blog.vue                  # Página do blog
-│   └── index.vue                 # Página inicial/portfolio
+│   ├── [...all].vue              # Catch-all page for dynamic routes
+│   ├── blog.vue                  # Blog page
+│   └── index.vue                 # Home / portfolio page
 ├── public/
-│   ├── favicon.ico               # Ícone do site
-│   ├── gmgb.svg                  # Logo pessoal
-│   ├── p4n-logo.svg              # Logo Pros4Noobs
-│   └── robots.txt                # Configuração para crawlers
+│   ├── favicon.ico               # Site icon
+│   ├── gmgb.svg                  # Personal logo
+│   ├── p4n-logo.svg              # Pros4Noobs logo
+│   └── robots.txt                # Crawlers configuration
 ├── server/
-│   └── tsconfig.json             # Configuração TypeScript do servidor
-├── nuxt.config.ts                # Configuração principal do Nuxt
-├── package.json                  # Dependências e scripts
-├── tsconfig.json                 # Configuração TypeScript
-├── three.d.ts                    # Declarações de tipos para Three.js
-└── eslint.config.mjs             # Configuração ESLint
+│   └── tsconfig.json             # Server TypeScript configuration
+├── nuxt.config.ts                # Main Nuxt configuration
+├── package.json                  # Dependencies and scripts
+├── tsconfig.json                 # TypeScript configuration
+├── three.d.ts                    # Type declarations for Three.js
+└── eslint.config.mjs             # ESLint configuration
 ```
 
-## 🛠️ Configuração e Instalação
+## 🛠️ Setup & Installation
 
-### Pré-requisitos
+### Prerequisites
 
 - Node.js 18+
-- npm ou yarn
+- npm or yarn
 - Git
 
-### Passos para Instalação
+### Installation Steps
 
-1. **Clone o repositório**
+1. Clone the repository
 
    ```bash
    git clone https://github.com/gabrielmaxgb/nuxt-app.git
    cd nuxt-app
    ```
 
-2. **Instale as dependências**
+2. Install dependencies
 
    ```bash
    npm install
-   # ou
+   # or
    yarn install
    ```
 
-3. **Execute o servidor de desenvolvimento**
+3. Run the development server
 
    ```bash
    npm run dev
-   # ou
+   # or
    yarn dev
    ```
 
-4. **Acesse o projeto**
+4. Open the project
    ```
    http://localhost:3000
    ```
 
-### Scripts Disponíveis
+### Available Scripts
 
 ```bash
-# Desenvolvimento
-npm run dev          # Inicia servidor de desenvolvimento
-npm run preview      # Preview da build de produção
+# Development
+npm run dev          # Start development server
+npm run preview      # Preview production build
 
-# Build e Deploy
-npm run build        # Build para produção
-npm run generate     # Gera site estático
-npm run deploy       # Deploy para GitHub Pages
+# Build and Deploy
+npm run build        # Build for production
+npm run generate     # Generate static site
+npm run deploy       # Deploy to GitHub Pages
 ```
 
-## 🎨 Práticas e Padrões do Projeto
+## 🎨 Project Practices & Patterns
 
-### Estrutura de Componentes
+### Component Structure
 
-- **Composables**: Uso de `<script setup>` com TypeScript
-- **Props**: Tipagem forte com interfaces TypeScript
-- **Eventos**: Emissão de eventos tipados
-- **Slots**: Uso de slots nomeados para flexibilidade
+- Composables: Use of <script setup> with TypeScript
+- Props: Strong typing with TypeScript interfaces
+- Events: Typed event emissions
+- Slots: Named slots for flexibility
 
-### Estilização
+### Styling
 
-- **Tailwind CSS**: Classes utilitárias para estilização rápida
-- **Tailwind Merge**: Mesclagem inteligente de classes
-- **Design System**: Cores e tipografia consistentes
-- **Responsividade**: Mobile-first com breakpoints definidos
+- Tailwind CSS: Utility classes for rapid styling
+- Tailwind Merge: Intelligent class merging
+- Design System: Consistent colors and typography
+- Responsiveness: Mobile-first with defined breakpoints
 
 ### Performance
 
-- **SSR Desabilitado**: Aplicação SPA para melhor performance
-- **Lazy Loading**: Carregamento sob demanda de componentes
-- **Otimização de Imagens**: Nuxt Image para otimização automática
-- **Fontes Otimizadas**: Carregamento eficiente via Nuxt Fonts
+- SSR Disabled: SPA application for better performance
+- Lazy Loading: On-demand component loading
+- Image Optimization: Nuxt Image for automatic optimization
+- Optimized Fonts: Efficient loading via Nuxt Fonts
 
-### 3D e Animações
+### 3D and Animations
 
-- **Three.js**: Cena 3D interativa como background
-- **Scroll-based Animation**: Animações baseadas no scroll
-- **Performance**: Otimização com requestAnimationFrame
-- **Responsive**: Adaptação da cena 3D para diferentes tamanhos
+- Three.js: Interactive 3D scene used as background
+- Scroll-based Animation: Animations triggered by scrolling
+- Performance: Optimized with requestAnimationFrame
+- Responsive: 3D scene adapts to different screen sizes
 
 ### TypeScript
 
-- **Tipagem Estrita**: Uso consistente de tipos
-- **Interfaces**: Definição clara de estruturas de dados
-- **Generics**: Uso apropriado de genéricos quando necessário
+- Strict Typing: Consistent use of types
+- Interfaces: Clear data structure definitions
+- Generics: Proper use of generics when needed
 
-## 🚀 Deploy
+## 🚀 Deployment
 
-O projeto está configurado para deploy automático no GitHub Pages:
+The project is configured for automated deployment to GitHub Pages:
 
-1. **Build do projeto**
+1. Build the project
 
    ```bash
    npm run generate
    ```
 
-2. **Deploy automático**
+2. Automatic deploy
    ```bash
    npm run deploy
    ```
 
-O site estará disponível em: `https://gabrielmaxgb.github.io/gabrielmaxgb-arena/`
+The site will be available at: `https://gabrielmaxgb.github.io/gabrielmaxgb-arena/`
 
-## 📝 Contribuindo
+## 📝 Contributing
 
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+1. Fork the project
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Padrões de Commit
+### Commit Guidelines
 
-- Use commits semânticos
-- Descreva claramente as mudanças
-- Inclua testes quando apropriado
+- Use semantic commits
+- Describe changes clearly
+- Include tests when appropriate
 
-## 📄 Licença
+## 📄 License
 
-Este projeto é privado e pessoal. Todos os direitos reservados.
+This project is private and personal. All rights reserved.
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 **Gabriel Max Gomes de Bessa**
 
@@ -203,9 +203,10 @@ Este projeto é privado e pessoal. Todos os direitos reservados.
 - Instagram: [@gabrielmaxgb](https://www.instagram.com/gabrielmaxgb/)
 - Email: gmaxgomes@gmail.com
 
-## 🙏 Agradecimentos
+## 🙏 Acknowledgements
 
-- Comunidade Nuxt.js
-- Equipe do Three.js
-- Contribuidores do Tailwind CSS
-- Todos que apoiaram este projeto
+- Nuxt.js community
+- Three.js team
+- Tailwind CSS contributors
+- Everyone who supported this project
+```
