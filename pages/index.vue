@@ -3,14 +3,14 @@ import p4nLogo from "~/public/p4n-logo.svg";
 
 const badgeItems: { label: string; iconRef?: string }[] = [
 	{
-		label: "6+ years coding",
+		label: "7+ years coding",
 	},
 	{
 		label: "Lead Dev in 2 teams",
 	},
-	{
-		label: "Author of ******",
-	},
+	// {
+	// 	label: "Author of ******",
+	// },
 	{
 		label: "Founder of Pros4Noobs",
 		iconRef: p4nLogo,
