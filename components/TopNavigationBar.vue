@@ -3,7 +3,10 @@ interface IHeaderLink {
 	icon: string;
 	href?: string;
 	routeName?: string;
+	isLocaleSwitch?: boolean;
 }
+
+const { locale, setLocale, t } = useI18n();
 
 const headerLinks: IHeaderLink[] = [
 	{
@@ -12,6 +15,7 @@ const headerLinks: IHeaderLink[] = [
 	},
 	{
 		icon: "ion:language-outline",
+		isLocaleSwitch: true,
 	},
 	{
 		icon: "mdi:fountain-pen-tip",
@@ -27,14 +31,42 @@ const headerLinks: IHeaderLink[] = [
 	},
 	{
 		icon: "entypo-social:instagram",
-		href: "https://www.instagram.com/gabrielmaxgb/",
+		href: "https://www.instagram.com/maxdecoyer/",
 	},
 ];
 
-// Method to open the link
-const openLink = (href: string) => {
-	window.open(href, "_blank");
-};
+const LOCALE_STORAGE_KEY = "nuxt-portfolio-locale";
+
+// function openLink(href: string) {
+// 	window.open(href, "_blank", "noopener,noreferrer");
+// }
+
+function toggleLocale() {
+	const nextLocale = locale.value === "pt-BR" ? "en" : "pt-BR";
+	setLocale(nextLocale);
+	if (import.meta.client) {
+		localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
+	}
+}
+
+// function handleLinkClick(link: IHeaderLink) {
+// 	if (link.isLocaleSwitch) {
+// 		toggleLocale();
+// 		return;
+// 	}
+// 	if (link.href) {
+// 		openLink(link.href);
+// 		return;
+// 	}
+// 	if (link.routeName) {
+// 		navigateTo(link.routeName);
+// 	}
+// }
+
+const localeLabel = computed(() =>
+	locale.value === "pt-BR" ? t("common.portuguese") : t("common.english"),
+);
+const switchLocaleAriaLabel = computed(() => t("nav.switchLocale"));
 </script>
 
 <template>
@@ -47,20 +79,35 @@ const openLink = (href: string) => {
 					<h1 class="text-3xl font-script">Gabrielmaxgb</h1>
 				</NuxtLink>
 				<div class="flex items-center gap-4">
-					<UIcon
-						v-for="(link, index) in headerLinks"
-						:key="index"
-						:name="link.icon"
-						class="text-xl hover:text-amber-200 transition-colors duration-200 cursor-pointer"
-						@click="
-							() =>
-								link.href
-									? openLink(link.href)
-									: link.routeName
-									? navigateTo(link.routeName)
-									: null
-						"
-					/>
+					<template v-for="(link, index) in headerLinks" :key="index">
+						<NuxtLink
+							v-if="link.routeName && !link.isLocaleSwitch"
+							:to="link.routeName"
+							class="text-xl hover:text-amber-200 transition-colors duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded"
+						>
+							<UIcon :name="link.icon" />
+						</NuxtLink>
+						<a
+							v-else-if="link.href"
+							:href="link.href"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-xl hover:text-amber-200 transition-colors duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded"
+						>
+							<UIcon :name="link.icon" />
+						</a>
+						<button
+							v-else-if="link.isLocaleSwitch"
+							type="button"
+							:aria-label="switchLocaleAriaLabel"
+							:title="`${localeLabel} — ${switchLocaleAriaLabel}`"
+							class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md text-sm font-medium bg-amber-50/10 text-amber-100 border border-amber-50/20 hover:bg-amber-50/20 hover:text-amber-50 transition-colors duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+							@click="toggleLocale"
+						>
+							<UIcon name="ion:language-outline" class="text-base" />
+							<span aria-hidden="true">{{ locale === 'pt-BR' ? 'PT' : 'EN' }}</span>
+						</button>
+					</template>
 				</div>
 			</div>
 		</div>

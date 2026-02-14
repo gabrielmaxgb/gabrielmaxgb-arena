@@ -47,5 +47,16 @@ export default defineNuxtConfig({
 		"@nuxt/scripts",
 		"@nuxt/test-utils",
 		"@nuxt/ui",
+		"@nuxtjs/i18n",
 	],
+
+	i18n: {
+		locales: [
+			{ code: "pt-BR", iso: "pt-BR", name: "Português", file: "pt-BR.json" },
+			{ code: "en", iso: "en-US", name: "English", file: "en.json" },
+		],
+		defaultLocale: "en",
+		langDir: "locales",
+		strategy: "no_prefix",
+	},
 });

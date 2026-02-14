@@ -13,7 +13,10 @@ const handleArticleClick = () => {
 	}
 };
 
-const languageLabel = props.language === "pt-BR" ? "Português" : "English";
+const { t } = useI18n();
+const languageLabel = computed(() =>
+	props.language === "pt-BR" ? t("common.portuguese") : t("common.english"),
+);
 </script>
 
 <template>
@@ -40,10 +43,7 @@ const languageLabel = props.language === "pt-BR" ? "Português" : "English";
 					class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-100/10 text-amber-200/90 transition-colors duration-300 group-hover:bg-amber-100/15"
 					aria-hidden="true"
 				>
-					<UIcon
-						name="mdi:book-open-page-variant"
-						class="text-xl"
-					/>
+					<UIcon name="mdi:book-open-page-variant" class="text-xl" />
 				</div>
 				<UIcon
 					name="mdi:arrow-top-right"
@@ -65,7 +65,7 @@ const languageLabel = props.language === "pt-BR" ? "Português" : "English";
 					class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50/10 text-amber-200/80 border border-amber-50/10"
 				>
 					<UIcon name="mdi:clock-outline" class="size-3.5 opacity-80" />
-					{{ readTimeMinutes }} min
+					{{ readTimeMinutes }} {{ $t("blog.minRead") }}
 				</span>
 				<span
 					class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50/10 text-amber-200/80 border border-amber-50/10"
