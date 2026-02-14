@@ -10,6 +10,11 @@ const { locale, setLocale, t } = useI18n();
 
 const headerLinks: IHeaderLink[] = [
 	{
+		icon: "icon-park-twotone:eyes",
+		routeName: "trip",
+	},
+
+	{
 		icon: "mdi:home",
 		routeName: "/",
 	},
@@ -105,7 +110,9 @@ const switchLocaleAriaLabel = computed(() => t("nav.switchLocale"));
 							@click="toggleLocale"
 						>
 							<UIcon name="ion:language-outline" class="text-base" />
-							<span aria-hidden="true">{{ locale === 'pt-BR' ? 'PT' : 'EN' }}</span>
+							<span aria-hidden="true">{{
+								locale === "pt-BR" ? "PT" : "EN"
+							}}</span>
 						</button>
 					</template>
 				</div>
