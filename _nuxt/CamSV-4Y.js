@@ -1,0 +1,1 @@
+import{_ as t,m as c,o,h as n}from"./C6am7Q_0.js";const s={};function a(r,_){const e=n;return o(),c(e,{name:"icon-park-twotone:eyes",class:"text-amber-50 text-5xl"})}const f=t(s,[["render",a]]);export{f as default};
