@@ -79,7 +79,9 @@ const switchLocaleAriaLabel = computed(() => t("nav.switchLocale"));
 		class="text-amber-50 fixed top-0 w-full py-6 flex items-center justify-center z-50 top-nav backdrop-blur-xs"
 	>
 		<div class="w-11/12">
-			<div class="flex items-center justify-between">
+			<div
+				class="flex flex-col gap-4 md:gap-0 md:flex-row items-center justify-between"
+			>
 				<NuxtLink to="/" class="">
 					<h1 class="text-3xl font-script">Gabrielmaxgb</h1>
 				</NuxtLink>
