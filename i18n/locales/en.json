@@ -62,5 +62,76 @@
 		"language": "Language",
 		"portuguese": "Portuguese",
 		"english": "English"
+	},
+	"trip": {
+		"idleHint1": "the beginning and the end",
+		"idleHint2": "he has a name.",
+		"accessDenied": "// access denied",
+		"spaceToContinue": "[ space to continue ]",
+		"spaceToAdvance": "[ space ]",
+		"slide0": [
+			"// ACCESS GRANTED",
+			"",
+			"ἐγώ εἰμι τὸ Ἄλφα καὶ τὸ Ὦ",
+			"",
+			"\"I am the Alpha and the Omega,",
+			"who is and who was",
+			"and who is to come,",
+			"the Almighty.\"",
+			"",
+			"— Revelation 1:8"
+		],
+		"slide1": [
+			"but who is he, exactly?",
+			"",
+			"\"For God so loved the world",
+			"that he gave his one and only Son,",
+			"that whoever believes in him",
+			"shall not perish but have eternal life.\"",
+			"",
+			"— John 3:16"
+		],
+		"slide2": [
+			"so what do you do with this?",
+			"",
+			"\"If you declare with your mouth,",
+			"'Jesus is Lord,'",
+			"and believe in your heart",
+			"that God raised him from the dead,",
+			"you will be saved.\"",
+			"",
+			"— Romans 10:9"
+		],
+		"slide3": [
+			"\"I am the way and the truth and the life.",
+			"No one comes to the Father",
+			"except through me.\"",
+			"",
+			"— John 14:6"
+		],
+		"slide4": [
+			"\"Here I am! I stand at the door and knock.",
+			"If anyone hears my voice",
+			"and opens the door,",
+			"I will come in",
+			"and eat with that person,",
+			"and they with me.\"",
+			"",
+			"— Revelation 3:20"
+		],
+		"slide5": [
+			"// end of transmission",
+			"",
+			"if something here moved you,",
+			"it wasn't a coincidence.",
+			"",
+			"he's knocking at your door right now."
+		],
+		"terminalSoulStatus": "> soul: searching",
+		"terminalPong": "> PONG. latency: 0ms. always available.",
+		"terminalQuestion": "do you want to accept the connection?",
+		"declinedMsg": "the door remains open.",
+		"rebootedMsg": "welcome to the new creation.",
+		"rebootedVerse": "— 2 Corinthians 5:17"
 	}
 }

@@ -62,5 +62,76 @@
 		"language": "Idioma",
 		"portuguese": "Português",
 		"english": "Inglês"
+	},
+	"trip": {
+		"idleHint1": "o início e o fim",
+		"idleHint2": "ele tem um nome.",
+		"accessDenied": "// acesso negado",
+		"spaceToContinue": "[ espaço para continuar ]",
+		"spaceToAdvance": "[ espaço ]",
+		"slide0": [
+			"// ACCESS GRANTED",
+			"",
+			"ἐγώ εἰμι τὸ Ἄλφα καὶ τὸ Ὦ",
+			"",
+			"\"Eu sou o Alfa e o Ômega,",
+			"o que é, o que era",
+			"e o que há de vir,",
+			"o Todo-Poderoso.\"",
+			"",
+			"— Apocalipse 1:8"
+		],
+		"slide1": [
+			"mas quem é ele, afinal?",
+			"",
+			"\"Porque Deus amou o mundo de tal maneira",
+			"que deu o seu Filho unigênito,",
+			"para que todo aquele que nele crê",
+			"não pereça, mas tenha a vida eterna.\"",
+			"",
+			"— João 3:16"
+		],
+		"slide2": [
+			"e o que fazer com isso?",
+			"",
+			"\"Se confessares com a tua boca",
+			"que Jesus é Senhor,",
+			"e creres no teu coração",
+			"que Deus o ressuscitou dos mortos,",
+			"serás salvo.\"",
+			"",
+			"— Romanos 10:9"
+		],
+		"slide3": [
+			"\"Eu sou o caminho, a verdade e a vida.",
+			"Ninguém vem ao Pai",
+			"senão por mim.\"",
+			"",
+			"— João 14:6"
+		],
+		"slide4": [
+			"\"Eis que estou à porta e bato.",
+			"Se alguém ouvir a minha voz",
+			"e abrir a porta,",
+			"entrarei em sua casa",
+			"e cearei com ele,",
+			"e ele comigo.\"",
+			"",
+			"— Apocalipse 3:20"
+		],
+		"slide5": [
+			"// end of transmission",
+			"",
+			"se algo aqui tocou você,",
+			"não foi coincidência.",
+			"",
+			"ele está batendo à sua porta agora."
+		],
+		"terminalSoulStatus": "> soul: searching",
+		"terminalPong": "> PONG. latency: 0ms. sempre disponível.",
+		"terminalQuestion": "você quer aceitar a conexão?",
+		"declinedMsg": "a porta continua aberta.",
+		"rebootedMsg": "bem-vindo à nova criação.",
+		"rebootedVerse": "— 2 Coríntios 5:17"
 	}
 }

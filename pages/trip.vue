@@ -1,79 +1,17 @@
 <script setup lang="ts">
-const SECRET_CODE = [
-	"j",
-	"e",
-	"s",
-	"u",
-	"s",
-	" ",
-	"c",
-	"h",
-	"r",
-	"i",
-	"s",
-	"t",
-];
+const { t, tm, rt, locale } = useI18n();
 
-const slides: string[][] = [
-	[
-		"// ACCESS GRANTED",
-		"",
-		"ἐγώ εἰμι τὸ Ἄλφα καὶ τὸ Ὦ",
-		"",
-		'"Eu sou o Alfa e o Ômega,',
-		"o que é, o que era",
-		"e o que há de vir,",
-		'o Todo-Poderoso."',
-		"",
-		"— Apocalipse 1:8",
-	],
-	[
-		"mas quem é ele, afinal?",
-		"",
-		'"Porque Deus amou o mundo de tal maneira',
-		"que deu o seu Filho unigênito,",
-		"para que todo aquele que nele crê",
-		'não pereça, mas tenha a vida eterna."',
-		"",
-		"— João 3:16",
-	],
-	[
-		"e o que fazer com isso?",
-		"",
-		'"Se confessares com a tua boca',
-		"que Jesus é Senhor,",
-		"e creres no teu coração",
-		"que Deus o ressuscitou dos mortos,",
-		'serás salvo."',
-		"",
-		"— Romanos 10:9",
-	],
-	[
-		'"Eu sou o caminho, a verdade e a vida.',
-		"Ninguém vem ao Pai",
-		'senão por mim."',
-		"",
-		"— João 14:6",
-	],
-	[
-		'"Eis que estou à porta e bato.',
-		"Se alguém ouvir a minha voz",
-		"e abrir a porta,",
-		"entrarei em sua casa",
-		"e cearei com ele,",
-		'e ele comigo."',
-		"",
-		"— Apocalipse 3:20",
-	],
-	[
-		"// fim da transmissão",
-		"",
-		"se algo aqui tocou você,",
-		"não foi coincidência.",
-		"",
-		"ele está batendo à sua porta agora.",
-	],
-];
+const SECRET_CODE = computed(() =>
+	locale.value === "pt-BR"
+		? ["j", "e", "s", "u", "s", " ", "c", "r", "i", "s", "t", "o"]
+		: ["j", "e", "s", "u", "s", " ", "c", "h", "r", "i", "s", "t"]
+);
+
+const slides = computed<string[][]>(() =>
+	[0, 1, 2, 3, 4, 5].map((i) =>
+		(tm(`trip.slide${i}`) as unknown[]).map((line) => rt(line as string))
+	)
+);
 
 const installLogs = [
 	"$ sudo install jesus-christ --global",
@@ -111,7 +49,7 @@ const slideIndex = ref(0);
 const visibleLines = ref<string[]>([]);
 const installLines = ref<string[]>([]);
 
-const SECRET_STR = SECRET_CODE.join("");
+const SECRET_STR = computed(() => SECRET_CODE.value.join(""));
 
 let revealTimer: ReturnType<typeof setTimeout> | null = null;
 let errorTimer: ReturnType<typeof setTimeout> | null = null;
@@ -123,8 +61,8 @@ function handleKey(e: KeyboardEvent) {
 	if (phase.value === "idle") {
 		if (e.key.length !== 1) return;
 		typed.value += e.key;
-		if (typed.value.length === SECRET_STR.length) {
-			if (typed.value === SECRET_STR) {
+		if (typed.value.length === SECRET_STR.value.length) {
+			if (typed.value === SECRET_STR.value) {
 				phase.value = "revealing";
 				revealSlide(0);
 			} else {
@@ -141,7 +79,8 @@ function handleKey(e: KeyboardEvent) {
 	if (phase.value === "waiting" && e.key === " ") {
 		e.preventDefault();
 		const next = slideIndex.value + 1;
-		if (next >= slides.length) {
+		if (next >= slides.value.length) {
+			visibleLines.value = [];
 			phase.value = "terminal";
 			startTerminalPrompt();
 		} else {
@@ -165,7 +104,7 @@ function handleKey(e: KeyboardEvent) {
 }
 
 function revealSlide(index: number) {
-	const lines = slides[index];
+	const lines = slides.value[index];
 	let i = 0;
 	function next() {
 		if (i < lines.length) {
@@ -189,12 +128,12 @@ function startTerminalPrompt() {
 		"",
 		"$ whoami",
 		"> user: unknown",
-		"> soul: searching",
+		t("trip.terminalSoulStatus"),
 		"",
 		"$ ping jesus-christ",
-		"> PONG. latency: 0ms. sempre disponível.",
+		t("trip.terminalPong"),
 		"",
-		"você quer aceitar a conexão?",
+		t("trip.terminalQuestion"),
 	];
 	let i = 0;
 	function next() {
@@ -215,7 +154,7 @@ function decline() {
 	phase.value = "declined";
 	declinedLines.value = [];
 	showPrompt.value = false;
-	const msgs = ["> n", "", "a porta continua aberta."];
+	const msgs = ["> n", "", t("trip.declinedMsg")];
 	let i = 0;
 	function next() {
 		if (i < msgs.length) {
@@ -255,7 +194,40 @@ function runInstall() {
 	setTimeout(next, 400);
 }
 
-const isLastSlide = computed(() => slideIndex.value === slides.length - 1);
+const isLastSlide = computed(() => slideIndex.value === slides.value.length - 1);
+
+const scrollContainer = ref<HTMLElement | null>(null);
+
+function scrollToBottom() {
+	nextTick(() => {
+		if (scrollContainer.value) {
+			scrollContainer.value.scrollTo({
+				top: scrollContainer.value.scrollHeight,
+				behavior: "smooth",
+			});
+		}
+	});
+}
+
+watch(phase, (newPhase) => {
+	if (newPhase === "rebooted") scrollToBottom();
+});
+
+watch(locale, () => {
+	if (phase.value === "idle") {
+		typed.value = "";
+		return;
+	}
+	// Re-render the current slide with the new locale
+	if (
+		phase.value === "revealing" ||
+		phase.value === "waiting"
+	) {
+		if (revealTimer) clearTimeout(revealTimer);
+		visibleLines.value = slides.value[slideIndex.value];
+		phase.value = "waiting";
+	}
+});
 
 onMounted(() => window.addEventListener("keydown", handleKey));
 onUnmounted(() => {
@@ -268,7 +240,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<div class="fixed inset-0 overflow-y-auto select-none">
+	<div ref="scrollContainer" class="fixed inset-0 overflow-y-auto select-none">
 		<div
 			class="min-h-full flex flex-col items-center justify-center px-6 py-16"
 		>
@@ -290,14 +262,14 @@ onUnmounted(() => {
 							>Ω</span
 						>
 					</div>
-					<p
-						class="text-xs text-amber-50/15 tracking-[0.3em] uppercase font-mono"
-					>
-						o início e o fim
-					</p>
-					<p class="text-xs text-amber-50/20 tracking-widest font-mono mt-2">
-						ele tem um nome.
-					</p>
+				<p
+					class="text-xs text-amber-50/15 tracking-[0.3em] uppercase font-mono"
+				>
+					{{ $t('trip.idleHint1') }}
+				</p>
+				<p class="text-xs text-amber-50/20 tracking-widest font-mono mt-2">
+					{{ $t('trip.idleHint2') }}
+				</p>
 				</div>
 			</Transition>
 
@@ -335,7 +307,7 @@ onUnmounted(() => {
 					<p
 						class="font-mono text-xs text-red-500/50 tracking-[0.2em] uppercase"
 					>
-						// acesso negado
+						{{ $t('trip.accessDenied') }}
 					</p>
 				</div>
 			</Transition>
@@ -370,13 +342,13 @@ onUnmounted(() => {
 						v-if="phase === 'waiting' && !isLastSlide"
 						class="mt-8 text-xs text-amber-50/20 tracking-widest animate-pulse"
 					>
-						[ espaço para continuar ]
+						{{ $t('trip.spaceToContinue') }}
 					</p>
 					<p
 						v-if="phase === 'waiting' && isLastSlide"
 						class="mt-8 text-xs text-amber-50/20 tracking-widest animate-pulse"
 					>
-						[ espaço ]
+						{{ $t('trip.spaceToAdvance') }}
 					</p>
 				</div>
 			</Transition>
@@ -476,10 +448,10 @@ onUnmounted(() => {
 							<p
 								class="font-mono text-xs text-amber-50/20 tracking-widest mt-1"
 							>
-								bem-vindo à nova criação.
+								{{ $t('trip.rebootedMsg') }}
 							</p>
 							<p class="font-mono text-xs text-amber-50/15 tracking-widest">
-								— 2 Coríntios 5:17
+								{{ $t('trip.rebootedVerse') }}
 							</p>
 						</div>
 					</Transition>
@@ -490,19 +462,17 @@ onUnmounted(() => {
 						tag="div"
 						class="flex flex-col gap-0.5 mt-4"
 					>
-						<p
-							v-for="(line, i) in declinedLines"
-							:key="`declined-${i}`"
-							:class="[
-								'whitespace-pre-wrap text-xs',
-								line.startsWith('>') ? 'text-amber-100/30' : '',
-								line === '...' ? 'text-amber-50/15 tracking-widest' : '',
-								line === 'a porta continua aberta.'
-									? 'text-amber-50/25 tracking-widest mt-1'
-									: '',
-								line === '' ? 'h-2' : '',
-							]"
-						>
+					<p
+						v-for="(line, i) in declinedLines"
+						:key="`declined-${i}`"
+						:class="[
+							'whitespace-pre-wrap text-xs',
+							line.startsWith('>') ? 'text-amber-100/30' : '',
+							line === '...' ? 'text-amber-50/15 tracking-widest' : '',
+							i === 2 ? 'text-amber-50/25 tracking-widest mt-1' : '',
+							line === '' ? 'h-2' : '',
+						]"
+					>
 							{{ line }}
 						</p>
 					</TransitionGroup>
