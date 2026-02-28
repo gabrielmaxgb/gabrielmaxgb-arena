@@ -4,13 +4,13 @@ const { t, tm, rt, locale } = useI18n();
 const SECRET_CODE = computed(() =>
 	locale.value === "pt-BR"
 		? ["j", "e", "s", "u", "s", " ", "c", "r", "i", "s", "t", "o"]
-		: ["j", "e", "s", "u", "s", " ", "c", "h", "r", "i", "s", "t"]
+		: ["j", "e", "s", "u", "s", " ", "c", "h", "r", "i", "s", "t"],
 );
 
 const slides = computed<string[][]>(() =>
 	[0, 1, 2, 3, 4, 5].map((i) =>
-		(tm(`trip.slide${i}`) as unknown[]).map((line) => rt(line as string))
-	)
+		(tm(`trip.slide${i}`) as unknown[]).map((line) => rt(line as string)),
+	),
 );
 
 const installLogs = [
@@ -194,7 +194,9 @@ function runInstall() {
 	setTimeout(next, 400);
 }
 
-const isLastSlide = computed(() => slideIndex.value === slides.value.length - 1);
+const isLastSlide = computed(
+	() => slideIndex.value === slides.value.length - 1,
+);
 
 const scrollContainer = ref<HTMLElement | null>(null);
 
@@ -219,10 +221,7 @@ watch(locale, () => {
 		return;
 	}
 	// Re-render the current slide with the new locale
-	if (
-		phase.value === "revealing" ||
-		phase.value === "waiting"
-	) {
+	if (phase.value === "revealing" || phase.value === "waiting") {
 		if (revealTimer) clearTimeout(revealTimer);
 		visibleLines.value = slides.value[slideIndex.value];
 		phase.value = "waiting";
@@ -262,14 +261,14 @@ onUnmounted(() => {
 							>Ω</span
 						>
 					</div>
-				<p
-					class="text-xs text-amber-50/15 tracking-[0.3em] uppercase font-mono"
-				>
-					{{ $t('trip.idleHint1') }}
-				</p>
-				<p class="text-xs text-amber-50/20 tracking-widest font-mono mt-2">
-					{{ $t('trip.idleHint2') }}
-				</p>
+					<p
+						class="text-xs text-amber-50/15 tracking-[0.3em] uppercase font-mono"
+					>
+						{{ $t("trip.idleHint1") }}
+					</p>
+					<p class="text-xs text-amber-50/20 tracking-widest font-mono mt-2">
+						{{ $t("trip.idleHint2") }}
+					</p>
 				</div>
 			</Transition>
 
@@ -307,7 +306,7 @@ onUnmounted(() => {
 					<p
 						class="font-mono text-xs text-red-500/50 tracking-[0.2em] uppercase"
 					>
-						{{ $t('trip.accessDenied') }}
+						{{ $t("trip.accessDenied") }}
 					</p>
 				</div>
 			</Transition>
@@ -342,13 +341,13 @@ onUnmounted(() => {
 						v-if="phase === 'waiting' && !isLastSlide"
 						class="mt-8 text-xs text-amber-50/20 tracking-widest animate-pulse"
 					>
-						{{ $t('trip.spaceToContinue') }}
+						{{ $t("trip.spaceToContinue") }}
 					</p>
 					<p
 						v-if="phase === 'waiting' && isLastSlide"
 						class="mt-8 text-xs text-amber-50/20 tracking-widest animate-pulse"
 					>
-						{{ $t('trip.spaceToAdvance') }}
+						{{ $t("trip.spaceToAdvance") }}
 					</p>
 				</div>
 			</Transition>
@@ -448,10 +447,10 @@ onUnmounted(() => {
 							<p
 								class="font-mono text-xs text-amber-50/20 tracking-widest mt-1"
 							>
-								{{ $t('trip.rebootedMsg') }}
+								{{ $t("trip.rebootedMsg") }}
 							</p>
 							<p class="font-mono text-xs text-amber-50/15 tracking-widest">
-								{{ $t('trip.rebootedVerse') }}
+								{{ $t("trip.rebootedVerse") }}
 							</p>
 						</div>
 					</Transition>
@@ -462,17 +461,17 @@ onUnmounted(() => {
 						tag="div"
 						class="flex flex-col gap-0.5 mt-4"
 					>
-					<p
-						v-for="(line, i) in declinedLines"
-						:key="`declined-${i}`"
-						:class="[
-							'whitespace-pre-wrap text-xs',
-							line.startsWith('>') ? 'text-amber-100/30' : '',
-							line === '...' ? 'text-amber-50/15 tracking-widest' : '',
-							i === 2 ? 'text-amber-50/25 tracking-widest mt-1' : '',
-							line === '' ? 'h-2' : '',
-						]"
-					>
+						<p
+							v-for="(line, i) in declinedLines"
+							:key="`declined-${i}`"
+							:class="[
+								'whitespace-pre-wrap text-xs',
+								line.startsWith('>') ? 'text-amber-100/30' : '',
+								line === '...' ? 'text-amber-50/15 tracking-widest' : '',
+								i === 2 ? 'text-amber-50/25 tracking-widest mt-1' : '',
+								line === '' ? 'h-2' : '',
+							]"
+						>
 							{{ line }}
 						</p>
 					</TransitionGroup>
