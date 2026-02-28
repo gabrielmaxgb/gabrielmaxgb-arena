@@ -78,29 +78,37 @@ const slides: string[][] = [
 	],
 ];
 
-type Phase = "idle" | "revealing" | "waiting" | "finished";
+type Phase = "idle" | "error" | "revealing" | "waiting" | "finished";
 
 const phase = ref<Phase>("idle");
-const codeProgress = ref(0);
+const typed = ref("");
 const slideIndex = ref(0);
 const visibleLines = ref<string[]>([]);
 
+const SECRET_STR = SECRET_CODE.join("");
+
 let revealTimer: ReturnType<typeof setTimeout> | null = null;
+let errorTimer: ReturnType<typeof setTimeout> | null = null;
 
 function handleKey(e: KeyboardEvent) {
-	if (phase.value === "finished") return;
+	if (phase.value === "finished" || phase.value === "error") return;
 
 	if (phase.value === "idle") {
-		const expected = SECRET_CODE[codeProgress.value];
-		if (e.key === expected) {
-			codeProgress.value++;
-			if (codeProgress.value === SECRET_CODE.length) {
+		if (e.key.length !== 1) return;
+
+		typed.value += e.key;
+
+		if (typed.value.length === SECRET_STR.length) {
+			if (typed.value === SECRET_STR) {
 				phase.value = "revealing";
 				revealSlide(0);
+			} else {
+				phase.value = "error";
+				errorTimer = setTimeout(() => {
+					typed.value = "";
+					phase.value = "idle";
+				}, 1800);
 			}
-		} else {
-			codeProgress.value = 0;
-			if (e.key === SECRET_CODE[0]) codeProgress.value = 1;
 		}
 		return;
 	}
@@ -140,6 +148,7 @@ onMounted(() => window.addEventListener("keydown", handleKey));
 onUnmounted(() => {
 	window.removeEventListener("keydown", handleKey);
 	if (revealTimer) clearTimeout(revealTimer);
+	if (errorTimer) clearTimeout(errorTimer);
 });
 </script>
 
@@ -176,20 +185,40 @@ onUnmounted(() => {
 			</div>
 		</Transition>
 
-		<!-- code progress dots -->
+		<!-- live typed input -->
 		<Transition name="fade">
 			<div
-				v-if="phase === 'idle' && codeProgress > 0"
-				class="absolute bottom-10 flex gap-1.5"
+				v-if="phase === 'idle' && typed.length > 0"
+				class="absolute bottom-10 flex flex-col items-center gap-3"
 			>
-				<span
-					v-for="(_, i) in SECRET_CODE"
-					:key="i"
-					:class="[
-						'w-1.5 h-1.5 rounded-full transition-all duration-200',
-						i < codeProgress ? 'bg-amber-300' : 'bg-amber-50/20',
-					]"
-				/>
+				<p class="font-mono text-sm text-amber-100/50 tracking-widest">
+					{{ typed }}<span class="animate-pulse">_</span>
+				</p>
+				<div class="flex gap-1.5">
+					<span
+						v-for="(_, i) in SECRET_CODE"
+						:key="i"
+						:class="[
+							'w-1.5 h-1.5 rounded-full transition-all duration-200',
+							i < typed.length ? 'bg-amber-300/60' : 'bg-amber-50/10',
+						]"
+					/>
+				</div>
+			</div>
+		</Transition>
+
+		<!-- error state -->
+		<Transition name="fade">
+			<div
+				v-if="phase === 'error'"
+				class="absolute bottom-10 flex flex-col items-center gap-3"
+			>
+				<p class="font-mono text-sm text-red-400/80 tracking-widest">
+					{{ typed }}
+				</p>
+				<p class="font-mono text-xs text-red-500/50 tracking-[0.2em] uppercase">
+					// acesso negado
+				</p>
 			</div>
 		</Transition>
 
