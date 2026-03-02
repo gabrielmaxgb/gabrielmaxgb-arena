@@ -10,7 +10,7 @@ const { locale, setLocale, t } = useI18n();
 
 const headerLinks: IHeaderLink[] = [
 	{
-		icon: "icon-park-twotone:eyes",
+		icon: "tabler:fish-christianity",
 		routeName: "trip",
 	},
 
