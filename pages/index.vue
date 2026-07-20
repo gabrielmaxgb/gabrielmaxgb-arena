@@ -1,15 +1,35 @@
 <script setup lang="ts">
 import p4nLogo from "~/public/p4n-logo.svg";
 import guardainLogo from "~/public/guardadin-logo.png";
+import minhaChurchLogo from "~/public/minhachurch-logo.png";
 
 const { t } = useI18n();
 
 const badgeItems = computed(() => [
 	{ label: t("index.badgeYears") },
 	{ label: t("index.badgeLead") },
-	{ label: t("index.badgeFounder"), iconRef: p4nLogo },
-	{ label: t("index.badgeCoFounder"), iconRef: guardainLogo },
 ]);
+
+const projects = [
+	{
+		name: "Pros4Noobs",
+		domain: "pros4noobs.com",
+		href: "https://pros4noobs.com",
+		logo: p4nLogo,
+	},
+	{
+		name: "Guardadin",
+		domain: "guardadin.com.br",
+		href: "https://guardadin.com.br",
+		logo: guardainLogo,
+	},
+	{
+		name: "Minha Church",
+		domain: "minhachurch.com",
+		href: "https://www.minhachurch.com/",
+		logo: minhaChurchLogo,
+	},
+];
 
 const journeyCount = 8;
 
@@ -22,16 +42,7 @@ function jobKey(index: number, field: "Period" | "Title" | "Description") {
 	<MainContainer>
 		<MainSection class="flex flex-col gap-5">
 			<p>{{ $t("index.intro1") }}</p>
-			<p>
-				{{ $t("index.intro2") }}
-				<a
-					href="https://pros4noobs.com"
-					class="text-primary font-semibold cursor-pointer"
-					target="_blank"
-					rel="noopener noreferrer"
-					>{{ $t("index.intro3") }}</a
-				>{{ $t("index.intro4") }}
-			</p>
+			<p>{{ $t("index.intro2") }}</p>
 			<p>{{ $t("index.intro5") }}</p>
 			<p>
 				{{ $t("index.intro6") }}
@@ -61,40 +72,56 @@ function jobKey(index: number, field: "Period" | "Title" | "Description") {
 					>gmaxgomes@gmail.com</span
 				>
 			</p>
-			<div class="flex flex-col gap-1">
-				<div
+			<div class="flex flex-wrap gap-2">
+				<UBadge
 					v-for="(item, index) in badgeItems"
 					:key="index"
-					class="flex gap-2"
+					variant="soft"
+					class="w-fit text-xs bg-amber-100/10 text-amber-100 h-fit"
+					size="sm"
 				>
-					<UBadge
-						variant="soft"
-						class="w-fit text-xs bg-amber-100/10 text-amber-100 h-fit"
-						size="sm"
-					>
-						{{ item.label }}
-					</UBadge>
-					<img
-						v-if="item.iconRef"
-						:src="item.iconRef"
-						alt="Gabriel Max Gomes"
-						class="w-6 h-6 rounded-full object-cover"
-					/>
-				</div>
+					{{ item.label }}
+				</UBadge>
+			</div>
+
+			<div class="mt-10 w-full">
+				<p class="text-sm text-amber-100/40 mb-5 tracking-wide">
+					{{ $t("index.projectsTitle") }}
+				</p>
+				<ul class="flex flex-col gap-2">
+					<li v-for="project in projects" :key="project.href">
+						<a
+							:href="project.href"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group flex items-center gap-4 rounded-xl px-3 py-3 -mx-3 transition-all duration-300 hover:bg-amber-50/[0.06] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/40"
+						>
+							<img
+								:src="project.logo"
+								:alt="project.name"
+								class="w-11 h-11 object-contain transition-all duration-300"
+							/>
+							<div class="flex flex-col min-w-0 flex-1">
+								<span
+									class="font-medium text-amber-50 group-hover:text-amber-100 transition-colors"
+								>
+									{{ project.name }}
+								</span>
+								<span class="text-xs text-amber-100/30 font-mono tracking-wide">
+									{{ project.domain }}
+								</span>
+							</div>
+							<UIcon
+								name="mdi:arrow-top-right"
+								class="size-4 text-amber-100/20 group-hover:text-amber-200/70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0"
+							/>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</MainSection>
 		<MainSection :title="$t('index.purposeTitle')">
-			<p>
-				{{ $t("index.purpose") }}
-				<a
-					href="https://pros4noobs.com"
-					class="text-primary font-semibold cursor-pointer"
-					target="_blank"
-					rel="noopener noreferrer"
-					>{{ $t("index.intro3") }}</a
-				>
-				{{ $t("index.purpose2") }}
-			</p>
+			<p>{{ $t("index.purpose") }}</p>
 		</MainSection>
 		<MainSection :title="$t('index.pushingTitle')">
 			<div class="flex flex-col gap-2">
