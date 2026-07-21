@@ -30,12 +30,12 @@ export default defineNuxtConfig({
 
 	fonts: {
 		families: [
-			{ name: "Chivo", provider: "google" },
-			{ name: "Chakra Petch", provider: "google" },
+			{ name: "Mulish", provider: "google" },
 			{ name: "Gloock", provider: "google" },
 			{ name: "JetBrains Mono", provider: "google" },
 			{ name: "Staatliches", provider: "google" },
-			{ name: "Orbitron", provider: "google" },
+			{ name: "Sacramento", provider: "google" },
+			{ name: "Monoton", provider: "google" },
 		],
 	},
 	modules: [
