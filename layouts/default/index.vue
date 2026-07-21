@@ -4,7 +4,7 @@
 	<ClientOnly>
 		<ThreeScene />
 		<div
-			class="relative flex items-start justify-center z-10 w-full overflow-y-auto pt-36 md:pt-20 pb-60"
+			class="relative z-10 flex w-full items-start justify-center overflow-y-auto pt-24 md:pt-28 pb-40 md:pb-56"
 		>
 			<TopNavigationBar />
 			<slot />

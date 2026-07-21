@@ -34,192 +34,243 @@ const projects = computed(() => [
 	},
 ]);
 
+const currentWork = computed(() => [
+	{
+		name: "Selby Lane Digital",
+		href: "https://selbylane.com/",
+		active: true,
+	},
+	{
+		name: "Wizhats",
+		href: "",
+		active: false,
+	},
+]);
+
 const journeyCount = 8;
 
 function jobKey(index: number, field: "Period" | "Title" | "Description") {
 	return `index.job${index}${field}` as const;
 }
+
+function padIndex(n: number) {
+	return String(n).padStart(2, "0");
+}
 </script>
 
 <template>
 	<MainContainer>
-		<MainSection class="flex flex-col gap-6">
-			<p class="text-lg md:text-xl leading-relaxed text-amber-50">
-				{{ $t("index.intro1") }}
-			</p>
-			<p class="text-amber-100/70 leading-relaxed">
-				{{ $t("index.intro8") }}
+		<MainSection
+			class="hero-block flex flex-col justify-center min-h-[70vh] md:min-h-[75vh]"
+		>
+			<p class="hero-fade section-eyebrow mb-5">
+				{{ $t("index.heroRole") }}
 			</p>
 
-			<div class="flex flex-wrap items-center gap-3">
+			<h1
+				class="hero-fade hero-delay-1 font-serif text-5xl sm:text-6xl md:text-8xl text-amber-50 leading-[0.92] tracking-tight max-w-xl"
+			>
+				{{ $t("index.heroName") }}
+			</h1>
+
+			<p
+				class="hero-fade hero-delay-2 mt-8 max-w-md text-xl md:text-2xl text-amber-50/85 leading-snug"
+			>
+				{{ $t("index.heroHeadline") }}
+			</p>
+
+			<p class="hero-fade hero-delay-3 mt-4 max-w-sm prose-muted text-base">
+				{{ $t("index.heroSupport") }}
+			</p>
+
+			<div class="hero-fade hero-delay-4 mt-10 flex flex-wrap items-center gap-3">
 				<a
 					href="mailto:gmaxgomes@gmail.com"
-					class="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium bg-amber-100/15 text-amber-50 border border-amber-100/25 hover:bg-amber-100/25 hover:border-amber-100/40 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/40"
+					class="inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-medium bg-amber-100 text-[var(--color-ink)] hover:bg-amber-50 transition-colors duration-200"
 				>
-					<UIcon name="ion:mail-outline" class="size-4" />
 					{{ $t("index.ctaEmail") }}
+					<UIcon name="ion:arrow-forward" class="size-4" />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/gabrielmaxgb/"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-amber-100/70 border border-amber-50/15 hover:text-amber-50 hover:border-amber-50/30 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/40"
+					class="inline-flex items-center gap-2 px-3 py-3 text-sm text-amber-100/55 hover:text-amber-100 transition-colors duration-200 rounded"
 				>
-					<UIcon name="simple-icons:linkedin" class="size-4" />
 					LinkedIn
+					<UIcon name="mdi:arrow-top-right" class="size-3.5 opacity-60" />
 				</a>
 			</div>
 
-			<div class="flex flex-wrap gap-2">
-				<UBadge
-					v-for="(item, index) in badgeItems"
-					:key="index"
-					variant="soft"
-					class="w-fit text-xs bg-amber-100/10 text-amber-100 h-fit"
-					size="sm"
-				>
-					{{ item.label }}
-				</UBadge>
-			</div>
-
-			<p class="flex items-center gap-2 text-sm text-amber-100/50">
-				<UIcon name="ion:location-outline" class="inline text-amber-100/60" />
+			<div
+				class="hero-fade hero-delay-5 mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs tracking-wide text-amber-100/35"
+			>
 				<a
 					target="_blank"
 					rel="noopener noreferrer"
 					href="https://www.google.com/maps/place/Bras%C3%ADlia+-+DF/@-15.7756577,-48.1267645,137253m/data=!3m2!1e3!4b1!4m6!3m5!1s0x935a3d18e45b91a3:0x24e8d3620bd85d7f!8m2!3d-15.7975174!4d-47.8918881!16s%2Fg%2F1ypvssh2c?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
-					class="font-medium text-amber-100/80 hover:text-amber-100 transition-colors"
+					class="hover:text-amber-100/60 transition-colors"
 				>
 					{{ $t("index.intro10") }}
 				</a>
-			</p>
-
-			<div class="mt-6 w-full">
-				<p class="text-sm text-amber-100/40 mb-5 tracking-wide">
-					{{ $t("index.projectsTitle") }}
-				</p>
-				<ul class="flex flex-col gap-2">
-					<li v-for="project in projects" :key="project.href">
-						<a
-							:href="project.href"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="group flex items-start gap-4 rounded-xl px-3 py-3 -mx-3 transition-all duration-300 hover:bg-amber-50/[0.06] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/40"
-						>
-							<img
-								:src="project.logo"
-								:alt="project.name"
-								class="w-11 h-11 object-contain transition-all duration-300 mt-0.5"
-							/>
-							<div class="flex flex-col min-w-0 flex-1 gap-0.5">
-								<span
-									class="font-medium text-amber-50 group-hover:text-amber-100 transition-colors"
-								>
-									{{ project.name }}
-								</span>
-								<span class="text-sm text-amber-100/45 leading-snug">
-									{{ project.description }}
-								</span>
-								<span
-									class="text-xs text-amber-100/25 font-mono tracking-wide mt-0.5"
-								>
-									{{ project.domain }}
-								</span>
-							</div>
-							<UIcon
-								name="mdi:arrow-top-right"
-								class="size-4 text-amber-100/20 group-hover:text-amber-200/70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0 mt-1"
-							/>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</MainSection>
-
-		<MainSection class="flex flex-col gap-4">
-			<p>{{ $t("index.intro5") }}</p>
-			<p>
-				{{ $t("index.intro6") }}
-				<NuxtLink
-					to="/blog"
-					class="font-semibold cursor-pointer text-amber-100"
-				>
-					{{ $t("index.intro7") }}
-				</NuxtLink>
-				.
-			</p>
-		</MainSection>
-
-		<MainSection :title="$t('index.purposeTitle')">
-			<p>{{ $t("index.purpose") }}</p>
-		</MainSection>
-
-		<MainSection :title="$t('index.pushingTitle')">
-			<div class="flex flex-col gap-2">
-				<span>
-					-
-					<a
-						href="https://selbylane.com/"
-						class="font-semibold cursor-pointer text-amber-100"
-						target="_blank"
-						rel="noopener noreferrer"
-						>Selby Lane Digital</a
+				<span aria-hidden="true" class="text-amber-100/20">·</span>
+				<span v-for="(item, index) in badgeItems" :key="index" class="contents">
+					<span>{{ item.label }}</span>
+					<span
+						v-if="index < badgeItems.length - 1"
+						aria-hidden="true"
+						class="text-amber-100/20"
+						>·</span
 					>
 				</span>
-				<span class="opacity-40 text-amber-100/80">
-					-
-					<span class="font-semibold">Wizhats</span>
-					<span class="text-xs ml-1.5 tracking-wide uppercase">{{
-						$t("index.comingSoon")
-					}}</span>
-				</span>
 			</div>
 		</MainSection>
 
-		<MainSection :title="$t('index.journeyTitle')">
-			<div class="flex flex-col gap-5">
+		<MainSection :eyebrow="$t('index.projectsEyebrow')" :title="$t('index.projectsTitle')">
+			<ul class="flex flex-col divide-y divide-amber-50/10">
+				<li v-for="(project, index) in projects" :key="project.href">
+					<a
+						:href="project.href"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="list-row group"
+					>
+						<span
+							class="font-mono text-xs text-amber-100/25 pt-1.5 w-6 shrink-0"
+							aria-hidden="true"
+						>
+							{{ padIndex(index + 1) }}
+						</span>
+						<img
+							:src="project.logo"
+							:alt="project.name"
+							class="w-10 h-10 object-contain shrink-0 mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity"
+						/>
+						<div class="flex flex-col min-w-0 flex-1 gap-1">
+							<span
+								class="font-medium text-amber-50 group-hover:text-amber-100 transition-colors"
+							>
+								{{ project.name }}
+							</span>
+							<span class="text-sm prose-muted leading-snug">
+								{{ project.description }}
+							</span>
+							<span
+								class="text-xs text-amber-100/25 font-mono tracking-wide mt-0.5"
+							>
+								{{ project.domain }}
+							</span>
+						</div>
+						<UIcon
+							name="mdi:arrow-top-right"
+							class="size-4 text-amber-100/20 group-hover:text-amber-200/70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0 mt-1"
+						/>
+					</a>
+				</li>
+			</ul>
+		</MainSection>
+
+		<MainSection :eyebrow="$t('index.aboutEyebrow')" :title="$t('index.aboutTitle')">
+			<div class="flex flex-col gap-5 prose-muted">
+				<p>{{ $t("index.intro5") }}</p>
+				<p>
+					{{ $t("index.intro6") }}
+					<NuxtLink to="/blog" class="prose-link">
+						{{ $t("index.intro7") }}
+					</NuxtLink>
+					.
+				</p>
+			</div>
+		</MainSection>
+
+		<MainSection :eyebrow="$t('index.purposeEyebrow')" :title="$t('index.purposeTitle')">
+			<p class="prose-muted">{{ $t("index.purpose") }}</p>
+		</MainSection>
+
+		<MainSection :eyebrow="$t('index.pushingEyebrow')" :title="$t('index.pushingTitle')">
+			<ul class="flex flex-col divide-y divide-amber-50/10">
+				<li v-for="item in currentWork" :key="item.name">
+					<a
+						v-if="item.active"
+						:href="item.href"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="list-row group"
+					>
+						<span
+							class="mt-1.5 size-1.5 rounded-full bg-emerald-400/80 shrink-0"
+							aria-hidden="true"
+						/>
+						<span
+							class="flex-1 font-medium text-amber-50 group-hover:text-amber-100 transition-colors"
+						>
+							{{ item.name }}
+						</span>
+						<UIcon
+							name="mdi:arrow-top-right"
+							class="size-4 text-amber-100/20 group-hover:text-amber-200/70 transition-all shrink-0"
+						/>
+					</a>
+					<div
+						v-else
+						class="flex items-center gap-4 px-3 py-5 -mx-3 opacity-40"
+					>
+						<span
+							class="size-1.5 rounded-full bg-amber-100/30 shrink-0"
+							aria-hidden="true"
+						/>
+						<span class="flex-1 font-medium text-amber-100/80">{{
+							item.name
+						}}</span>
+						<span
+							class="text-[10px] tracking-[0.2em] uppercase text-amber-100/50"
+						>
+							{{ $t("index.comingSoon") }}
+						</span>
+					</div>
+				</li>
+			</ul>
+		</MainSection>
+
+		<MainSection :eyebrow="$t('index.journeyEyebrow')" :title="$t('index.journeyTitle')">
+			<div class="flex flex-col gap-5 prose-muted mb-14">
 				<p>{{ $t("index.journey1") }}</p>
 				<p>{{ $t("index.journey2") }}</p>
 				<p>
 					{{ $t("index.journey3") }}
 					<a
 						href="https://www.linkedin.com/in/gabrielmaxgb/"
-						class="text-amber-100 font-semibold cursor-pointer"
+						class="prose-link"
 						target="_blank"
 						rel="noopener noreferrer"
 						>{{ $t("index.journey4") }}</a
-					>
-					{{ $t("index.journeyProfile") }}
+					>{{ $t("index.journeyProfile") }}
 				</p>
 			</div>
 
-			<h2 class="mt-12">{{ $t("index.briefSummary") }}</h2>
+			<p class="section-eyebrow mb-8">{{ $t("index.briefSummary") }}</p>
 
-			<section class="w-full flex flex-col gap-16 mt-8">
-				<div v-for="i in journeyCount" :key="i" class="w-full pt-8">
-					<div
-						class="w-full flex justify-end items-center opacity-30 text-2xl md:text-5xl font-script"
-					>
+			<ol class="relative flex flex-col gap-0 border-l border-amber-50/10 ml-1.5">
+				<li
+					v-for="i in journeyCount"
+					:key="i"
+					class="relative pl-8 md:pl-10 pb-12 last:pb-0"
+				>
+					<span
+						class="absolute -left-[5px] top-1.5 size-2.5 rounded-full bg-amber-100/40 ring-4 ring-[#0c0c0b]"
+						aria-hidden="true"
+					/>
+					<p class="font-mono text-xs tracking-wide text-amber-100/35 mb-2">
 						{{ $t(jobKey(i - 1, "Period")) }}
-					</div>
-					<div class="flex gap-3">
-						<div>
-							<UIcon
-								name="mdi:code-block-tags"
-								class="text-amber-100/30 text-xl md:text-2xl"
-							/>
-						</div>
-						<div>
-							<h3 class="font-semibold text-amber-100">
-								{{ $t(jobKey(i - 1, "Title")) }}
-							</h3>
-							<p>
-								{{ $t(jobKey(i - 1, "Description")) }}
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
+					</p>
+					<h3 class="text-base md:text-lg font-medium text-amber-50 mb-2">
+						{{ $t(jobKey(i - 1, "Title")) }}
+					</h3>
+					<p class="prose-muted text-sm md:text-base">
+						{{ $t(jobKey(i - 1, "Description")) }}
+					</p>
+				</li>
+			</ol>
 		</MainSection>
 	</MainContainer>
 </template>

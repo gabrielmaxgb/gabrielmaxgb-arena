@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 
 const articlesRaw: {
 	title: string;
 	url: string;
 	readTimeMinutes: number;
-	publishedAt: string; // ISO date YYYY-MM-DD
+	publishedAt: string;
 	language: string;
 }[] = [
 	{
@@ -40,7 +40,7 @@ const articlesRaw: {
 ];
 
 const localeForDate = computed(() =>
-	locale.value === "pt-BR" ? "pt-BR" : "en-US"
+	locale.value === "pt-BR" ? "pt-BR" : "en-US",
 );
 
 const dateFormatter = computed(
@@ -49,29 +49,48 @@ const dateFormatter = computed(
 			day: "numeric",
 			month: "short",
 			year: "numeric",
-		})
+		}),
 );
 
 const articles = computed(() =>
-	articlesRaw.map((article) => ({
-		...article,
-		publishedAtFormatted: dateFormatter.value.format(
-			new Date(article.publishedAt)
-		),
-	}))
+	[...articlesRaw]
+		.sort(
+			(a, b) =>
+				new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+		)
+		.map((article) => ({
+			...article,
+			publishedAtFormatted: dateFormatter.value.format(
+				new Date(article.publishedAt),
+			),
+		})),
 );
+
+useHead(() => ({
+	title: t("blog.pageTitle"),
+}));
 </script>
 
 <template>
-	<MainContainer class="gap-8">
-		<ArticleItem
-			v-for="(article, index) in articles"
-			:key="index"
-			:url="article.url"
-			:title="article.title"
-			:read-time-minutes="article.readTimeMinutes"
-			:published-at="article.publishedAtFormatted"
-			:language="article.language"
-		/>
+	<MainContainer class="gap-16 md:gap-20">
+		<MainSection>
+			<p class="section-eyebrow mb-3">{{ $t("blog.eyebrow") }}</p>
+			<h1 class="section-title mb-4">{{ $t("blog.pageTitle") }}</h1>
+			<p class="prose-muted">{{ $t("blog.subtitle") }}</p>
+		</MainSection>
+
+		<MainSection>
+			<div class="flex flex-col">
+				<ArticleItem
+					v-for="(article, index) in articles"
+					:key="index"
+					:url="article.url"
+					:title="article.title"
+					:read-time-minutes="article.readTimeMinutes"
+					:published-at="article.publishedAtFormatted"
+					:language="article.language"
+				/>
+			</div>
+		</MainSection>
 	</MainContainer>
 </template>

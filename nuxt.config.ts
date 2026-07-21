@@ -52,11 +52,12 @@ export default defineNuxtConfig({
 
 	i18n: {
 		locales: [
-			{ code: "pt-BR", iso: "pt-BR", name: "Português", file: "pt-BR.json" },
 			{ code: "en", iso: "en-US", name: "English", file: "en.json" },
+			{ code: "pt-BR", iso: "pt-BR", name: "Português", file: "pt-BR.json" },
 		],
 		defaultLocale: "en",
 		langDir: "locales",
 		strategy: "no_prefix",
+		detectBrowserLanguage: false,
 	},
 });

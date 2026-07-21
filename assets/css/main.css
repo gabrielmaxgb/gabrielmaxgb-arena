@@ -8,4 +8,128 @@
 	--font-header: "Staatliches", sans-serif;
 	--font-script: "Sacramento", cursive;
 	--font-outline: "Monoton", cursive;
+	--color-ink: #1a1917;
+	--color-surface: #0c0c0b;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-sans);
+	background: var(--color-surface);
+	color: #fffbeb;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: rgb(254 243 199 / 0.25);
+	color: #fffbeb;
+}
+
+:focus-visible {
+	outline: 2px solid rgb(253 230 138 / 0.5);
+	outline-offset: 3px;
+}
+
+/* —— Typography helpers —— */
+.section-eyebrow {
+	font-size: 0.75rem;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: rgb(254 243 199 / 0.4);
+}
+
+.section-title {
+	font-family: var(--font-serif);
+	font-size: clamp(2rem, 4vw, 2.75rem);
+	line-height: 1.05;
+	letter-spacing: -0.02em;
+	color: #fffbeb;
+}
+
+.prose-muted {
+	color: rgb(254 243 199 / 0.55);
+	line-height: 1.7;
+	max-width: 36rem;
+}
+
+.prose-link {
+	color: rgb(254 243 199 / 0.9);
+	font-weight: 600;
+	text-underline-offset: 3px;
+	transition: color 0.2s ease;
+}
+
+.prose-link:hover {
+	color: #fffbeb;
+	text-decoration: underline;
+}
+
+/* —— Interactive rows —— */
+.list-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	padding: 1.25rem 0.75rem;
+	margin-inline: -0.75rem;
+	border-radius: 0.5rem;
+	transition:
+		background-color 0.25s ease,
+		transform 0.25s ease;
+}
+
+.list-row:hover {
+	background: rgb(255 251 235 / 0.05);
+}
+
+.list-row:focus-visible {
+	outline: 2px solid rgb(253 230 138 / 0.4);
+	outline-offset: 2px;
+}
+
+/* —— Motion —— */
+@keyframes hero-rise {
+	from {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero-fade {
+	opacity: 0;
+	animation: hero-rise 0.7s ease-out forwards;
+}
+
+.hero-delay-1 {
+	animation-delay: 0.08s;
+}
+.hero-delay-2 {
+	animation-delay: 0.16s;
+}
+.hero-delay-3 {
+	animation-delay: 0.24s;
+}
+.hero-delay-4 {
+	animation-delay: 0.32s;
+}
+.hero-delay-5 {
+	animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.hero-fade {
+		opacity: 1;
+		animation: none;
+	}
 }

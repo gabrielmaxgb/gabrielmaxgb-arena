@@ -4,7 +4,12 @@ import { twMerge, type ClassNameValue } from "tailwind-merge";
 
 <template>
 	<div
-		:class="twMerge('w-full flex flex-col items-center gap-24 py-6 text-amber-50', $attrs.class as ClassNameValue)"
+		:class="
+			twMerge(
+				'w-full flex flex-col items-center gap-28 md:gap-36 py-8 text-amber-50',
+				$attrs.class as ClassNameValue,
+			)
+		"
 	>
 		<slot />
 	</div>
