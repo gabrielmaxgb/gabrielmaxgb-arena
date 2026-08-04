@@ -6,7 +6,7 @@ import { twMerge, type ClassNameValue } from "tailwind-merge";
 	<div
 		:class="
 			twMerge(
-				'w-full flex flex-col items-center gap-28 md:gap-36 py-8 text-amber-50',
+				'editorial-flow mx-auto w-full max-w-3xl md:max-w-4xl px-6 md:px-8 flex flex-col items-stretch gap-28 md:gap-36 pt-28 md:pt-32 pb-10 md:pb-14',
 				$attrs.class as ClassNameValue,
 			)
 		"

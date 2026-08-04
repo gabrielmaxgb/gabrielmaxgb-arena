@@ -41,7 +41,7 @@ The portfolio reflects the philosophy of transforming complexity into simplicity
 ## 📁 Project Structure
 
 ```
-nuxt-app/
+gabrielmaxgb-arena/
 ├── assets/
 │   └── css/
 │       └── main.css              # Global styles and Tailwind configuration
@@ -85,8 +85,8 @@ nuxt-app/
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/gabrielmaxgb/nuxt-app.git
-   cd nuxt-app
+   git clone https://github.com/gabrielmaxgb/gabrielmaxgb-arena.git
+   cd gabrielmaxgb-arena
    ```
 
 2. Install dependencies

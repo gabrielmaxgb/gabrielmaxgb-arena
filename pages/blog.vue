@@ -72,18 +72,25 @@ useHead(() => ({
 </script>
 
 <template>
-	<MainContainer class="gap-16 md:gap-20">
-		<MainSection>
-			<p class="section-eyebrow mb-3">{{ $t("blog.eyebrow") }}</p>
-			<h1 class="section-title mb-4">{{ $t("blog.pageTitle") }}</h1>
-			<p class="prose-muted">{{ $t("blog.subtitle") }}</p>
+	<MainContainer class="gap-24 md:gap-28">
+		<MainSection compact solo :show-index="false">
+			<header class="section-header section-header--compact section-header--solo">
+				<p class="section-eyebrow">{{ $t("blog.eyebrow") }}</p>
+				<h1 class="display-title !text-[clamp(2.5rem,7vw,4.25rem)]">
+					{{ $t("blog.pageTitle") }}
+				</h1>
+				<p class="prose-muted mt-3 max-w-lg">
+					{{ $t("blog.subtitle") }}
+				</p>
+			</header>
 		</MainSection>
 
-		<MainSection>
-			<div class="flex flex-col">
+		<MainSection :show-index="false">
+			<div class="editorial-list">
 				<ArticleItem
 					v-for="(article, index) in articles"
 					:key="index"
+					:index="index"
 					:url="article.url"
 					:title="article.title"
 					:read-time-minutes="article.readTimeMinutes"

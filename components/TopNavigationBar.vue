@@ -1,11 +1,12 @@
 <script setup lang="ts">
 interface IHeaderLink {
-	icon: string;
+	icon?: string;
 	labelKey: string;
 	href?: string;
 	routeName?: string;
 	isLocaleSwitch?: boolean;
 	subtle?: boolean;
+	textNav?: boolean;
 }
 
 const route = useRoute();
@@ -13,14 +14,14 @@ const { locale, setLocale, t } = useI18n();
 
 const headerLinks: IHeaderLink[] = [
 	{
-		icon: "mdi:home",
 		labelKey: "nav.home",
 		routeName: "/",
+		textNav: true,
 	},
 	{
-		icon: "mdi:fountain-pen-tip",
 		labelKey: "nav.blog",
 		routeName: "blog",
+		textNav: true,
 	},
 	{
 		icon: "ion:language-outline",
@@ -82,35 +83,41 @@ useHead(() => ({
 
 <template>
 	<nav
-		class="fixed top-0 inset-x-0 z-50 border-b border-amber-50/[0.06] bg-[#0c0c0b]/70 backdrop-blur-md"
+		class="fixed top-0 inset-x-0 z-50 border-b border-dashed border-[var(--color-rule)] bg-[var(--color-surface)]/80 backdrop-blur-md"
 	>
 		<div
-			class="mx-auto flex w-11/12 max-w-5xl items-center justify-between gap-4 py-4 md:py-5"
+			class="mx-auto flex w-full max-w-4xl items-center justify-between gap-4 px-6 md:px-8 py-4 md:py-5"
 		>
-			<NuxtLink
-				to="/"
-				class="font-script text-2xl md:text-3xl text-amber-50 hover:text-amber-100 transition-colors duration-200 shrink-0"
-			>
-				Gabrielmaxgb
+			<NuxtLink to="/" class="masthead-wordmark shrink-0">
+				{{ $t("nav.wordmark") }}
 			</NuxtLink>
 
-			<div class="flex items-center gap-1 sm:gap-2">
+			<div class="flex items-center gap-0.5 sm:gap-1">
 				<template v-for="(link, index) in headerLinks" :key="index">
 					<NuxtLink
-						v-if="link.routeName && !link.isLocaleSwitch"
+						v-if="link.routeName && !link.isLocaleSwitch && link.textNav"
+						:to="link.routeName"
+						:aria-label="t(link.labelKey)"
+						:class="[
+							'nav-bracket hidden sm:inline',
+							isActive(link.routeName) && 'nav-bracket--active',
+						]"
+					>
+						[ {{ t(link.labelKey) }} ]
+					</NuxtLink>
+
+					<NuxtLink
+						v-else-if="link.routeName && !link.isLocaleSwitch"
 						:to="link.routeName"
 						:aria-label="t(link.labelKey)"
 						:title="t(link.labelKey)"
 						:class="[
-							'flex size-9 items-center justify-center rounded-md text-lg transition-colors duration-200',
-							isActive(link.routeName)
-								? 'text-amber-50 bg-amber-50/10'
-								: link.subtle
-									? 'text-amber-100/25 hover:text-amber-100/60'
-									: 'text-amber-100/55 hover:text-amber-50 hover:bg-amber-50/[0.06]',
+							'nav-icon',
+							link.subtle && 'opacity-35 hover:opacity-70',
+							isActive(link.routeName) && '!text-[var(--color-flame)]',
 						]"
 					>
-						<UIcon :name="link.icon" />
+						<UIcon :name="link.icon!" />
 					</NuxtLink>
 
 					<a
@@ -120,9 +127,9 @@ useHead(() => ({
 						rel="noopener noreferrer"
 						:aria-label="t(link.labelKey)"
 						:title="t(link.labelKey)"
-						class="flex size-9 items-center justify-center rounded-md text-lg text-amber-100/55 hover:text-amber-50 hover:bg-amber-50/[0.06] transition-colors duration-200"
+						class="nav-icon"
 					>
-						<UIcon :name="link.icon" />
+						<UIcon :name="link.icon!" />
 					</a>
 
 					<button
@@ -130,12 +137,10 @@ useHead(() => ({
 						type="button"
 						:aria-label="switchLocaleAriaLabel"
 						:title="`${localeLabel} — ${switchLocaleAriaLabel}`"
-						class="inline-flex h-9 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium tracking-wide text-amber-100/70 hover:text-amber-50 hover:bg-amber-50/[0.06] transition-colors duration-200"
+						class="nav-bracket"
 						@click="toggleLocale"
 					>
-						<span aria-hidden="true">{{
-							locale === "pt-BR" ? "PT" : "EN"
-						}}</span>
+						[ {{ locale === "pt-BR" ? "pt" : "en" }} ]
 					</button>
 				</template>
 			</div>

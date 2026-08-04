@@ -1,5 +1,6 @@
 {
 	"nav": {
+		"wordmark": "GabrielMax",
 		"home": "Início",
 		"blog": "Blog",
 		"switchLocale": "Mudar para English",
@@ -9,8 +10,11 @@
 		"trip": "Caminho oculto"
 	},
 	"index": {
-		"heroName": "Gabriel Max",
-		"heroRole": "Engenheiro de software · Front-end e UI/UX",
+		"heroName": "Magomax",
+		"heroRealName": "Gabriel Max",
+		"profileAlt": "Retrato de Magomax",
+		"heroRole": "Software Enginwizard ⚡",
+		"heroEdition": "vol. 01 · brasília",
 		"heroHeadline": "Transformo problemas complexos em interfaces simples e claras.",
 		"heroSupport": "Quer falar de fé, código ou café em Brasília? Me chama.",
 		"intro5": "Fora do trabalho, toco bateria, ando de skate, treino com minha esposa e leio, jogo e caio em assuntos nerds.",
@@ -38,6 +42,10 @@
 		"badgeLead": "Lead em 2 times",
 		"projectsEyebrow": "Trabalho",
 		"projectsTitle": "Projetos",
+		"projectVisit": "ver site",
+		"projectScreenshotAlt": "preview do site",
+		"projectCarouselLabel": "Slides de projetos",
+		"projectScrollHint": "role ↓ para explorar",
 		"projectP4n": "Mentorias 1:1 entre iniciantes e profissionais de tecnologia.",
 		"projectGuardadin": "App de finanças pessoais para controlar gastos com mais clareza.",
 		"projectMinhaChurch": "Ferramenta para igrejas organizarem membros, escalas e comunicados.",

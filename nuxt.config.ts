@@ -30,12 +30,15 @@ export default defineNuxtConfig({
 
 	fonts: {
 		families: [
-			{ name: "Mulish", provider: "google" },
-			{ name: "Gloock", provider: "google" },
-			{ name: "JetBrains Mono", provider: "google" },
-			{ name: "Staatliches", provider: "google" },
+			{ name: "Syne", provider: "google", weights: [700, 800] },
+			{
+				name: "Newsreader",
+				provider: "google",
+				weights: [400, 500],
+				styles: ["normal", "italic"],
+			},
+			{ name: "IBM Plex Mono", provider: "google", weights: [400, 500] },
 			{ name: "Sacramento", provider: "google" },
-			{ name: "Monoton", provider: "google" },
 		],
 	},
 	modules: [

@@ -4,6 +4,9 @@ import { twMerge, type ClassNameValue } from "tailwind-merge";
 const props = defineProps<{
 	title?: string;
 	eyebrow?: string;
+	compact?: boolean;
+	solo?: boolean;
+	showIndex?: boolean;
 }>();
 </script>
 
@@ -11,13 +14,25 @@ const props = defineProps<{
 	<section
 		:class="
 			twMerge(
-				'w-11/12 max-w-2xl md:w-7/12 md:max-w-none px-1',
+				'w-full',
 				$attrs.class as ClassNameValue,
 			)
 		"
 	>
-		<header v-if="props.eyebrow || props.title" class="mb-8">
-			<p v-if="props.eyebrow" class="section-eyebrow mb-3">
+		<header
+			v-if="props.eyebrow || props.title"
+			:class="[
+				'section-header',
+				props.compact && 'section-header--compact',
+				props.solo && 'section-header--solo',
+			]"
+		>
+			<span
+				v-if="props.showIndex !== false && !props.solo"
+				class="section-index"
+				aria-hidden="true"
+			/>
+			<p v-if="props.eyebrow" class="section-eyebrow">
 				{{ props.eyebrow }}
 			</p>
 			<h2 v-if="props.title" class="section-title">

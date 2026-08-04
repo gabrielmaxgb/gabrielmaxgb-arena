@@ -5,6 +5,7 @@ const props = defineProps<{
 	readTimeMinutes: number | string;
 	publishedAt: string;
 	language: string;
+	index?: number;
 }>();
 
 const handleArticleClick = () => {
@@ -18,6 +19,10 @@ const languageLabel = computed(() =>
 	props.language === "pt-BR" ? t("common.portuguese") : t("common.english"),
 );
 const ariaLabel = computed(() => `${t("blog.readArticle")}: ${props.title}`);
+
+const displayIndex = computed(() =>
+	props.index != null ? String(props.index + 1).padStart(2, "0") : null,
+);
 </script>
 
 <template>
@@ -25,30 +30,37 @@ const ariaLabel = computed(() => `${t("blog.readArticle")}: ${props.title}`);
 		role="link"
 		tabindex="0"
 		:aria-label="ariaLabel"
-		class="list-row group w-full cursor-pointer border-b border-amber-50/10 last:border-b-0"
+		class="list-row group w-full cursor-pointer"
 		@click="handleArticleClick"
 		@keydown.enter="handleArticleClick"
 		@keydown.space.prevent="handleArticleClick"
 	>
-		<div class="flex flex-col min-w-0 flex-1 gap-3 py-1">
+		<span
+			v-if="displayIndex"
+			class="list-index"
+			aria-hidden="true"
+		>
+			{{ displayIndex }}
+		</span>
+
+		<div class="flex flex-col min-w-0 flex-1 gap-2.5">
 			<h3
-				class="text-lg md:text-xl font-medium text-amber-50 leading-snug tracking-tight group-hover:text-amber-100 transition-colors"
+				class="text-lg md:text-[1.25rem] font-medium text-[var(--color-parchment)] leading-snug tracking-tight group-hover:text-[var(--color-accent)] transition-colors duration-300"
 			>
 				{{ title }}
 			</h3>
-			<div
-				class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-wide text-amber-100/35"
-			>
+			<div class="meta-text flex flex-wrap items-center gap-x-3 gap-y-1">
 				<span>{{ readTimeMinutes }} {{ $t("blog.minRead") }}</span>
-				<span aria-hidden="true" class="text-amber-100/20">·</span>
+				<span aria-hidden="true">—</span>
 				<span>{{ publishedAt }}</span>
-				<span aria-hidden="true" class="text-amber-100/20">·</span>
+				<span aria-hidden="true">—</span>
 				<span>{{ languageLabel }}</span>
 			</div>
 		</div>
+
 		<UIcon
 			name="mdi:arrow-top-right"
-			class="size-4 text-amber-100/20 group-hover:text-amber-200/70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0 mt-1.5"
+			class="size-4 text-[var(--color-parchment-faint)] group-hover:text-[var(--color-accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0 mt-1"
 			aria-hidden="true"
 		/>
 	</article>

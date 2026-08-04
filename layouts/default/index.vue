@@ -3,11 +3,10 @@
 <template>
 	<ClientOnly>
 		<ThreeScene />
-		<div
-			class="relative z-10 flex w-full items-start justify-center overflow-y-auto pt-24 md:pt-28 pb-40 md:pb-56"
-		>
+		<div class="editorial-canvas relative z-10 w-full min-h-dvh pt-0 pb-44 md:pb-60">
 			<TopNavigationBar />
 			<slot />
 		</div>
+		<CustomCursor />
 	</ClientOnly>
 </template>

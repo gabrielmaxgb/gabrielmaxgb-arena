@@ -250,23 +250,23 @@ onUnmounted(() => {
 					class="flex flex-col items-center gap-10 text-center"
 				>
 					<div class="relative flex items-center justify-center">
-						<span class="text-7xl font-serif text-amber-100/10 tracking-widest"
+						<span class="text-7xl font-serif text-[var(--color-parchment)]/10 tracking-widest"
 							>Α</span
 						>
 						<span
-							class="mx-6 text-amber-50/5 text-xs tracking-[0.5em] uppercase font-mono"
+							class="mx-6 text-[var(--color-parchment)]/5 text-xs tracking-[0.5em] uppercase font-mono"
 							>∴</span
 						>
-						<span class="text-7xl font-serif text-amber-100/10 tracking-widest"
+						<span class="text-7xl font-serif text-[var(--color-parchment)]/10 tracking-widest"
 							>Ω</span
 						>
 					</div>
 					<p
-						class="text-xs text-amber-50/15 tracking-[0.3em] uppercase font-mono"
+						class="text-xs text-[var(--color-parchment)]/15 tracking-[0.3em] uppercase font-mono"
 					>
 						{{ $t("trip.idleHint1") }}
 					</p>
-					<p class="text-xs text-amber-50/20 tracking-widest font-mono mt-2">
+					<p class="text-xs text-[var(--color-parchment)]/20 tracking-widest font-mono mt-2">
 						{{ $t("trip.idleHint2") }}
 					</p>
 				</div>

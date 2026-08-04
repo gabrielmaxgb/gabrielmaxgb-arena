@@ -26,9 +26,9 @@ onMounted(() => {
 	const geometry = new THREE.BoxGeometry(8, 8, 8);
 	const edges = new THREE.EdgesGeometry(geometry);
 	const material = new THREE.LineBasicMaterial({
-		color: "#FFFBEA",
+		color: "#e0632f",
 		transparent: true,
-		opacity: 0.2,
+		opacity: 0.12,
 	});
 	const wireframe = new THREE.LineSegments(edges, material);
 	scene.add(wireframe);
@@ -56,10 +56,10 @@ onMounted(() => {
 	);
 
 	const particlesMaterial = new THREE.PointsMaterial({
-		color: 0xffffff,
-		size: 0.09,
+		color: 0xddd6c8,
+		size: 0.06,
 		transparent: true,
-		opacity: 0.4,
+		opacity: 0.18,
 		blending: THREE.AdditiveBlending,
 		depthWrite: false,
 	});
@@ -139,6 +139,10 @@ onMounted(() => {
 	height: 100vh;
 	z-index: -1;
 	pointer-events: none;
-	background: radial-gradient(ellipse at center, #1a1916 0%, #0c0c0b 90%);
+	background: radial-gradient(
+		ellipse 85% 75% at 30% 35%,
+		#151310 0%,
+		#0e0d0a 70%
+	);
 }
 </style>

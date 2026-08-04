@@ -7,23 +7,18 @@ useHead(() => ({
 <template>
 	<MainContainer>
 		<MainSection
-			class="flex flex-col justify-center min-h-[60vh] md:min-h-[70vh]"
+			class="section--silent flex flex-col justify-center min-h-[62vh] md:min-h-[72vh]"
+			:show-index="false"
 		>
-			<p class="section-eyebrow mb-5">404</p>
-			<h1
-				class="font-serif text-5xl sm:text-6xl md:text-7xl text-amber-50 leading-[0.95] tracking-tight max-w-lg mb-6"
-			>
+			<p class="section-eyebrow mb-6">404</p>
+			<h1 class="display-title !text-[clamp(2.5rem,7vw,4.5rem)] max-w-lg mb-8">
 				{{ $t("notFound.title") }}
 			</h1>
-			<p class="prose-muted mb-10">
+			<p class="prose-muted mb-12 max-w-md">
 				{{ $t("notFound.description") }}
 			</p>
-			<NuxtLink
-				to="/"
-				class="inline-flex w-fit items-center gap-2 rounded-md px-5 py-3 text-sm font-medium bg-amber-100 text-[var(--color-ink)] hover:bg-amber-50 transition-colors duration-200"
-			>
+			<NuxtLink to="/" class="btn-primary w-fit">
 				{{ $t("notFound.cta") }}
-				<UIcon name="ion:arrow-forward" class="size-4" />
 			</NuxtLink>
 		</MainSection>
 	</MainContainer>
