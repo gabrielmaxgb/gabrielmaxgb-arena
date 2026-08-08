@@ -10,7 +10,7 @@ interface IHeaderLink {
 }
 
 const route = useRoute();
-const { locale, setLocale, t } = useI18n();
+const { locale, t } = useI18n();
 
 const headerLinks: IHeaderLink[] = [
 	{
@@ -23,11 +23,12 @@ const headerLinks: IHeaderLink[] = [
 		routeName: "blog",
 		textNav: true,
 	},
-	{
-		icon: "ion:language-outline",
-		labelKey: "nav.switchLocale",
-		isLocaleSwitch: true,
-	},
+	// Locale switch disabled for now
+	// {
+	// 	icon: "ion:language-outline",
+	// 	labelKey: "nav.switchLocale",
+	// 	isLocaleSwitch: true,
+	// },
 	{
 		icon: "lucide:github",
 		labelKey: "nav.github",
@@ -51,16 +52,6 @@ const headerLinks: IHeaderLink[] = [
 	},
 ];
 
-const LOCALE_STORAGE_KEY = "nuxt-portfolio-locale";
-
-function toggleLocale() {
-	const nextLocale = locale.value === "pt-BR" ? "en" : "pt-BR";
-	setLocale(nextLocale);
-	if (import.meta.client) {
-		localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
-	}
-}
-
 function isActive(routeName?: string) {
 	if (!routeName) return false;
 	if (routeName === "/") {
@@ -68,11 +59,6 @@ function isActive(routeName?: string) {
 	}
 	return route.name === routeName;
 }
-
-const localeLabel = computed(() =>
-	locale.value === "pt-BR" ? t("common.portuguese") : t("common.english"),
-);
-const switchLocaleAriaLabel = computed(() => t("nav.switchLocale"));
 
 useHead(() => ({
 	htmlAttrs: {
@@ -131,17 +117,6 @@ useHead(() => ({
 					>
 						<UIcon :name="link.icon!" />
 					</a>
-
-					<button
-						v-else-if="link.isLocaleSwitch"
-						type="button"
-						:aria-label="switchLocaleAriaLabel"
-						:title="`${localeLabel} — ${switchLocaleAriaLabel}`"
-						class="nav-bracket"
-						@click="toggleLocale"
-					>
-						[ {{ locale === "pt-BR" ? "pt" : "en" }} ]
-					</button>
 				</template>
 			</div>
 		</div>

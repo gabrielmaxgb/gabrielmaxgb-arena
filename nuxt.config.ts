@@ -17,8 +17,17 @@ export default defineNuxtConfig({
 			link: [
 				{
 					rel: "icon",
+					type: "image/png",
+					href: "/gabrielmaxgb-arena/favicon.png",
+				},
+				{
+					rel: "icon",
 					type: "image/x-icon",
 					href: "/gabrielmaxgb-arena/favicon.ico",
+				},
+				{
+					rel: "apple-touch-icon",
+					href: "/gabrielmaxgb-arena/apple-touch-icon.png",
 				},
 			],
 		},

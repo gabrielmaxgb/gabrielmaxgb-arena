@@ -18,6 +18,7 @@ const props = defineProps<{
 				$attrs.class as ClassNameValue,
 			)
 		"
+		:style="$attrs.style as string | Record<string, string> | undefined"
 	>
 		<header
 			v-if="props.eyebrow || props.title"

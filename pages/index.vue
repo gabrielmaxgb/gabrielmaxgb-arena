@@ -134,35 +134,25 @@ function jobKey(index: number, field: "Period" | "Title" | "Description") {
 			</MainSection>
 		</MainContainer>
 
-		<ProjectCarousel :projects="projects" />
+		<!-- <ProjectCarousel :projects="projects" /> -->
 
 		<div class="page-home__rest">
 			<MainContainer>
-			<MainSection :eyebrow="$t('index.aboutEyebrow')" :title="$t('index.aboutTitle')">
-				<div
-					class="grid w-full gap-10 md:gap-14 md:grid-cols-[auto_minmax(0,1fr)] md:items-start"
-				>
-					<figure class="profile-portrait profile-portrait--section mx-auto md:mx-0">
-						<img
-							:src="profileImage"
-							:alt="$t('index.profileAlt')"
-							class="profile-portrait__image"
-							width="681"
-							height="1024"
-							loading="lazy"
-						/>
-					</figure>
-
-					<div class="flex flex-col gap-6 prose-muted min-w-0">
-						<p>{{ $t("index.intro5") }}</p>
-						<p>
-							{{ $t("index.intro6") }}
-							<NuxtLink to="/blog" class="prose-link">
-								{{ $t("index.intro7") }}
-							</NuxtLink>
-							.
-						</p>
-					</div>
+			<MainSection
+				class="about-section"
+				:style="{ '--about-bg': `url(${profileImage})` }"
+				:eyebrow="$t('index.aboutEyebrow')"
+				:title="$t('index.aboutTitle')"
+			>
+				<div class="about-section__copy prose-muted">
+					<p>{{ $t("index.intro5") }}</p>
+					<p>
+						{{ $t("index.intro6") }}
+						<NuxtLink to="/blog" class="prose-link">
+							{{ $t("index.intro7") }}
+						</NuxtLink>
+						.
+					</p>
 				</div>
 			</MainSection>
 
