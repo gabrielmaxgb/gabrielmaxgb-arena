@@ -147,6 +147,18 @@ function jobKey(index: number, field: "Period" | "Title" | "Description") {
 				<div class="about-section__copy prose-muted">
 					<p>{{ $t("index.intro5") }}</p>
 					<p>
+						{{ $t("index.introPhoto") }}
+						<a
+							href="https://www.maxdecoyer.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="prose-link"
+						>
+							{{ $t("index.introPhotoName") }}
+						</a>
+						.
+					</p>
+					<p>
 						{{ $t("index.intro6") }}
 						<NuxtLink to="/blog" class="prose-link">
 							{{ $t("index.intro7") }}
